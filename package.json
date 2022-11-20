@@ -1,0 +1,22 @@
+{
+  "name": "duo-milonga",
+  "version": "1.0.0",
+  "private": true,
+  "description": "duo-milonga",
+  "author": "Patryk Kobylarczyk",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
