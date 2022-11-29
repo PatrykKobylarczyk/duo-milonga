@@ -25,32 +25,30 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <Layout
-      selectedPage={selectedPage}
-      setSelectedPage={setSelectedPage}
-      isTopOfPage={isTopOfPage}
-    >
-      <main>
-        {/* Hero section */}
+      <Layout
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+        isTopOfPage={isTopOfPage}
+      >
+        <main>
+          {/* Hero section */}
 
-        <section className="section">
-          <div>
-            <StaticImage src="../images/Duo/01.jpg" alt="main room" />
-          </div>
-        </section>
+          <section className="section">
+            <div>
+              <StaticImage src="../images/Duo/01.jpg" alt="main room" />
+            </div>
+          </section>
 
-        {/* About */}
-        {/* Biographies */}
-        {/* Video */}
-        {/* Gallery */}
-        {/* Music */}
-        {/* Media */}
-        {/* Contact */}
-        {/* Shop */}
-
-
-      </main>
-    </Layout>
+          {/* About */}
+          {/* Biographies */}
+          {/* Video */}
+          {/* Gallery */}
+          {/* Music */}
+          {/* Media */}
+          {/* Contact */}
+          {/* Shop */}
+        </main>
+      </Layout>
   );
 };
 

@@ -1,9 +1,12 @@
 import React from 'react'
+import Logo from './Logo'
+import SocialMedia from './SocialMedia'
 
 const Footer = () => {
   return (
     <footer>
-      Footer
+      <SocialMedia/>
+      <Logo color='white'/>
     </footer>
   )
 }
