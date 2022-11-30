@@ -30,3 +30,61 @@
     }
 
   }
+
+
+
+  /* Music player */
+  .play-music {
+    color: white;
+    width: 20px;
+    height: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .music-animation {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+  }
+  
+  .music-animation.on .bar {
+    animation: bar 1.2s infinite;
+  }
+  
+  .music-animation.on .bar2 {
+    animation-delay: .1s;
+  }
+  
+  .music-animation.on .bar3 {
+    animation-delay: .2s;
+  }
+  
+  .music-animation.on .bar4 {
+    animation-delay: .3s;
+  }
+  
+  .music-animation.on .bar5 {
+    animation-delay: .4s;
+  }
+  
+  .bar {
+    width: 1px;
+    height: 3px;
+    display: block;
+    background: #ffffff;
+    margin: 0 1px;
+  }
+  
+  @keyframes bar {
+    0% {
+      height: 4px;
+    }
+    50% {
+      height: 10px;
+    }
+    100% {
+      height: 4px;
+    }
+  }
