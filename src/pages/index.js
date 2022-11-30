@@ -33,7 +33,7 @@ const IndexPage = () => {
         setSelectedPage={setSelectedPage}
         isTopOfPage={isTopOfPage}
       >
-        {isAboveSmallScreens ? <Cursor isHovered={isHovered}/> : <Cursor isAboveSmallScreens={isAboveSmallScreens}/>}
+        {/* {isAboveSmallScreens ? <Cursor isHovered={isHovered}/> : <Cursor isAboveSmallScreens={isAboveSmallScreens}/>} */}
 
         <main className="section">
           <StaticImage
