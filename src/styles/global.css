@@ -11,19 +11,22 @@
     }
   
     header {
-      @apply fixed top-0 bg-white z-50 flex w-full items-center justify-between px-8 py-4 transition-all lg:px-10 lg:py-6 select-none;
+      @apply fixed top-0 z-50 flex w-full items-center justify-between px-8 py-8 transition-all lg:px-10 lg:py-6 select-none;
     }
 
     footer{
-      @apply bottom-0 left-0 w-full px-10 py-4 bg-black flex justify-between items-center text-white
+      @apply absolute bottom-0 left-0 w-full px-10 py-8  text-white z-50 text-center
     }
   }
 
   @layer components {
 
     .section{
-        @apply py-20 px-8
+        @apply absolute w-full h-full object-cover
     }
 
+    .button{
+      @apply flex h-11 w-11 items-center justify-center  rounded-full border-[1px] border-white
+    }
 
   }

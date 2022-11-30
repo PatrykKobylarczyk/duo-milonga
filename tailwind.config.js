@@ -17,7 +17,12 @@ module.exports = {
       fontFamily: {
         monteCarlo: ["MonteCarlo"],
         Quicksand: ["Quicksand", "sans-serif"],
-      }
+      },
+      backgroundImage: {
+        'gradient-layout':
+          'linear-gradient(to bottom,#141414 0,rgba(20,20,20,.35) 15%,rgba(20,20,20,0.1) 25%,rgba(20,20,20, 0) 50%,rgba(20,20,20,.15) 75%, rgba(20,20,20,.35) 85%,#141414 100%);',
+      },
+      
     },
     screens: {
       xs: "480px",

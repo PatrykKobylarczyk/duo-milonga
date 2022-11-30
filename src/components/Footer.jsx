@@ -1,12 +1,16 @@
 import React from 'react'
 import Logo from './Logo'
+import MusicButton from './MusicButton'
 import SocialMedia from './SocialMedia'
 
 const Footer = () => {
   return (
     <footer>
+      <div className='flex justify-between items-center'>
       <SocialMedia/>
-      <Logo color='white'/>
+      <MusicButton/>
+      </div>
+      <p className='text-xs font-light'>© 2022 Duo Milonga</p>
     </footer>
   )
 }

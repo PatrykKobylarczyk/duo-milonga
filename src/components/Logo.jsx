@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 
-const Logo = ({color}) => {
+const Logo = ({ color }) => {
   return (
     <Link to="/">
       <p className={`font-monteCarlo text-${color} text-3xl pl-2 z-50`}>
