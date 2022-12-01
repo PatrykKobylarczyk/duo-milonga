@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from './Logo'
 import MusicButton from './MusicButton'
 import SocialMedia from './SocialMedia'
 
