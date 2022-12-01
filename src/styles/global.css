@@ -33,7 +33,7 @@
 /* dynamic vieport for IOS */
 body {
   height: 100dvh;
-  overflow: hiddengi  ;
+  overflow: hidden;
 }
 
 /* Music player */
