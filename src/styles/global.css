@@ -29,6 +29,11 @@
   }
 }
 
+/* dynamic vieport for IOS */
+body {
+  height: 100dvh;
+}
+
 /* Music player */
 .play-music {
   color: white;
