@@ -1,43 +1,37 @@
 import React, { useState, useEffect } from "react";
-import audio from '../audio/music2.mp3'
+import audio from "../audio/music2.mp3";
 
-const useAudio = url => {
-  const [audio] = useState(new Audio(url));
+const useAudio = (url) => {
+  const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
   const [playing, setPlaying] = useState(false);
 
-  const toggle = () => setPlaying(!playing);
+  const toggle = () => setPlaying((prev) => !prev);
 
   useEffect(() => {
-      playing ? audio.play() : audio.pause();
-    },
-    [playing]
-  );
+    playing ? audio.play() : audio.pause();
+  }, [playing]);
 
   useEffect(() => {
-    audio.addEventListener('ended', () => setPlaying(false));
+    audio.addEventListener("ended", () => setPlaying(false));
     return () => {
-      audio.removeEventListener('ended', () => setPlaying(false));
+      audio.removeEventListener("ended", () => setPlaying(false));
     };
   }, []);
 
   return [playing, toggle];
 };
 
-
-
 const MusicButton = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [playing, toggle ] = useAudio(audio)
+  const [playing, toggle] = useAudio(audio);
 
   const togglePlay = () => {
-    setIsPlaying((prev) => !prev);
-    toggle()
+    toggle();
   };
 
   return (
     <button className="button text-xs" onClick={() => togglePlay()}>
       <div className="play-music">
-        <div className={`music-animation ${isPlaying ? 'on' : null}`}>
+        <div className={`music-animation ${playing ? "on" : null}`}>
           <span className="bar bar1"></span>
           <span className="bar bar2"></span>
           <span className="bar bar3"></span>

@@ -37,9 +37,10 @@ const IndexPage = () => {
 
         <main className="section">
           <StaticImage
-            src="../images/Duo/16.jpg"
+            src="../images/Duo/11.jpg"
             alt="main room"
             className="h-full left-0 -z-50"
+            objectPosition='32% 0'
           />
         </main>
       </Layout>

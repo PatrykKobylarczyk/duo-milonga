@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&family=Quicksand:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=MonteCarlo&family=Quicksand:wght@300&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,85 +6,82 @@
 
 /* html, body, heading */
 @layer base {
-    html {
-      @apply scroll-smooth;
-    }
-  
-    header {
-      @apply fixed top-0 z-50 flex w-full items-center justify-between px-8 py-8 transition-all lg:px-10 lg:py-6 select-none;
-    }
-
-    footer{
-      @apply absolute bottom-0 left-0 w-full px-10 py-8  text-white z-50 text-center
-    }
+  html {
+    @apply scroll-smooth;
   }
 
-  @layer components {
-
-    .section{
-        @apply absolute w-full h-full object-cover
-    }
-
-    .button{
-      @apply flex h-11 w-11 items-center justify-center  rounded-full border-[1px] border-white
-    }
-
+  header {
+    @apply fixed top-0 z-50 flex w-full items-center justify-between px-8 py-8 transition-all lg:px-10 lg:py-6 select-none;
   }
 
+  footer {
+    @apply absolute bottom-0 left-0 w-full px-10 py-8  text-white z-50 text-center;
+  }
+}
 
+@layer components {
+  .section {
+    @apply absolute w-full h-full object-cover;
+  }
 
-  /* Music player */
-  .play-music {
-    color: white;
-    width: 20px;
+  .button {
+    @apply flex h-14 w-14 items-center justify-center  rounded-full border-[1px] border-white;
+  }
+}
+
+/* Music player */
+.play-music {
+  color: white;
+  width: 20px;
+  height: 10px;
+  margin-right: 2px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.music-animation {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.music-animation.on .bar {
+  animation: bar 1.2s infinite;
+}
+
+.music-animation.on .bar2 {
+  animation-delay: 0.1s;
+}
+
+.music-animation.on .bar3 {
+  animation-delay: 0.2s;
+}
+
+.music-animation.on .bar4 {
+  animation-delay: 0.3s;
+}
+
+.music-animation.on .bar5 {
+  animation-delay: 0.4s;
+}
+
+.bar {
+  width: 1px;
+  height: 3px;
+  display: block;
+  background: #ffffff;
+  margin: 0 1px;
+}
+
+@keyframes bar {
+  0% {
+    height: 4px;
+  }
+  50% {
     height: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
   }
-  
-  .music-animation {
-    display: flex;
-    align-items: flex-end;
-    position: relative;
+  100% {
+    height: 4px;
   }
-  
-  .music-animation.on .bar {
-    animation: bar 1.2s infinite;
-  }
-  
-  .music-animation.on .bar2 {
-    animation-delay: .1s;
-  }
-  
-  .music-animation.on .bar3 {
-    animation-delay: .2s;
-  }
-  
-  .music-animation.on .bar4 {
-    animation-delay: .3s;
-  }
-  
-  .music-animation.on .bar5 {
-    animation-delay: .4s;
-  }
-  
-  .bar {
-    width: 1px;
-    height: 3px;
-    display: block;
-    background: #ffffff;
-    margin: 0 1px;
-  }
-  
-  @keyframes bar {
-    0% {
-      height: 4px;
-    }
-    50% {
-      height: 10px;
-    }
-    100% {
-      height: 4px;
-    }
-  }
+}
