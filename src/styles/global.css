@@ -18,13 +18,14 @@
   footer {
     @apply absolute bottom-0 left-0 w-full px-10 py-8  text-white z-50 text-center;
   }
+
+  main{
+    @apply absolute w-full h-screen object-cover;
+  }
 }
 
 @layer components {
-  .section {
-    @apply absolute w-full h-full object-cover;
-  }
-
+ 
   .button {
     @apply flex h-14 w-14 items-center justify-center  rounded-full border-[1px] border-white;
   }

@@ -1,29 +1,10 @@
 import React, { useState } from "react";
 import Logo from "./Logo";
 import { Squeeze as Hamburger } from "hamburger-react";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "gatsby";
 
-const Link = ({ page, selectedPage, setSelectedPage, setIsMenuToggled }) => {
-  const lowerCasePage = page.toLowerCase();
-
-  return (
-    <motion.div>
-      <AnchorLink
-        className={`${selectedPage === lowerCasePage ? "text-red" : ""}
-          hover:text-red transition duration-500`}
-        to={`#${lowerCasePage}`}
-        onClick={() => {
-          setSelectedPage(lowerCasePage);
-          setIsMenuToggled(false);
-        }}
-      >
-        {page}
-      </AnchorLink>
-    </motion.div>
-  );
-};
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
@@ -38,24 +19,16 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         {isAboveSmallScreens ? (
           <motion.div className="flex justify-between gap-16 font-opensans text-sm font-semibold text-white">
             <Link
-              page="Home"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
+              to="/Home"
             />
             <Link
-              page="About"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
+              to="/about"
             />
             <Link
-              page="Media"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
+              to="/media"
             />
             <Link
-              page="Contact"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
+              to="/contact"
             />
           </motion.div>
         ) : (
@@ -79,26 +52,18 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
           >
             {/* MENU ITEMS */}
             <div className="w-full h-full flex flex-col gap-6 items-center justify-center text-xl text-white">
-              <Link
-                page="Home"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-              <Link
-                page="About"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-              <Link
-                page="Media"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-              <Link
-                page="Contact"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
+            <Link
+              to="/Home"
+            />
+            <Link
+              to="/about"
+            />
+            <Link
+              to="/media"
+            />
+            <Link
+              to="/contact"
+            />
             </div>
           </motion.div>
         )}

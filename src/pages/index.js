@@ -35,7 +35,7 @@ const IndexPage = () => {
       >
         {/* {isAboveSmallScreens ? <Cursor isHovered={isHovered}/> : <Cursor isAboveSmallScreens={isAboveSmallScreens}/>} */}
 
-        <main className="section">
+        <main>
           <StaticImage
             src="../images/Duo/11.jpg"
             alt="main room"
