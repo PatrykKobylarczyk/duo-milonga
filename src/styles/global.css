@@ -20,7 +20,7 @@
   }
 
   main {
-    @apply absolute w-full h-screen object-cover;
+    @apply absolute w-full h-full object-cover;
   }
 }
 
@@ -39,12 +39,16 @@ body {
   height: 100dvh;
 }
 
-/* hovered Link */
-.hovered-link > a {
-  transition: color .3s;
+li {
+  list-style: none;
 }
 
-.hovered-link > a:hover {
+/* hovered Link */
+.hovered-link > li > a {
+  transition: color 0.3s;
+}
+
+.hovered-link > li > a:hover {
   color: rgb(175 38 34);
 }
 

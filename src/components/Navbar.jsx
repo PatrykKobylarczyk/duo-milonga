@@ -5,12 +5,23 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "gatsby";
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
+const Navbar = ({ isTopOfPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
+  const menuListAnimation = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
 
-  const activeLinkStyle = 'color'
+  const projectVariant = {
+    hidden: { opacity: 0, scale: 0.2 },
+    visible: { opacity: 1, scale: 1 },
+  };
 
   return (
     <div className="relative">
@@ -21,15 +32,44 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         {isAboveSmallScreens ? (
           <motion.div
             className="hovered-link flex justify-between gap-16 font-opensans text-sm font-semibold text-white"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.5 }}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.5 }}
+            viewport={{ amount: 0.2 }}
+            variants={menuListAnimation}
           >
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/media">Media</Link>
-            <Link to="/contact">Contact</Link>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5 }}
+              variants={projectVariant}
+            >
+              <Link to="/">Home</Link>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5 }}
+              variants={projectVariant}
+            >
+              <Link to="/about">About</Link>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5 }}
+              variants={projectVariant}
+            >
+              <Link to="/media">Media</Link>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5 }}
+              variants={projectVariant}
+            >
+              <Link to="/contact">Contact</Link>
+            </motion.div>
           </motion.div>
         ) : (
           <Hamburger
@@ -51,12 +91,49 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             transition={{ ease: "easeInOut", duration: 0.5 }}
           >
             {/* MENU ITEMS */}
-            <motion.div className="hovered-link w-full h-full flex flex-col gap-6 items-center justify-center text-xl text-white">
-              <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/media">Media</Link>
-              <Link to="/contact">Contact</Link>
-            </motion.div>
+            <AnimatePresence>
+              <motion.div
+                className="hovered-link w-full h-full flex flex-col gap-6 items-center justify-center text-xl text-white"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ ease: "easeInOut", delay: 0.5, duration: 0.5 }}
+                variants={menuListAnimation}
+              >
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 0.5 }}
+                  variants={projectVariant}
+                >
+                  <Link to="/">Home</Link>
+                </motion.div>
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 0.5 }}
+                  variants={projectVariant}
+                >
+                  <Link to="/about">About</Link>
+                </motion.div>
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 0.5 }}
+                  variants={projectVariant}
+                >
+                  <Link to="/media">Media</Link>
+                </motion.div>
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 0.5 }}
+                  variants={projectVariant}
+                >
+                  <Link to="/contact">Contact</Link>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
