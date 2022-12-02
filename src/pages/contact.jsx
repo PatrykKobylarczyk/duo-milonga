@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Layout from "../components/Layout";
 
 const Contact = () => {
   return (
-    <div className='grid place-items-center bg-[#141414]'>
-      Contact
-    </div>
-  )
-}
+    <Layout>
+      <div className="page h-screen grid place-items-center ">Contact</div>
+    </Layout>
+  );
+};
 
-export default Contact
+export default Contact;

@@ -19,22 +19,33 @@
     @apply absolute bottom-0 left-0 w-full px-10 py-8  text-white z-50 text-center;
   }
 
-  main{
+  main {
     @apply absolute w-full h-screen object-cover;
   }
 }
 
 @layer components {
- 
   .button {
     @apply flex h-14 w-14 items-center justify-center  rounded-full border-[1px] border-white;
+  }
+
+  .page {
+    @apply w-full bg-[#141414] text-white;
   }
 }
 
 /* dynamic vieport for IOS */
 body {
   height: 100dvh;
-  overflow: hidden;
+}
+
+/* hovered Link */
+.hovered-link > a {
+  transition: color .3s;
+}
+
+.hovered-link > a:hover {
+  color: rgb(175 38 34);
 }
 
 /* Music player */

@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import Layout from "../components/Layout";
 
 const About = () => {
   return (
-    <div className='grid place-items-center bg-[#141414]'>
-      About
-    </div>
-  )
-}
+    <Layout>
+      <div className="page h-screen grid place-items-center ">
+        About
+      </div>
+    </Layout>
+  );
+};
 
-export default About
+export default About;
