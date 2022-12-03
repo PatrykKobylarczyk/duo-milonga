@@ -13,14 +13,15 @@ const Navbar = ({ isTopOfPage }) => {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.1,
+        delay: 0.3,
       },
     },
   };
 
   const projectVariant = {
-    hidden: { opacity: 0, scale: 0.2 },
-    visible: { opacity: 1, scale: 1 },
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
   };
 
   return (
@@ -34,38 +35,29 @@ const Navbar = ({ isTopOfPage }) => {
             className="hovered-link flex justify-between gap-16 font-opensans text-sm font-semibold text-white"
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.5 }}
-            viewport={{ amount: 0.2 }}
+            viewport={{ once: true }}
             variants={menuListAnimation}
           >
             <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.15 }}
               variants={projectVariant}
             >
               <Link to="/">Home</Link>
             </motion.div>
             <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.15 }}
               variants={projectVariant}
             >
               <Link to="/about">About</Link>
             </motion.div>
             <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.15 }}
               variants={projectVariant}
             >
               <Link to="/media">Media</Link>
             </motion.div>
             <motion.div
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.15 }}
               variants={projectVariant}
             >
               <Link to="/contact">Contact</Link>
@@ -88,46 +80,37 @@ const Navbar = ({ isTopOfPage }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.5 }}
+            transition={{ ease: "easeInOut", duration: 0.3 }}
           >
             {/* MENU ITEMS */}
             <AnimatePresence>
               <motion.div
                 className="hovered-link w-full h-full flex flex-col gap-6 items-center justify-center text-xl text-white"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ ease: "easeInOut", delay: 0.5, duration: 0.5 }}
+                initial="hidden"
+                animate="visible"
+                viewport={{ once: true }}
                 variants={menuListAnimation}
               >
                 <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.1 }}
                   variants={projectVariant}
                 >
                   <Link to="/">Home</Link>
                 </motion.div>
                 <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.1 }}
                   variants={projectVariant}
                 >
                   <Link to="/about">About</Link>
                 </motion.div>
                 <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.1 }}
                   variants={projectVariant}
                 >
                   <Link to="/media">Media</Link>
                 </motion.div>
                 <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.1 }}
                   variants={projectVariant}
                 >
                   <Link to="/contact">Contact</Link>

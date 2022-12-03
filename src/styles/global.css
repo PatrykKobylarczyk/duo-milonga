@@ -44,11 +44,11 @@ li {
 }
 
 /* hovered Link */
-.hovered-link > li > a {
+.hovered-link > div > a {
   transition: color 0.3s;
 }
 
-.hovered-link > li > a:hover {
+.hovered-link > div > a:hover {
   color: rgb(175 38 34);
 }
 

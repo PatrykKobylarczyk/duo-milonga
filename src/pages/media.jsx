@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 const Media = () => {
   return (
     <Layout>
-      <div className="page h-screen grid place-items-center ">Contact</div>
+      <div className="page h-screen grid place-items-center ">Media</div>
     </Layout>
   );
 };
