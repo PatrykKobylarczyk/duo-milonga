@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import audio from "../audio/music2.mp3";
+import audio from "../assets/audio/music2.mp3";
 
 const useAudio = (url) => {
   const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));

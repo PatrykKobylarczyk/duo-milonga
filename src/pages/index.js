@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 //COMPONENTS
 import Layout from "../components/Layout";
-import Cursor from "../components/Cursor";
+// import Cursor from "../components/Cursor";
 
 const IndexPage = () => {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -27,7 +27,7 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <div className="relative h-screen bg-gradient-layout">
+    <div className="relative h-screen">
       <Layout
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
@@ -37,7 +37,7 @@ const IndexPage = () => {
 
         <main>
           <StaticImage
-            src="../images/Duo/11.jpg"
+            src="../assets/images/Duo/11.jpg"
             alt="main room"
             className="h-full left-0 -z-50"
             objectPosition='32% 0'

@@ -12,15 +12,15 @@
   }
 
   header {
-    @apply fixed top-0 z-50 flex w-full items-center justify-between px-8 py-8 transition-all lg:px-10 lg:py-6 select-none;
+    @apply fixed top-0 z-50 flex w-full items-center justify-between px-8 py-8 transition-all lg:px-10 lg:py-10 select-none;
   }
 
   footer {
-    @apply absolute bottom-0 left-0 w-full px-10 py-8  text-white z-50 text-center;
+    @apply fixed bottom-0 left-0 w-full px-10 py-8  text-white z-50 text-center;
   }
 
   main {
-    @apply absolute w-full h-full object-cover;
+    @apply absolute w-full h-full;
   }
 }
 
@@ -30,7 +30,7 @@
   }
 
   .page {
-    @apply w-full bg-[#141414] text-white;
+    @apply bg-[#141414] text-white;
   }
 }
 

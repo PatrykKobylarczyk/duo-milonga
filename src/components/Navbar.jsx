@@ -14,14 +14,14 @@ const Navbar = ({ isTopOfPage }) => {
     visible: {
       transition: {
         staggerChildren: 0.1,
-        delay: 0.3,
+        delayChildren: 0.4,
       },
     },
   };
 
   const projectVariant = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
+    hidden: { x: 50, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
   };
 
   return (
@@ -39,25 +39,25 @@ const Navbar = ({ isTopOfPage }) => {
             variants={menuListAnimation}
           >
             <motion.div
-              transition={{ duration: 0.15 }}
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/">Home</Link>
             </motion.div>
             <motion.div
-              transition={{ duration: 0.15 }}
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/about">About</Link>
             </motion.div>
             <motion.div
-              transition={{ duration: 0.15 }}
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/media">Media</Link>
             </motion.div>
             <motion.div
-              transition={{ duration: 0.15 }}
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/contact">Contact</Link>
@@ -92,25 +92,37 @@ const Navbar = ({ isTopOfPage }) => {
                 variants={menuListAnimation}
               >
                 <motion.div
-                  transition={{ duration: 0.1 }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.435, 0.135, 0.09, 0.83],
+                  }}
                   variants={projectVariant}
                 >
                   <Link to="/">Home</Link>
                 </motion.div>
                 <motion.div
-                  transition={{ duration: 0.1 }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.435, 0.135, 0.09, 0.83],
+                  }}
                   variants={projectVariant}
                 >
                   <Link to="/about">About</Link>
                 </motion.div>
                 <motion.div
-                  transition={{ duration: 0.1 }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.435, 0.135, 0.09, 0.83],
+                  }}
                   variants={projectVariant}
                 >
                   <Link to="/media">Media</Link>
                 </motion.div>
                 <motion.div
-                  transition={{ duration: 0.1 }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.435, 0.135, 0.09, 0.83],
+                  }}
                   variants={projectVariant}
                 >
                   <Link to="/contact">Contact</Link>
