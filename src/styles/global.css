@@ -35,7 +35,7 @@
 }
 
 /* dynamic vieport for IOS */
-body {
+.pages {
   height: 100dvh;
 }
 

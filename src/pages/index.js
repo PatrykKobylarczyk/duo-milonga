@@ -27,7 +27,7 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <div className="relative h-screen">
+    <div className="pages relative h-screen">
       <Layout
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
