@@ -11,8 +11,18 @@ const About = () => {
   return (
     <div className="pages">
       <Layout>
+        <div className="right-0 h-full w-3/5 ">
+          <StaticImage
+            src="../assets/images/Duo/08.jpg"
+            alt="main room"
+            className="absolute w-full h-full z-0"
+            objectPosition={`${isAboveMediumScreens ? "0% 0%" : "39% 0%"}`}
+          />
+          <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
+          <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
+        </div>
         <div className="page flex min-h-screen ">
-          <div className="w-2/5 h-full py-32 px-10 w-3xl md:max-w-4xl ">
+          <div className="max-w-6xl h-full py-48 px-10 w-3xl md:max-w-4xl ">
             <h1 className="text-3xl font-bold mb-8">Duo Milonga</h1>
             <p>
               Duet powstał w 2007 roku i od początku istnienia koncertował już w
@@ -41,16 +51,6 @@ const About = () => {
               <br />
               wielu festiwali muzyki kameralnej i tangowej.
             </p>
-            <div className="absolute left-0 top-0 w-full h-full bg-red "></div>
-          </div>
-          <div className="fixed right-0 h-full w-3/5">
-            <StaticImage
-              src="../assets/images/Duo/13.jpg"
-              alt="main room"
-              className=" h-full"
-              objectPosition={`${isAboveMediumScreens ? "0% 0%" : "39% 0%"}`}
-            />
-            {/* <div className="fixed right-0 h-full w-3/5 bg-red"></div> */}
           </div>
         </div>
       </Layout>

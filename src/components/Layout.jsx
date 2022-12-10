@@ -2,16 +2,32 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const Layout = ({ children }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (
-    <div>
+    <>
       <Navbar />
-      {children}
+      <AnimatePresence>
+        <motion.div
+          initial={{ y:0 }}
+          animate={{ y: 0 }}
+          exit={{ y: '100%' }}
+          transition={{
+            ease: [0.435, 0.135, 0.09, 0.83],
+            stiffness: 260,
+            damping: 20,
+            duration: .8,
+          }}
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
       <Footer />
-    </div>
+    </>
   );
 };
 

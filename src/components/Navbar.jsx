@@ -4,6 +4,8 @@ import { Squeeze as Hamburger } from "hamburger-react";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "gatsby";
+import { lang_EN } from "../data/lang-pack";
+import { lang_PL } from "../data/lang-pack";
 
 const Navbar = ({ isTopOfPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
@@ -42,25 +44,37 @@ const Navbar = ({ isTopOfPage }) => {
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
-              <Link to="/">Home</Link>
+              <Link to="/">{lang_EN.menu_home}</Link>
             </motion.div>
             <motion.div
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
-              <Link to="/about">About</Link>
+              <Link to="/about">{lang_EN.menu_about}</Link>
             </motion.div>
             <motion.div
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
-              <Link to="/media">Media</Link>
+              <Link to="/gallery">{lang_EN.menu_gallery}</Link>
             </motion.div>
             <motion.div
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
-              <Link to="/contact">Contact</Link>
+              <Link to="/video">{lang_EN.menu_video}</Link>
+            </motion.div>
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/music">{lang_EN.menu_music}</Link>
+            </motion.div>
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/contact">{lang_EN.menu_contact}</Link>
             </motion.div>
           </motion.div>
         ) : (
@@ -92,41 +106,41 @@ const Navbar = ({ isTopOfPage }) => {
                 variants={menuListAnimation}
               >
                 <motion.div
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.435, 0.135, 0.09, 0.83],
-                  }}
-                  variants={projectVariant}
-                >
-                  <Link to="/">Home</Link>
-                </motion.div>
-                <motion.div
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.435, 0.135, 0.09, 0.83],
-                  }}
-                  variants={projectVariant}
-                >
-                  <Link to="/about">About</Link>
-                </motion.div>
-                <motion.div
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.435, 0.135, 0.09, 0.83],
-                  }}
-                  variants={projectVariant}
-                >
-                  <Link to="/media">Media</Link>
-                </motion.div>
-                <motion.div
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.435, 0.135, 0.09, 0.83],
-                  }}
-                  variants={projectVariant}
-                >
-                  <Link to="/contact">Contact</Link>
-                </motion.div>
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/">{lang_EN.menu_home}</Link>
+            </motion.div>
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/about">{lang_EN.menu_about}</Link>
+            </motion.div>
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/gallery">{lang_EN.menu_gallery}</Link>
+            </motion.div>
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/video">{lang_EN.menu_video}</Link>
+            </motion.div>
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/music">{lang_EN.menu_music}</Link>
+            </motion.div>
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/contact">{lang_EN.menu_contact}</Link>
+            </motion.div>
               </motion.div>
             </AnimatePresence>
           </motion.div>
