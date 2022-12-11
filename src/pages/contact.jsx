@@ -1,90 +1,49 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { StaticImage } from "gatsby-plugin-image";
+import ContactForm from "../components/ContactForm";
+import useMediaQuery from "../hooks/useMediaQuery";
+import { lang_EN } from "../data/lang-pack";
+import { lang_PL } from "../data/lang-pack";
+import { useRecoilState } from "recoil";
+import { languageState } from "../atoms/atom";
 
 const Contact = () => {
-  const {
-    register,
-    trigger,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = async (e) => {
-    const isValid = await trigger();
-    if (!isValid) {
-      e.preventDefault();
-    }
-  };
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [language, setLanguage] = useRecoilState(languageState);
+  const lang = language === "PL" ? lang_EN : lang_PL;
 
   return (
-    <div className="page px-10 h-screen grid place-items-center">
-      <div className="w-full flex flex-col justify-start pt-10">
-        <h2>Contact</h2>
-        <p>Konrad Salwiński</p>
+    <div className="page relative h-screen flex flex-col justify-center overflow-hidden">
+      <div className="flex">
+        {isAboveMediumScreens && (
+          <div className="h-full w-1/6 bg-[rgb(3,11,15)]"></div>
+        )}
+        <StaticImage
+          src="../assets/images/Duo/05.jpg"
+          alt="main room"
+          className="h-screen left-0 z-0"
+        />
       </div>
-      <form
-        target="_blank"
-        onSubmit={onSubmit}
-        action="https://formsubmit.co/patryk.kobylarczyk@gmail.com"
-        method="POST"
-        className="max-w-2xl"
-      >
-        <input
-          className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-3  placeholder:font-light"
-          type="text"
-          placeholder="name"
-          {...register("name", {
-            required: true,
-            maxLength: 100,
-          })}
-        />
-        {errors.name && (
-          <p className="text-red mt-1">
-            {errors.name.type === "required" && "This field is required."}
-            {errors.name.type === "maxLength" && "<Max length is 100 chars."}
-          </p>
-        )}
+      <div className="absolute left-0 top-0 w-full h-full bg-darker-gradient-bg z-10"></div>
+      <div className="absolute w-1/2 flex flex-col justify-start ml-16 lg:ml-40 z-10 overflow-x-auto gap-2">
+        <h3 className="text-xl lg:text-2xl font-light">{lang.contact_title}</h3>
+        <p className="text-2xl lg:text-3xl font-bold mt-5">
+          {lang.contact_name}
+        </p>
+        <ul className="text-lg mt-5 gap-4">
+          <li>
+            <a href="tel:48508239654">{lang.contact_phone}</a>
+          </li>
+          <li>
+            <a href="mailto:duomilonga@gmail.com">{lang.contact_mail}</a>
+          </li>
+          <li>
+            <a href="https://wa.me/48508239654">{lang.contact_whatsapp}</a>
+          </li>
+        </ul>
 
-        <input
-          className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-3  placeholder:font-light mt-5"
-          type="text"
-          placeholder="email"
-          {...register("email", {
-            required: true,
-            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-          })}
-        />
-        {errors.email && (
-          <p className="text-red mt-1">
-            {errors.email.type === "required" && "This field is required."}
-            {errors.email.type === "pattern" && "Invalid email address."}
-          </p>
-        )}
-
-        <textarea
-          className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-3  placeholder:font-light mt-5"
-          name="message"
-          placeholder="message"
-          rows="4"
-          cols="50"
-          {...register("message", {
-            required: true,
-            maxLength: 2000,
-          })}
-        />
-        {errors.message && (
-          <p className="text-red mt-1">
-            {errors.message.type === "required" && "This field is required."}
-            {errors.message.type === "maxLength" && "Max length is 2000 char."}
-          </p>
-        )}
-
-        <button
-          className="p-5 bg-transparent border-[1px]  font-semibold text-white mt-5 hover:bg-white hover:text-black transition duration-300"
-          type="submit"
-        >
-          Napisz do mnie
-        </button>
-      </form>
+        {/* <ContactForm/> */}
+      </div>
     </div>
   );
 };

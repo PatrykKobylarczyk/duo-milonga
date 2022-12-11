@@ -61,7 +61,7 @@ const Navbar = ({ isTopOfPage }) => {
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
-              <Link to="/media">{lang.menu_gallery}</Link>
+              <Link to="/media">{lang.menu_media}</Link>
             </motion.div>
             <motion.div
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
@@ -123,7 +123,7 @@ const Navbar = ({ isTopOfPage }) => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/media">{lang.menu_gallery}</Link>
+                  <Link to="/media">{lang.menu_media}</Link>
                 </motion.div>
                 <motion.div
                   transition={{

@@ -29,7 +29,6 @@ const IndexPage = () => {
   return (
     <div className="pages relative h-screen">
       {/* {isAboveSmallScreens ? <Cursor isHovered={isHovered}/> : <Cursor isAboveSmallScreens={isAboveSmallScreens}/>} */}
-
       <main>
         <StaticImage
           src="../assets/images/Duo/11.jpg"
@@ -38,6 +37,7 @@ const IndexPage = () => {
           objectPosition="32% 0"
         />
       </main>
+      <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
     </div>
   );
 };

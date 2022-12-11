@@ -1,25 +1,6 @@
-import React, { useState, useEffect } from "react";
-import audio from "../assets/audio/music2.mp3";
-
-const useAudio = (url) => {
-  const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
-  const [playing, setPlaying] = useState(false);
-
-  const toggle = () => setPlaying((prev) => !prev);
-
-  useEffect(() => {
-    playing ? audio.play() : audio.pause();
-  }, [playing]);
-
-  useEffect(() => {
-    audio.addEventListener("ended", () => setPlaying(false));
-    return () => {
-      audio.removeEventListener("ended", () => setPlaying(false));
-    };
-  }, []);
-
-  return [playing, toggle];
-};
+import React from "react";
+import audio from "../assets/audio/salwinski_milonga.mp3";
+import useAudio from "../hooks/useAudio";
 
 const MusicButton = () => {
   const [playing, toggle] = useAudio(audio);
@@ -38,7 +19,6 @@ const MusicButton = () => {
           <span className="bar bar4"></span>
           <span className="bar bar5"></span>
         </div>
-        <audio className="music" loop="loop" src="./music/music2.mp3"></audio>
       </div>
     </button>
   );
