@@ -15,15 +15,15 @@ const About = () => {
 
   return (
     <div className="pages">
-      <div className="right-0 h-full w-3/5 ">
+      <div className="right-0 h-full w-full">
         <StaticImage
           src="../assets/images/Duo/08.jpg"
           alt="main room"
-          className="pages absolute w-full h-screen z-0"
+          className=" absolute w-full h-screen z-0"
           // objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
           // objectFit={{}}
         />
-        <div className="pages absolute left-0 top-0 w-full h-screen bg-gradient-layout"></div>
+        <div className=" absolute left-0 top-0 w-full h-screen bg-gradient-layout"></div>
       </div>
       <div className="page flex min-h-screen justify-center px-6 lg:justify-start lg:pl-40">
         <div className="max-w-6xl h-full py-20 lg:py-32 px-10 w-3xl md:max-w-4xl ">
