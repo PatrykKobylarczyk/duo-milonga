@@ -1,16 +1,12 @@
 import React from "react";
-import Layout from "../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 const About = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
-  console.log(isAboveMediumScreens);
-
   return (
     <div className="pages">
-      <Layout>
         <div className="right-0 h-full w-3/5 ">
           <StaticImage
             src="../assets/images/Duo/08.jpg"
@@ -53,7 +49,6 @@ const About = () => {
             </p>
           </div>
         </div>
-      </Layout>
     </div>
   );
 };

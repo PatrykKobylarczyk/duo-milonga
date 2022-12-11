@@ -11,7 +11,7 @@ export const lang_EN = {
 
 export const lang_PL = {
     language: "PL",
-    menu_home: 'Strona główna',
+    menu_home: 'Główna',
     menu_about: 'O Nas',
     menu_video: 'Wideo',
     menu_music: 'Muzyka',
