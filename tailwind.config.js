@@ -22,7 +22,7 @@ module.exports = {
         "gradient-layout":
           "linear-gradient(to bottom,rgba(3,11,15,1) 0,rgba(3,11,15,.35) 15%,rgba(3,11,15,0.1) 25%,rgba(3,11,15, 0) 50%,rgba(3,11,15,.15) 75%, rgba(3,11,15,.35) 85%,rgba(3,11,15,1) 100%);",
         "darker-gradient-bg":
-          "linear-gradient(to right, rgba(3,11,15, 1) 0, rgba(3,11,15, 1) 15%, rgba(3,11,15, .7) 35%, rgba(3,11,15,0.2) 50%, rgba(3,11,15,0.2) 75%, rgba(3,11,15,0) 100%)",
+          "linear-gradient(to right, rgba(3,11,15, 1) 0, rgba(3,11,15, .8) 15%, rgba(3,11,15, .6) 35%, rgba(3,11,15,0.2) 50%, rgba(3,11,15,0.2) 75%, rgba(3,11,15,0) 100%)",
       },
     },
     screens: {

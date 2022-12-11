@@ -105,7 +105,9 @@ const Navbar = ({ isTopOfPage }) => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/">{lang.menu_home}</Link>
+                  <Link to="/" onClick={() => setIsMenuToggled(false)}>
+                    {lang.menu_home}
+                  </Link>
                 </motion.div>
                 <motion.div
                   transition={{
@@ -114,7 +116,9 @@ const Navbar = ({ isTopOfPage }) => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/about">{lang.menu_about}</Link>
+                  <Link to="/about" onClick={() => setIsMenuToggled(false)}>
+                    {lang.menu_about}
+                  </Link>
                 </motion.div>
                 <motion.div
                   transition={{
@@ -123,7 +127,7 @@ const Navbar = ({ isTopOfPage }) => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/media">{lang.menu_media}</Link>
+                  <Link to="/media" onClick={() => setIsMenuToggled(false)}>{lang.menu_media}</Link>
                 </motion.div>
                 <motion.div
                   transition={{
@@ -132,7 +136,7 @@ const Navbar = ({ isTopOfPage }) => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/contact">{lang.menu_contact}</Link>
+                  <Link to="/contact" onClick={() => setIsMenuToggled(false)}>{lang.menu_contact}</Link>
                 </motion.div>
               </motion.div>
             </AnimatePresence>
