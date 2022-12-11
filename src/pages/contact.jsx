@@ -13,7 +13,7 @@ const Contact = () => {
   const lang = language === "PL" ? lang_EN : lang_PL;
 
   return (
-    <div className="page relative h-screen flex flex-col justify-center overflow-hidden">
+    <div className="page pages relative h-screen flex flex-col justify-center overflow-hidden">
       <div className="flex">
         {isAboveMediumScreens && (
           <div className="h-full w-1/6 bg-[rgb(3,11,15)]"></div>
