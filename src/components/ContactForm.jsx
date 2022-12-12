@@ -4,7 +4,6 @@ import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
 
 const ContactForm = ({ language }) => {
-
   const lang = language === "PL" ? lang_EN : lang_PL;
 
   const {
