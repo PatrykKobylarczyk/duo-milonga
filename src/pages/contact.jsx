@@ -27,6 +27,7 @@ const Contact = () => {
             src="../assets/images/Duo/05.jpg"
             alt="main room"
             className="h-screen left-0 z-0"
+            objectPosition="65% 0"
           />
         </div>
         <div className="absolute left-0 top-0 w-full h-full bg-darker-gradient-bg z-10"></div>
