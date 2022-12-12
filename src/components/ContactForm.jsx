@@ -1,7 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { lang_EN } from "../data/lang-pack";
+import { lang_PL } from "../data/lang-pack";
 
-const ContactForm = () => {
+const ContactForm = ({ language }) => {
+
+  const lang = language === "PL" ? lang_EN : lang_PL;
 
   const {
     register,
@@ -22,10 +26,10 @@ const ContactForm = () => {
       onSubmit={onSubmit}
       action="https://formsubmit.co/patryk.kobylarczyk@gmail.com"
       method="POST"
-      className="max-w-2xl z-10"
+      className="max-w-2xl z-20 mt-10"
     >
       <input
-        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-3  placeholder:font-light"
+        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-2  placeholder:font-light"
         type="text"
         placeholder="name"
         {...register("name", {
@@ -41,7 +45,7 @@ const ContactForm = () => {
       )}
 
       <input
-        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-3  placeholder:font-light mt-5"
+        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-2  placeholder:font-light mt-2"
         type="text"
         placeholder="email"
         {...register("email", {
@@ -57,7 +61,7 @@ const ContactForm = () => {
       )}
 
       <textarea
-        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-3  placeholder:font-light mt-5"
+        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-2  placeholder:font-light mt-2"
         name="message"
         placeholder="message"
         rows="4"
@@ -75,10 +79,10 @@ const ContactForm = () => {
       )}
 
       <button
-        className="p-5 bg-transparent border-[1px]  font-semibold text-white mt-5 hover:bg-white hover:text-black transition duration-300"
+        className="button font-semibold text-xs text-white mt-5 hover:bg-white hover:text-black transition duration-300 text-end"
         type="submit"
       >
-        Napisz do mnie
+        {lang.contact_contact_form_button}
       </button>
     </form>
   );
