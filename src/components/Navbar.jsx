@@ -12,7 +12,7 @@ import { languageState } from "../atoms/atom";
 const Navbar = ({ isTopOfPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  const [language, setLanguage] = useRecoilState(languageState);
+  const [language] = useRecoilState(languageState);
 
   const lang = language === "PL" ? lang_EN : lang_PL;
 

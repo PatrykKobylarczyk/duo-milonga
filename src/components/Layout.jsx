@@ -1,12 +1,10 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 
 const Layout = ({ children }) => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (
     <>

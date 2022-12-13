@@ -1,34 +1,10 @@
-import React, { useEffect, useState } from "react";
-import useMediaQuery from "../hooks/useMediaQuery";
+import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { RecoilRoot, useRecoilState } from "recoil";
-
-//COMPONENTS
-import { AnimatePresence, motion } from "framer-motion";
-// import Cursor from "../components/Cursor";
 
 const IndexPage = () => {
-  const [isTopOfPage, setIsTopOfPage] = useState(true);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  const [isHovered, setIsHovered] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsTopOfPage(true);
-      }
-      if (window.scrollY !== 0) setIsTopOfPage(false);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="pages relative h-screen">
-      {/* {isAboveSmallScreens ? <Cursor isHovered={isHovered}/> : <Cursor isAboveSmallScreens={isAboveSmallScreens}/>} */}
       <main>
         <StaticImage
           src="../assets/images/Duo/11.jpg"
