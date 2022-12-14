@@ -30,8 +30,9 @@
   }
 
   .page {
-    @apply bg-[#141414] text-white -z-50;
+    @apply bg-[#141414] text-white;
   }
+
 }
 /* *{
   border: 1px solid red

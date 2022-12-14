@@ -8,7 +8,6 @@ import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
 import { SlArrowRight } from "react-icons/sl";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const Contact = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -25,13 +24,13 @@ const Contact = () => {
         <StaticImage
           src="../assets/images/Duo/05.jpg"
           alt="main room"
-          className="h-screen left-0 z-0"
+          className="h-screen left-0"
           objectPosition="62% 0"
         />
       </div>
-      <div className="absolute left-0 top-0 w-full h-full bg-darker-gradient-bg z-10"></div>
+      <div className="absolute left-0 top-0 w-full h-full bg-darker-gradient-bg "></div>
       <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center lg:gap-10">
-        <div className="flex flex-col items-center lg:items-start lg:pl-40  lg:w-1/3 z-20">
+        <div className="flex flex-col items-center lg:items-start lg:pl-40  lg:w-1/3 ">
           <div>
             {!isContactForm && (
               <div className="flex flex-col gap-2">
@@ -72,7 +71,9 @@ const Contact = () => {
             </button>
           </div>
         </div>
-        <div className="px-12 lg:px-40 z-20">{isContactForm && <ContactForm language={language} />}</div>
+        <div className="px-12 lg:px-40 z-20">
+          {isContactForm && <ContactForm language={language} />}
+        </div>
       </div>
     </div>
   );
