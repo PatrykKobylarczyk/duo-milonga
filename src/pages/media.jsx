@@ -4,7 +4,7 @@ import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
-import Music from "../components/music";
+import Music from "../components/Music";
 import Gallery from "../components/Gallery";
 import Video from "../components/Video";
 
