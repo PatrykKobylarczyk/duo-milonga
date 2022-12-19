@@ -45,7 +45,7 @@ const Media = () => {
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout -z-50"></div>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-left-side -z-50"></div>
       <section className="flex">
-        <div className="hidden lg:w-1/5 h-screen lg:flex flex-col justify-center  items-start pl-40 z-30 ">
+        <div className="lg:w-1/5 h-screen flex flex-col justify-center  items-start pl-40 z-30 ">
           {isAboveSmallScreens ? (
             <ul className="text-lg flex flex-col gap-3">
               <li>
