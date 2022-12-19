@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { TfiClose } from "react-icons/tfi";
 import ReactPlayer from "react-player/lazy";
 import MuiModal from "@mui/material/Modal";
+import { useRecoilState } from "recoil";
+import { languageState, mediumClicked } from "../atoms/atom";
 
 const Modal = ({ showModal, setShowModal }) => {
   const [muted, setMuted] = useState(false);
+  const [isMediumClicked, SetMediumClicked] = useRecoilState(mediumClicked);
 
   const handleClose = () => {
     setShowModal(false);
+    SetMediumClicked(false);
   };
 
   return (
@@ -33,7 +37,7 @@ const Modal = ({ showModal, setShowModal }) => {
             style={{
               position: "absolute",
               top: "0",
-              left: "0"
+              left: "0",
             }}
             playing
             playsinline

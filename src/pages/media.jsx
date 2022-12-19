@@ -3,29 +3,36 @@ import { StaticImage } from "gatsby-plugin-image";
 import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
 import { useRecoilState } from "recoil";
-import { languageState } from "../atoms/atom";
+import { languageState, mediumClicked } from "../atoms/atom";
 import Music from "../components/Music";
 import Gallery from "../components/Gallery";
 import Video from "../components/Video";
-
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const Media = () => {
   const [language] = useRecoilState(languageState);
   const lang = language === "PL" ? lang_EN : lang_PL;
   const [media, setMedia] = useState("Music");
+  const [isMediumClicked, SetMediumClicked] = useRecoilState(mediumClicked);
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
-let medium;
-switch(media){
-  case lang.menu_media_music:
-    medium = <Music/>
-    break;
+  const handleSetMedium = (mediumName) => {
+    setMedia(mediumName);
+    SetMediumClicked(true);
+  };
+
+  let medium;
+  switch (media) {
+    case lang.menu_media_music:
+      medium = <Music SetMediumClicked={SetMediumClicked} />;
+      break;
     case lang.menu_media_video:
-    medium = <Video/>
-    break;
+      medium = <Video SetMediumClicked={SetMediumClicked} />;
+      break;
     case lang.menu_media_gallery:
-    medium = <Gallery/>
-    break;
-}
+      medium = <Gallery SetMediumClicked={SetMediumClicked} />;
+      break;
+  }
 
   return (
     <div className="relative page h-screen">
@@ -38,27 +45,57 @@ switch(media){
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout -z-50"></div>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-left-side -z-50"></div>
       <section className="flex">
-        <div className="w-1/3 h-screen flex flex-col justify-center items-start pl-40 z-50 ">
-          <ul className="text-lg flex flex-col gap-3">
-            <li>
-              <button onClick={() => setMedia(lang.menu_media_music)}>
-                {lang.menu_media_music}
-              </button>
-            </li>
-            <li>
-              <button onClick={() => setMedia(lang.menu_media_video)}>
-                {lang.menu_media_video}
-              </button>
-            </li>
-            <li>
-              <button onClick={() => setMedia(lang.menu_media_gallery)}>
-                {lang.menu_media_gallery}
-              </button>
-            </li>
-          </ul>
+        <div className="hidden lg:w-1/5 h-screen lg:flex flex-col justify-center  items-start pl-40 z-30 ">
+          {isAboveSmallScreens ? (
+            <ul className="text-lg flex flex-col gap-3">
+              <li>
+                <button onClick={() => handleSetMedium(lang.menu_media_music)}>
+                  {lang.menu_media_music}
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleSetMedium(lang.menu_media_video)}>
+                  {lang.menu_media_video}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleSetMedium(lang.menu_media_gallery)}
+                >
+                  {lang.menu_media_gallery}
+                </button>
+              </li>
+            </ul>
+          ) : (
+            !isMediumClicked && (
+              <ul className="text-lg flex flex-col gap-3">
+                <li>
+                  <button
+                    onClick={() => handleSetMedium(lang.menu_media_music)}
+                  >
+                    {lang.menu_media_music}
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleSetMedium(lang.menu_media_video)}
+                  >
+                    {lang.menu_media_video}
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleSetMedium(lang.menu_media_gallery)}
+                  >
+                    {lang.menu_media_gallery}
+                  </button>
+                </li>
+              </ul>
+            )
+          )}
         </div>
 
-        <div className="w-2/3 grid place-items-center">{medium}</div>
+        <div className="w-full lg:w-4/5 grid place-items-center">{medium}</div>
       </section>
     </div>
   );
