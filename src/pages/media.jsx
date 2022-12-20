@@ -39,11 +39,11 @@ const Media = () => {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: "-100%" },
   };
-
   const variantsMedia = {
-    open: { opacity: 0, x: "100%" },
+    open: { opacity: 0, x: '100%' },
     closed: { opacity: 1, x: 0 },
   };
+
 
   return (
     <div className="relative page h-screen">
@@ -59,7 +59,7 @@ const Media = () => {
         <div className="fixed left-0 top-0 w-full h-full bg-gradient-left-side z-[3]"></div>
       )}
 
-      <section className="flex">
+      <section className="absolute top-0 left-0 w-full flex overflow-hidden">
         {isAboveSmallScreens ? (
           <div className="w-full lg:w-1/5 h-screen flex flex-col justify-center items-start pl-40 z-30">
             <ul className="text-lg flex flex-col gap-3">
@@ -84,7 +84,7 @@ const Media = () => {
           </div>
         ) : (
           <motion.div
-            className="absolute w-full h-screen flex flex-col justify-center  items-start pl-40 z-30"
+            className="w-full h-screen flex flex-col justify-center  items-start pl-40 z-30 bg-red"
             animate={isMediumClicked ? "closed" : "open"}
             variants={variants}
             transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
@@ -112,7 +112,7 @@ const Media = () => {
         )}
 
         <motion.div
-          className="w-full lg:w-4/5 grid place-items-center z-30"
+          className="absolute lg:relative top-0 left-0 w-full lg:w-4/5 grid place-items-center z-30 translate-x-['100%']"
           animate={isMediumClicked ? "closed" : "open"}
           variants={variantsMedia}
           transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
