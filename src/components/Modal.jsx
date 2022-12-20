@@ -11,7 +11,7 @@ const Modal = ({ showModal, setShowModal }) => {
 
   const handleClose = () => {
     setShowModal(false);
-    SetMediumClicked(false);
+    // SetMediumClicked(false);
   };
 
   return (

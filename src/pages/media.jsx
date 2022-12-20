@@ -8,6 +8,7 @@ import Music from "../components/Music";
 import Gallery from "../components/Gallery";
 import Video from "../components/Video";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { motion } from "framer-motion";
 
 const Media = () => {
   const [language] = useRecoilState(languageState);
@@ -34,19 +35,33 @@ const Media = () => {
       break;
   }
 
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+  };
+
+  const variantsMedia = {
+    open: { opacity: 0, x: "100%" },
+    closed: { opacity: 1, x: 0 },
+  };
+
   return (
     <div className="relative page h-screen">
       <StaticImage
         src="../assets/images/Duo/09.jpg"
         alt="main room"
-        className="h-full absolute left-0 top-0 -z-50"
+        className="h-full fixed left-0 top-0 z-[2]"
         objectPosition=" 65% 0"
       />
-      <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout -z-50"></div>
-      <div className="absolute left-0 top-0 w-full h-full bg-gradient-left-side -z-50"></div>
+      <div className="fixed left-0 top-0 w-full h-full bg-gradient-layout z-[3]"></div>
+      <div className="fixed left-0 top-0 w-full h-full bg-gradient-layout-darker z-[3]"></div>
+      {isAboveSmallScreens && (
+        <div className="fixed left-0 top-0 w-full h-full bg-gradient-left-side z-[3]"></div>
+      )}
+
       <section className="flex">
-        <div className="lg:w-1/5 h-screen flex flex-col justify-center  items-start pl-40 z-30 ">
-          {isAboveSmallScreens ? (
+        {isAboveSmallScreens ? (
+          <div className="w-full lg:w-1/5 h-screen flex flex-col justify-center items-start pl-40 z-30">
             <ul className="text-lg flex flex-col gap-3">
               <li>
                 <button onClick={() => handleSetMedium(lang.menu_media_music)}>
@@ -66,36 +81,44 @@ const Media = () => {
                 </button>
               </li>
             </ul>
-          ) : (
-            !isMediumClicked && (
-              <ul className="text-lg flex flex-col gap-3">
-                <li>
-                  <button
-                    onClick={() => handleSetMedium(lang.menu_media_music)}
-                  >
-                    {lang.menu_media_music}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleSetMedium(lang.menu_media_video)}
-                  >
-                    {lang.menu_media_video}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleSetMedium(lang.menu_media_gallery)}
-                  >
-                    {lang.menu_media_gallery}
-                  </button>
-                </li>
-              </ul>
-            )
-          )}
-        </div>
+          </div>
+        ) : (
+          <motion.div
+            className="absolute w-full h-screen flex flex-col justify-center  items-start pl-40 z-30"
+            animate={isMediumClicked ? "closed" : "open"}
+            variants={variants}
+            transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+          >
+            <ul className="text-lg flex flex-col gap-3">
+              <li>
+                <button onClick={() => handleSetMedium(lang.menu_media_music)}>
+                  {lang.menu_media_music}
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleSetMedium(lang.menu_media_video)}>
+                  {lang.menu_media_video}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleSetMedium(lang.menu_media_gallery)}
+                >
+                  {lang.menu_media_gallery}
+                </button>
+              </li>
+            </ul>
+          </motion.div>
+        )}
 
-        <div className="w-full lg:w-4/5 grid place-items-center">{medium}</div>
+        <motion.div
+          className="w-full lg:w-4/5 grid place-items-center z-30 p-10"
+          animate={isMediumClicked ? "closed" : "open"}
+          variants={variantsMedia}
+          transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+        >
+          {isMediumClicked && medium}
+        </motion.div>
       </section>
     </div>
   );

@@ -13,14 +13,14 @@ const VideoWindow = ({ video }) => {
     
     <>
       <div
-        className="relative w-full h-60 border transition duration-200"
+        className="relative w-full h-60 transition duration-200"
         onClick={() => setShowModal(true)}
       >
         <StaticImage
           src="../assets/images/thumbnails/tn1.jpg"
           // dodac dynamic Image
           alt="video thumbnail"
-          className="absolute top-0 left-0 w-full h-full transition duration-200 hover:scale-125 z-10"
+          className="absolute top-0 left-0 w-full h-full transition duration-200 hover:scale-105 z-10"
         />
         <Button
           content={<SlControlPlay className="ml-1" />}
