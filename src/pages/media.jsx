@@ -84,7 +84,7 @@ const Media = () => {
           </div>
         ) : (
           <motion.div
-            className="w-full h-screen flex flex-col justify-center  items-start pl-40 z-30 bg-red"
+            className="w-full h-screen flex flex-col justify-center  items-start pl-40 z-30"
             animate={isMediumClicked ? "closed" : "open"}
             variants={variants}
             transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}

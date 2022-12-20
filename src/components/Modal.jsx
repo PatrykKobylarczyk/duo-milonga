@@ -18,7 +18,7 @@ const Modal = ({ showModal, setShowModal }) => {
     <MuiModal
       open={showModal}
       onClose={handleClose}
-      className="fixed !top-1/4 left-0 right-0 z-50 mx-auto w-full max-w-4xl h-full  overflow-hidden"
+      className="fixed h-3/4 !top-1/2 -translate-y-1/4 lg:-translate-y-1/2 left-0 right-0 z-30 mx-auto max-w-6xl min-h-3xl overflow-hidden lg:p-16"
     >
       <div>
         <button
