@@ -112,7 +112,7 @@ const Media = () => {
         )}
 
         <motion.div
-          className="w-full lg:w-4/5 grid place-items-center z-30 p-10"
+          className="w-full lg:w-4/5 grid place-items-center z-30"
           animate={isMediumClicked ? "closed" : "open"}
           variants={variantsMedia}
           transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
