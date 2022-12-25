@@ -8,7 +8,7 @@ import Music from "../components/Music";
 import Gallery from "../components/Gallery";
 import Video from "../components/Video";
 import useMediaQuery from "../hooks/useMediaQuery";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Media = () => {
   const [language] = useRecoilState(languageState);
@@ -25,7 +25,7 @@ const Media = () => {
   let medium;
   switch (media) {
     case lang.menu_media_music:
-      medium = <Music SetMediumClicked={SetMediumClicked}  />;
+      medium = <Music />;
       break;
     case lang.menu_media_video:
       medium = <Video SetMediumClicked={SetMediumClicked} />;
@@ -34,7 +34,7 @@ const Media = () => {
       medium = <Gallery SetMediumClicked={SetMediumClicked} />;
       break;
     default:
-      console.log('opss')
+      console.log("opss");
   }
 
   const variants = {
@@ -42,13 +42,13 @@ const Media = () => {
     closed: { opacity: 0, x: "-100%" },
   };
   const variantsMedia = {
-    open: { opacity: 0, x: '100%' },
+    open: { opacity: 0, x: "100%" },
     closed: { opacity: 1, x: 0 },
   };
 
-  useEffect(()=> {
-    console.log(isMediumClicked)
-  })
+  useEffect(() => {
+    console.log(isMediumClicked);
+  });
 
   return (
     <div className="pages relative page h-screen">
@@ -115,15 +115,14 @@ const Media = () => {
             </ul>
           </motion.div>
         )}
-
-        <motion.div
-          className="absolute lg:relative top-0 left-0 w-full lg:w-4/5 h-screen grid place-items-center z-30 translate-x-['100%']"
-          animate={isMediumClicked ? "closed" : "open"}
-          variants={variantsMedia}
-          transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
-        >
-          {isMediumClicked && medium}
-        </motion.div>
+          <motion.div
+            className="absolute lg:relative top-0 left-0 w-full lg:w-4/5 h-screen grid place-items-center z-30 translate-x-['100%']"
+            animate={isMediumClicked ? "closed" : "open"}
+            variants={variantsMedia}
+            transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+          >
+            {isMediumClicked && medium}
+          </motion.div>
       </section>
     </div>
   );

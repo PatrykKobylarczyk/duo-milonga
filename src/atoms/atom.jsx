@@ -18,5 +18,5 @@ export const currentSongState = atom({
 
 export const currentSongIndex = atom({
   key: 'currentIndex',
-  default: false
+  default: 0
 })

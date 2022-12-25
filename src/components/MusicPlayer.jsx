@@ -5,18 +5,24 @@ import Button from "./Button";
 import MusicButtonAudioSpectrum from "./MusicButtonAudioSpectrum";
 import AudioSpectrum from "react-audio-spectrum";
 import { useRecoilState } from "recoil";
-import { currentSongState, currentSongIndex } from "../atoms/atom";
+import {
+  currentSongState,
+  currentSongIndex,
+  mediumClicked,
+} from "../atoms/atom";
 import useMediaQuery from "../hooks/useMediaQuery";
 
-const MusicPlayer = ({ SetMediumClicked }) => {
+const MusicPlayer = ({ closePlayer }) => {
   const audioRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useRecoilState(currentSongIndex);
   const [currentSong, setCurrentSong] = useRecoilState(currentSongState);
+  const [isMediumClicked, SetMediumClicked] = useRecoilState(mediumClicked);
   const [isPlaying, setIsplaying] = useState(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [audioProgress, setAudioProgress] = useState(0);
   const [musicTotalLength, setMusicTotalLength] = useState("04 : 38");
   const [musicCurrentTime, setMusicCurrentTime] = useState("00 : 00");
+
 
   useEffect(() => {
     audioRef.current.load();
@@ -44,10 +50,6 @@ const MusicPlayer = ({ SetMediumClicked }) => {
       setCurrentIndex(currentIndex - 1);
       setCurrentSong(musicData[currentIndex - 1]);
     }
-  };
-
-  const closeMusicPlayer = () => {
-    SetMediumClicked(false);
   };
 
   const handleAudioUpdate = () => {
@@ -79,17 +81,21 @@ const MusicPlayer = ({ SetMediumClicked }) => {
       (e.target.value * audioRef.current.duration) / 100;
   };
 
+  useEffect(()=>{
+    console.log(currentIndex)
+  },[])
+
   return (
     <div className="w-[280px] h-auto md:w-[800px]">
       <div className="relative flex flex-col w-full bg-black/50 pt-5 md:pt-15 px-3 rounded-md">
         <button
           className="absolute top-2 right-2 z-50"
-          onClick={closeMusicPlayer}
+          onClick={() => SetMediumClicked(false)}
         >
           back
         </button>
         <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-5 md:translate-y-0">
-          {musicData[1].title}
+          {musicData[currentIndex].title}
         </h1>
 
         <div className="w-full h-auto grid place-items-center opacity-100">
