@@ -54,10 +54,10 @@ const Media = () => {
         className="h-full fixed left-0 top-0 z-[2]"
         objectPosition=" 65% 0"
       />
-      <div className="fixed left-0 top-0 w-full h-full bg-gradient-layout z-[3]"></div>
-      <div className="fixed left-0 top-0 w-full h-full bg-gradient-layout-darker z-[3]"></div>
+      <div className="pages fixed left-0 top-0 w-full  bg-gradient-layout z-[3]"></div>
+      <div className="pages fixed left-0 top-0 w-full  bg-gradient-layout-darker z-[3]"></div>
       {isAboveSmallScreens && (
-        <div className="fixed left-0 top-0 w-full h-full bg-gradient-left-side z-[3]"></div>
+        <div className="fixed left-0 top-0 w-full  bg-gradient-left-side z-[3]"></div>
       )}
 
       <section className="absolute top-0 left-0 w-full flex overflow-hidden">
