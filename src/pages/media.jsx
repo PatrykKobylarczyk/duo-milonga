@@ -33,6 +33,8 @@ const Media = () => {
     case lang.menu_media_gallery:
       medium = <Gallery SetMediumClicked={SetMediumClicked} />;
       break;
+    default:
+      console.log('opss')
   }
 
   const variants = {
@@ -43,7 +45,6 @@ const Media = () => {
     open: { opacity: 0, x: '100%' },
     closed: { opacity: 1, x: 0 },
   };
-
 
   return (
     <div className="pages relative page h-screen">

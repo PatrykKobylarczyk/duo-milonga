@@ -7,7 +7,6 @@ import Modal from "./Modal";
 const VideoWindow = () => {
   const [showModal, setShowModal] = useState(false);
 
-  console.log(showModal);
   return (
     <>
       <div

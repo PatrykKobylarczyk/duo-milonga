@@ -14,6 +14,9 @@ const MusicPlayer = () => {
   const [currentSong, setCurrentSong] = useRecoilState(currentSongState);
   const [isPlaying, setIsplaying] = useState(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [audioProgress, setAudioProgress] = useState(0);
+  const [musicTotalLength, setMusicTotalLength] = useState("04 : 38");
+  const [musicCurrentTime, setMusicCurrentTime] = useState("00 : 00");
 
   useEffect(() => {
     audioRef.current.load()
@@ -23,6 +26,11 @@ const MusicPlayer = () => {
       audioRef.current.pause();
     }
   }, [isPlaying, currentIndex]);
+
+  const setSongFromList = (song, index) => {
+    setCurrentIndex(currentIndex + 1);
+      setCurrentSong(song);
+  }
 
   const nextSong = () => {
     if (currentIndex + 1 < musicData.length) {
@@ -37,11 +45,43 @@ const MusicPlayer = () => {
       setCurrentSong(musicData[currentIndex - 1]);
     }
   };
+  useEffect(() => {
+    console.log(audioRef.current.duration);
+  }, []);
+
+  const handleAudioUpdate = () => {
+    //Input total length of the audio
+    let minutes = Math.floor(audioRef.current.duration / 60);
+    let seconds = Math.floor(audioRef.current.duration % 60);
+    let musicTotalLength0 = `${minutes < 10 ? `0${minutes}` : minutes} : ${
+      seconds < 10 ? `0${seconds}` : seconds
+    }`;
+    setMusicTotalLength(musicTotalLength0);
+
+    //Input Music Current Time
+    let currentMin = Math.floor(audioRef.current.currentTime / 60);
+    let currentSec = Math.floor(audioRef.current.currentTime % 60);
+    let musicCurrentT = `${currentMin < 10 ? `0${currentMin}` : currentMin} : ${
+      currentSec < 10 ? `0${currentSec}` : currentSec
+    }`;
+    setMusicCurrentTime(musicCurrentT);
+
+    const progress = parseInt(
+      (audioRef.current.currentTime / audioRef.current.duration) * 100
+    );
+    setAudioProgress(isNaN(progress) ? 0 : progress);
+  };
+
+  const handleMusicProgressBar = (e) => {
+    setAudioProgress(e.target.value);
+    audioRef.current.currentTime =
+      (e.target.value * audioRef.current.duration) / 100;
+  };
 
   return (
     <div className="w-[280px] h-auto md:w-[800px]">
-      <div className="relative flex flex-col w-full bg-black/50 pt-10 rounded-md">
-        <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-3">
+      <div className="relative flex flex-col w-full bg-black/50 pt-5 md:pt-15 px-3 rounded-md">
+        <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-5 md:translate-y-0">
           {musicData[1].title}
         </h1>
 
@@ -49,11 +89,12 @@ const MusicPlayer = () => {
           <audio
             ref={audioRef}
             id="audio-element"
-            src={currentSong.path}
+            src={currentSong.music.default}
+            onTimeUpdate={handleAudioUpdate}
           />
           <AudioSpectrum
             id="audio-canvas"
-            height={140}
+            height={isAboveMediumScreens ? 200 : 110}
             width={isAboveMediumScreens ? 320 : 200}
             audioId={"audio-element"}
             capColor={"#af2723"}
@@ -69,7 +110,7 @@ const MusicPlayer = () => {
           />
         </div>
         <div className="grid place-items-center z-40">
-          <div className="flex gap-5 py-5 items-center">
+          <div className="flex gap-5 py-5 md:py-8 items-center">
             <button className="button w-10 h-10 " onClick={prevSong}>
               <RxTrackPrevious size={"12px"} />
             </button>
@@ -82,12 +123,18 @@ const MusicPlayer = () => {
             </button>
           </div>
         </div>
-        <input type="range" min={"0"} max={"100"} className=" w-full z-40" />
-        
+        <input
+          type="range"
+          value={audioProgress}
+          className=" w-full z-40"
+          onChange={handleMusicProgressBar}
+        />
       </div>
-      <ul className="w-full h-auto flex flex-col gap-1 mt-3">
-        {musicData.map((song) => (
-          <li className="bg-black/50 px-8 py-3 rounded-md" key={song.title}>{song.title}</li>
+      <ul className="w-full h-auto flex flex-col gap-1 lg:gap-3 mt-3">
+        {musicData.map((song, index) => (
+          <li className="bg-black/50 px-8 py-3 lg:py-5 rounded-md cursor-pointer" key={song.title} onClick={()=>setSongFromList(song, index)}>
+            {song.title}
+          </li>
         ))}
       </ul>
     </div>
