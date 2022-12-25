@@ -40,7 +40,7 @@ const MusicPlayer = () => {
   return (
     <div className="w-[280px] h-auto md:w-[800px]">
       <div className="relative flex flex-col w-full bg-black/50 pt-10 rounded-md">
-        <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black">
+        <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-3">
           {musicData[1].title}
         </h1>
 
@@ -81,7 +81,7 @@ const MusicPlayer = () => {
             </button>
           </div>
         </div>
-        <input type="range" min={"0"} max={"100"} className="w-full" />
+        <input type="range" min={"0"} max={"100"} className=" w-full z-40" />
         
       </div>
       <ul className="w-full h-auto flex flex-col gap-1 mt-3">
