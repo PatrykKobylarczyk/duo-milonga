@@ -16,6 +16,7 @@ const MusicPlayer = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   useEffect(() => {
+    audioRef.current.load()
     if (isPlaying) {
       audioRef.current.play();
     } else {
@@ -48,7 +49,7 @@ const MusicPlayer = () => {
           <audio
             ref={audioRef}
             id="audio-element"
-            src={currentSong.music.default}
+            src={currentSong.path}
           />
           <AudioSpectrum
             id="audio-canvas"

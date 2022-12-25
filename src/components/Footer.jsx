@@ -17,7 +17,7 @@ const Footer = () => {
   const [language, setLanguage] = useRecoilState(languageState);
   const [currentSong] = useRecoilState(currentSongState);
   const [isPlaying, setIsplaying] = useState(false);
-  const [currentIndex, setCurrentIndex] = useRecoilState(currentSongIndex);
+  const [currentIndex] = useRecoilState(currentSongIndex);
 
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
