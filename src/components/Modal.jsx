@@ -1,17 +1,12 @@
 import React, { useState } from "react";
-import { TfiClose } from "react-icons/tfi";
 import ReactPlayer from "react-player/lazy";
 import MuiModal from "@mui/material/Modal";
-import { useRecoilState } from "recoil";
-import { languageState, mediumClicked } from "../atoms/atom";
 
 const Modal = ({ showModal, setShowModal }) => {
-  const [muted, setMuted] = useState(false);
-  const [isMediumClicked, SetMediumClicked] = useRecoilState(mediumClicked);
+  const [muted] = useState(false);
 
   const handleClose = () => {
     setShowModal(false);
-    // SetMediumClicked(false);
   };
 
   return (
@@ -29,6 +24,7 @@ const Modal = ({ showModal, setShowModal }) => {
         </button>
 
         <div className="relative pt-[56.25%]">
+
           {/* From React-Player-Documentation - padding-top: 56.25% - Player ratio: 100 / (1280 / 720) */}
           <ReactPlayer
             url="https://www.youtube.com/watch?v=_uk2qDTs5aI"

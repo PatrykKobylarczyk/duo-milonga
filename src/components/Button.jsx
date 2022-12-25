@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
 
-const Button = ({content, handleClick}) => {
+const Button = ({ content, handleClick }) => {
   return (
-    <button className='button text-xs' onClick={handleClick}>
+    <button
+      className={`button 
+      h-14 w-14
+      text-xs`}
+      
+      onClick={handleClick}
+    >
       {content}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
+
+// h-${size ? size : "14"} w-${size ? size : "14"}}

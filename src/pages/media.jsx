@@ -46,7 +46,7 @@ const Media = () => {
 
 
   return (
-    <div className="relative page h-screen">
+    <div className="pages relative page h-screen">
       <StaticImage
         src="../assets/images/Duo/09.jpg"
         alt="main room"
@@ -112,7 +112,7 @@ const Media = () => {
         )}
 
         <motion.div
-          className="absolute lg:relative top-0 left-0 w-full lg:w-4/5 grid place-items-center z-30 translate-x-['100%']"
+          className="absolute lg:relative top-0 left-0 w-full lg:w-4/5 h-screen grid place-items-center z-30 translate-x-['100%']"
           animate={isMediumClicked ? "closed" : "open"}
           variants={variantsMedia}
           transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}

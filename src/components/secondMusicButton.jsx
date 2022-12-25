@@ -11,7 +11,7 @@ const MusicButton = () => {
   };
 
   return (
-    <button className="button" onClick={() => togglePlay()}>
+    <button className="button h-14 w-14" onClick={() => togglePlay()}>
       {playing ? (
         <div className="play-music">
           <div className={`music-animation ${playing ? "on" : null}`}>

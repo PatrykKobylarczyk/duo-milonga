@@ -1,18 +1,35 @@
-import React from "react";
-import MusicButton from "./MusicButton";
+import React, { useState, useEffect, useRef } from "react";
+import MusicButtonAudioSpectrum from "./MusicButtonAudioSpectrum";
 import Button from "./Button";
 import SocialMedia from "./SocialMedia";
 import { useRecoilState } from "recoil";
-import { languageState } from "../atoms/atom";
+import {
+  currentSongState,
+  currentSongIndex,
+  languageState,
+} from "../atoms/atom";
 import useMediaQuery from "../hooks/useMediaQuery";
+import audio from "../assets/audio/salwinski_milonga.mp3";
 
 const Footer = () => {
+  const audioRef = useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language, setLanguage] = useRecoilState(languageState);
+  const [currentSong] = useRecoilState(currentSongState);
+  const [isPlaying, setIsplaying] = useState(false);
+  const [currentIndex, setCurrentIndex] = useRecoilState(currentSongIndex);
 
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
   };
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying, currentIndex]);
 
   return (
     <footer>
@@ -27,7 +44,17 @@ const Footer = () => {
         </div>
         <div className="flex gap-5">
           <Button content={language} handleClick={changeLanguage} />
-          <MusicButton />
+          <audio
+            ref={audioRef}
+            id="audio-element"
+            src={audio}
+          />
+          <Button
+            handleClick={() => setIsplaying((prev) => !prev)}
+            content={
+              <MusicButtonAudioSpectrum type="footer" isPlaying={isPlaying} />
+            }
+          />
         </div>
       </div>
       {isAboveSmallScreens ? (

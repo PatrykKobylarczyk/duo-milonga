@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import VideoWindow from "./VideoWindow";
 import { videoData } from "../data/videoData";
 
-const Video = ({ SetMediumClicked }) => {
+const Video = () => {
   
 
   return (

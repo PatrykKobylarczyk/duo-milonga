@@ -4,19 +4,19 @@ import Button from "../components/Button";
 import { SlControlPlay } from "react-icons/sl";
 import Modal from "./Modal";
 
-const VideoWindow = ({ video }) => {
+const VideoWindow = () => {
   const [showModal, setShowModal] = useState(false);
 
   console.log(showModal);
   return (
     <>
       <div
-        className="group relative w-full h-60 transition duration-200 grid place-items-center cursor-pointer"
+        className="group relative w-full h-60 transition duration-200 cursor-pointer"
         onClick={() => setShowModal(true)}
       >
         <Button
-          content={<SlControlPlay className="ml-1 group-hover:brightness-125" />}
-          className=''
+          content={<SlControlPlay className=" ml-1 group-hover:brightness-125" />}
+          className='absolute'
         />
         <StaticImage
           src="../assets/images/thumbnails/tn1.jpg"
