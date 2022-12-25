@@ -8,7 +8,7 @@ import { useRecoilState } from "recoil";
 import { currentSongState, currentSongIndex } from "../atoms/atom";
 import useMediaQuery from "../hooks/useMediaQuery";
 
-const MusicPlayer = () => {
+const MusicPlayer = ({ SetMediumClicked }) => {
   const audioRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useRecoilState(currentSongIndex);
   const [currentSong, setCurrentSong] = useRecoilState(currentSongState);
@@ -19,7 +19,7 @@ const MusicPlayer = () => {
   const [musicCurrentTime, setMusicCurrentTime] = useState("00 : 00");
 
   useEffect(() => {
-    audioRef.current.load()
+    audioRef.current.load();
     if (isPlaying) {
       audioRef.current.play();
     } else {
@@ -28,9 +28,9 @@ const MusicPlayer = () => {
   }, [isPlaying, currentIndex]);
 
   const setSongFromList = (song, index) => {
-    setCurrentIndex(currentIndex + 1);
-      setCurrentSong(song);
-  }
+    setCurrentIndex(index);
+    setCurrentSong(song);
+  };
 
   const nextSong = () => {
     if (currentIndex + 1 < musicData.length) {
@@ -45,9 +45,10 @@ const MusicPlayer = () => {
       setCurrentSong(musicData[currentIndex - 1]);
     }
   };
-  useEffect(() => {
-    console.log(audioRef.current.duration);
-  }, []);
+
+  const closeMusicPlayer = () => {
+    SetMediumClicked(false);
+  };
 
   const handleAudioUpdate = () => {
     //Input total length of the audio
@@ -81,6 +82,12 @@ const MusicPlayer = () => {
   return (
     <div className="w-[280px] h-auto md:w-[800px]">
       <div className="relative flex flex-col w-full bg-black/50 pt-5 md:pt-15 px-3 rounded-md">
+        <button
+          className="absolute top-2 right-2 z-50"
+          onClick={closeMusicPlayer}
+        >
+          back
+        </button>
         <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-5 md:translate-y-0">
           {musicData[1].title}
         </h1>
@@ -132,7 +139,11 @@ const MusicPlayer = () => {
       </div>
       <ul className="w-full h-auto flex flex-col gap-1 lg:gap-3 mt-3">
         {musicData.map((song, index) => (
-          <li className="bg-black/50 px-8 py-3 lg:py-5 rounded-md cursor-pointer" key={song.title} onClick={()=>setSongFromList(song, index)}>
+          <li
+            className="bg-black/50 px-8 py-3 lg:py-5 rounded-md cursor-pointer"
+            key={song.title}
+            onClick={() => setSongFromList(song, index)}
+          >
             {song.title}
           </li>
         ))}

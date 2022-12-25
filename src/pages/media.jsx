@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
@@ -25,7 +25,7 @@ const Media = () => {
   let medium;
   switch (media) {
     case lang.menu_media_music:
-      medium = <Music SetMediumClicked={SetMediumClicked} />;
+      medium = <Music SetMediumClicked={SetMediumClicked}  />;
       break;
     case lang.menu_media_video:
       medium = <Video SetMediumClicked={SetMediumClicked} />;
@@ -46,6 +46,10 @@ const Media = () => {
     closed: { opacity: 1, x: 0 },
   };
 
+  useEffect(()=> {
+    console.log(isMediumClicked)
+  })
+
   return (
     <div className="pages relative page h-screen">
       <StaticImage
@@ -60,7 +64,7 @@ const Media = () => {
         <div className="fixed left-0 top-0 w-full h-full  bg-gradient-left-side z-[3]"></div>
       )}
 
-      <section className="absolute top-0 left-0 w-full flex overflow-hidden">
+      <section className="absolute top-0 left-0 w-full h-full flex overflow-hidden">
         {isAboveSmallScreens ? (
           <div className="w-full lg:w-1/5 h-full flex flex-col justify-center items-start pl-40 z-30">
             <ul className="text-lg flex flex-col gap-3">
