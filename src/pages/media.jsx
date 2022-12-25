@@ -54,15 +54,15 @@ const Media = () => {
         className="h-full fixed left-0 top-0 z-[2]"
         objectPosition=" 65% 0"
       />
-      <div className="pages fixed left-0 top-0 w-full  bg-gradient-layout z-[3]"></div>
-      <div className="pages fixed left-0 top-0 w-full  bg-gradient-layout-darker z-[3]"></div>
+      <div className="fixed left-0 top-0 w-full h-full  bg-gradient-layout z-[3]"></div>
+      <div className="fixed left-0 top-0 w-full h-full  bg-gradient-layout-darker z-[3]"></div>
       {isAboveSmallScreens && (
-        <div className="fixed left-0 top-0 w-full  bg-gradient-left-side z-[3]"></div>
+        <div className="fixed left-0 top-0 w-full h-full  bg-gradient-left-side z-[3]"></div>
       )}
 
       <section className="absolute top-0 left-0 w-full flex overflow-hidden">
         {isAboveSmallScreens ? (
-          <div className="w-full lg:w-1/5 h-screen flex flex-col justify-center items-start pl-40 z-30">
+          <div className="w-full lg:w-1/5 h-full flex flex-col justify-center items-start pl-40 z-30">
             <ul className="text-lg flex flex-col gap-3">
               <li>
                 <button onClick={() => handleSetMedium(lang.menu_media_music)}>
@@ -85,7 +85,7 @@ const Media = () => {
           </div>
         ) : (
           <motion.div
-            className="w-full h-screen flex flex-col justify-center  items-start pl-40 z-30"
+            className="w-full h-full flex flex-col justify-center  items-start pl-40 z-30"
             animate={isMediumClicked ? "closed" : "open"}
             variants={variants}
             transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
