@@ -28,7 +28,7 @@ const MusicPlayer = () => {
   const [currentIndex, setCurrentIndex] = useRecoilState(currentSongIndex);
   const [currentSong, setCurrentSong] = useRecoilState(currentSongState);
   const [isMediumClicked, SetMediumClicked] = useRecoilState(mediumClicked);
-  const [isPlaying, setIsplaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [audioProgress, setAudioProgress] = useState(0);
   const [musicTotalLength, setMusicTotalLength] = useState("04 : 38");
@@ -62,6 +62,10 @@ const MusicPlayer = () => {
       setCurrentSong(musicData[currentIndex - 1]);
     }
   };
+
+  useEffect(() => {
+    console.log(audioRef);
+  }, []);
 
   // CONTROL TIME FOR PROGRESS BAR
   const handleAudioUpdate = () => {
@@ -111,13 +115,6 @@ const MusicPlayer = () => {
 
         {/* AUDIO AND AUDIOSPECTRUM */}
         <div className="w-full h-auto grid place-items-center opacity-100">
-          <audio
-            ref={audioRef}
-            id="audio-element"
-            src={night}
-            onTimeUpdate={handleAudioUpdate}
-            muted={false}
-          />
           <AudioSpectrum
             id="audio-canvas"
             height={isAboveMediumScreens ? 200 : 110}
@@ -142,8 +139,16 @@ const MusicPlayer = () => {
             <button className="button w-10 h-10 " onClick={prevSong}>
               <RxTrackPrevious size={"12px"} />
             </button>
+            <audio
+              ref={audioRef}
+              id="audio-element"
+              src={night}
+              onTimeUpdate={handleAudioUpdate}
+              muted={false}
+              onEnded={nextSong}
+            />
             <Button
-              handleClick={() => setIsplaying((prev) => !prev)}
+              handleClick={() => setIsPlaying((prev) => !prev)}
               content={<MusicButtonAudioSpectrum isPlaying={isPlaying} />}
             />
             <button className="button w-10 h-10 " onClick={nextSong}>

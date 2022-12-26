@@ -20,7 +20,7 @@ const Footer = () => {
   const audioRef = useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language, setLanguage] = useRecoilState(languageState);
-  const [isPlaying, setIsplaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
@@ -52,7 +52,7 @@ const Footer = () => {
 
           {/* MUSIC BUTTON */}
           <Button
-            handleClick={() => setIsplaying((prev) => !prev)}
+            handleClick={() => setIsPlaying((prev) => !prev)}
             content={
               <MusicButtonAudioSpectrum type="footer" isPlaying={isPlaying} />
             }
