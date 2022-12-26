@@ -23,13 +23,13 @@ const Footer = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
   };
 
-  useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-  }, [isPlaying, currentIndex]);
+  // useEffect(() => {
+  //   if (isPlaying) {
+  //     audioRef.current.play();
+  //   } else {
+  //     audioRef.current.pause();
+  //   }
+  // }, [isPlaying, currentIndex]);
 
 
   useEffect(()=>{
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
         <div className="flex gap-5">
           <Button content={language} handleClick={changeLanguage} />
-          <audio
+          {/* <audio
             ref={audioRef}
             id="audio-element"
             src={audio}
@@ -59,7 +59,7 @@ const Footer = () => {
             content={
               <MusicButtonAudioSpectrum type="footer" isPlaying={isPlaying} />
             }
-          />
+          /> */}
         </div>
       </div>
       {isAboveSmallScreens ? (
