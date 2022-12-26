@@ -25,7 +25,6 @@ const MusicPlayer = ({ closePlayer }) => {
 
 
   useEffect(() => {
-    console.log(audioRef.current.muted)
     audioRef.current.load();
     if (isPlaying) {
       audioRef.current.play();
@@ -103,7 +102,7 @@ const MusicPlayer = ({ closePlayer }) => {
           <audio
             ref={audioRef}
             id="audio-element"
-            src={currentSong.music.default}
+            src={currentSong.music}
             onTimeUpdate={handleAudioUpdate}
           />
           <AudioSpectrum

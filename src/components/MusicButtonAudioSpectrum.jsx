@@ -18,8 +18,8 @@ const MusicButtonAudioSpectrum = ({ isPlaying, type }) => {
           </div>
         ) : (
           <div className="flex gap-1 mr-[1px]">
-            <span className="w-[1px] h-4 bg-white"></span>
-            <span className="w-[1px]  h-4 bg-white"></span>
+            <span className="w-[1px] h-3 bg-white"></span>
+            <span className="w-[1px]  h-3 bg-white"></span>
           </div>
         )
       ) : (
