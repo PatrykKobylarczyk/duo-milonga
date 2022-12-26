@@ -23,7 +23,6 @@ const MusicPlayer = ({ closePlayer }) => {
   const [musicTotalLength, setMusicTotalLength] = useState("04 : 38");
   const [musicCurrentTime, setMusicCurrentTime] = useState("00 : 00");
 
-
   useEffect(() => {
     audioRef.current.load();
     if (isPlaying) {
@@ -81,9 +80,9 @@ const MusicPlayer = ({ closePlayer }) => {
       (e.target.value * audioRef.current.duration) / 100;
   };
 
-  useEffect(()=>{
-    console.log(currentIndex)
-  },[])
+  useEffect(() => {
+    console.log(currentIndex);
+  }, []);
 
   return (
     <div className="w-[280px] h-auto md:w-[800px]">
@@ -104,6 +103,7 @@ const MusicPlayer = ({ closePlayer }) => {
             id="audio-element"
             src={currentSong.music}
             onTimeUpdate={handleAudioUpdate}
+            muted={false}
           />
           <AudioSpectrum
             id="audio-canvas"
