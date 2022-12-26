@@ -114,7 +114,16 @@ const MusicPlayer = () => {
         </h1>
 
         {/* AUDIO AND AUDIOSPECTRUM */}
-        <div className="w-full h-auto grid place-items-center opacity-100">
+        <div className="w-full h-auto grid place-items-center">
+          <audio
+            ref={audioRef}
+            id="audio-element"
+            src={night}
+            onTimeUpdate={handleAudioUpdate}
+            muted={false}
+            onEnded={nextSong}
+            autoPlay
+          />
           <AudioSpectrum
             id="audio-canvas"
             height={isAboveMediumScreens ? 200 : 110}
@@ -139,14 +148,7 @@ const MusicPlayer = () => {
             <button className="button w-10 h-10 " onClick={prevSong}>
               <RxTrackPrevious size={"12px"} />
             </button>
-            <audio
-              ref={audioRef}
-              id="audio-element"
-              src={night}
-              onTimeUpdate={handleAudioUpdate}
-              muted={false}
-              onEnded={nextSong}
-            />
+
             <Button
               handleClick={() => setIsPlaying((prev) => !prev)}
               content={<MusicButtonAudioSpectrum isPlaying={isPlaying} />}
