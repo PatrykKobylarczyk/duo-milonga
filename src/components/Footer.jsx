@@ -32,7 +32,7 @@ const Footer = () => {
     } else {
       audioRef.current.pause();
     }
-  }, [isPlaying, currentIndex]);
+  }, [isPlaying]);
 
   return (
     <footer>
