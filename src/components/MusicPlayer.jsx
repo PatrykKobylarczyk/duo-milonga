@@ -11,6 +11,7 @@ import {
   mediumClicked,
 } from "../atoms/atom";
 import useMediaQuery from "../hooks/useMediaQuery";
+import night from "../assets/audio/majkusiak_night.mp3";
 
 const MusicPlayer = ({ closePlayer }) => {
   const audioRef = useRef(null);
@@ -81,7 +82,8 @@ const MusicPlayer = ({ closePlayer }) => {
   };
 
   useEffect(() => {
-    console.log(currentIndex);
+    console.log(currentSong.music);
+    console.log(night);
   }, []);
 
   return (
@@ -101,7 +103,7 @@ const MusicPlayer = ({ closePlayer }) => {
           <audio
             ref={audioRef}
             id="audio-element"
-            src={currentSong.music}
+            src={night}
             onTimeUpdate={handleAudioUpdate}
             muted={false}
           />

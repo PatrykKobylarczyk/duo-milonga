@@ -31,6 +31,11 @@ const Footer = () => {
     }
   }, [isPlaying, currentIndex]);
 
+
+  useEffect(()=>{
+    console.log(audio)
+  })
+
   return (
     <footer>
       <div className="flex justify-between items-center">

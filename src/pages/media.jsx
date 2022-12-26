@@ -46,10 +46,6 @@ const Media = () => {
     closed: { opacity: 1, x: 0 },
   };
 
-  useEffect(() => {
-    console.log(isMediumClicked);
-  });
-
   return (
     <div className="pages relative page h-screen">
       <StaticImage
