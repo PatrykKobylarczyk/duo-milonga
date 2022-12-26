@@ -1,19 +1,29 @@
 import React, { useEffect, useState, useRef } from "react";
 import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
-import { musicData } from "../data/musicData";
+
+// LIBS
+import AudioSpectrum from "react-audio-spectrum";
+
+// HOOKS
+import useMediaQuery from "../hooks/useMediaQuery";
+
+// COMPONENTS
 import Button from "./Button";
 import MusicButtonAudioSpectrum from "./MusicButtonAudioSpectrum";
-import AudioSpectrum from "react-audio-spectrum";
+
+// STATE
 import { useRecoilState } from "recoil";
 import {
   currentSongState,
   currentSongIndex,
   mediumClicked,
 } from "../atoms/atom";
-import useMediaQuery from "../hooks/useMediaQuery";
+
+// DATA
+import { musicData } from "../data/musicData";
 import night from "../assets/audio/majkusiak_night.mp3";
 
-const MusicPlayer = ({ closePlayer }) => {
+const MusicPlayer = () => {
   const audioRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useRecoilState(currentSongIndex);
   const [currentSong, setCurrentSong] = useRecoilState(currentSongState);
@@ -24,6 +34,7 @@ const MusicPlayer = ({ closePlayer }) => {
   const [musicTotalLength, setMusicTotalLength] = useState("04 : 38");
   const [musicCurrentTime, setMusicCurrentTime] = useState("00 : 00");
 
+  //PLAY AND PAUSE MUSIC
   useEffect(() => {
     audioRef.current.load();
     if (isPlaying) {
@@ -52,6 +63,7 @@ const MusicPlayer = ({ closePlayer }) => {
     }
   };
 
+  // CONTROL TIME FOR PROGRESS BAR
   const handleAudioUpdate = () => {
     //Input total length of the audio
     let minutes = Math.floor(audioRef.current.duration / 60);
@@ -81,24 +93,23 @@ const MusicPlayer = ({ closePlayer }) => {
       (e.target.value * audioRef.current.duration) / 100;
   };
 
-  useEffect(() => {
-    console.log(currentSong.music);
-    console.log(night);
-  }, []);
-
   return (
     <div className="w-[280px] h-auto md:w-[800px]">
       <div className="relative flex flex-col w-full bg-black/50 pt-5 md:pt-15 px-3 rounded-md">
+        {/* CLOSE MUSICPLAYER BUTTON */}
         <button
           className="absolute top-2 right-2 z-50"
           onClick={() => SetMediumClicked(false)}
         >
           back
         </button>
+
+        {/* SONG TITLE */}
         <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-5 md:translate-y-0">
           {musicData[currentIndex].title}
         </h1>
 
+        {/* AUDIO AND AUDIOSPECTRUM */}
         <div className="w-full h-auto grid place-items-center opacity-100">
           <audio
             ref={audioRef}
@@ -124,6 +135,8 @@ const MusicPlayer = ({ closePlayer }) => {
             gap={4}
           />
         </div>
+
+        {/* CONTROL PANEL */}
         <div className="grid place-items-center z-40">
           <div className="flex gap-5 py-5 md:py-8 items-center">
             <button className="button w-10 h-10 " onClick={prevSong}>
@@ -138,6 +151,8 @@ const MusicPlayer = ({ closePlayer }) => {
             </button>
           </div>
         </div>
+
+        {/* PROGRESSBAR */}
         <input
           type="range"
           value={audioProgress}
@@ -145,6 +160,8 @@ const MusicPlayer = ({ closePlayer }) => {
           onChange={handleMusicProgressBar}
         />
       </div>
+
+      {/* SONG LIST */}
       <ul className="w-full h-auto flex flex-col gap-1 lg:gap-3 mt-3">
         {musicData.map((song, index) => (
           <li

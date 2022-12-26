@@ -15,5 +15,3 @@ const Button = ({ content, handleClick }) => {
 };
 
 export default Button;
-
-// h-${size ? size : "14"} w-${size ? size : "14"}}

@@ -1,15 +1,25 @@
 import React, { useState } from "react";
-import Logo from "./Logo";
-import { Squeeze as Hamburger } from "hamburger-react";
-import useMediaQuery from "../hooks/useMediaQuery";
-import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "gatsby";
-import { lang_EN } from "../data/lang-pack";
-import { lang_PL } from "../data/lang-pack";
+
+// LIBS
+import { motion, AnimatePresence } from "framer-motion";
+import { Squeeze as Hamburger } from "hamburger-react";
+
+// HOOKS
+import useMediaQuery from "../hooks/useMediaQuery";
+
+// COMPONENTS
+import Logo from "./Logo";
+
+// STATE
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
 
-const Navbar = ({ isTopOfPage }) => {
+// DATA
+import { lang_EN } from "../data/lang-pack";
+import { lang_PL } from "../data/lang-pack";
+
+const Navbar = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language] = useRecoilState(languageState);

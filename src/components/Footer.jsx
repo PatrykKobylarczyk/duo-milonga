@@ -1,40 +1,38 @@
 import React, { useState, useEffect, useRef } from "react";
+
+// HOOKS
+import useMediaQuery from "../hooks/useMediaQuery";
+
+// COMPONENTS
 import MusicButtonAudioSpectrum from "./MusicButtonAudioSpectrum";
 import Button from "./Button";
 import SocialMedia from "./SocialMedia";
+
+// STATE
 import { useRecoilState } from "recoil";
-import {
-  currentSongState,
-  currentSongIndex,
-  languageState,
-} from "../atoms/atom";
-import useMediaQuery from "../hooks/useMediaQuery";
+import { languageState } from "../atoms/atom";
+
+// DATA
 import audio from "../assets/audio/salwinski_milonga.mp3";
+
 
 const Footer = () => {
   const audioRef = useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language, setLanguage] = useRecoilState(languageState);
-  const [currentSong] = useRecoilState(currentSongState);
   const [isPlaying, setIsplaying] = useState(false);
-  const [currentIndex] = useRecoilState(currentSongIndex);
 
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
   };
 
-  // useEffect(() => {
-  //   if (isPlaying) {
-  //     audioRef.current.play();
-  //   } else {
-  //     audioRef.current.pause();
-  //   }
-  // }, [isPlaying, currentIndex]);
-
-
-  useEffect(()=>{
-    console.log(audio)
-  })
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying, currentIndex]);
 
   return (
     <footer>
@@ -47,19 +45,18 @@ const Footer = () => {
             </p>
           )}
         </div>
+
         <div className="flex gap-5">
           <Button content={language} handleClick={changeLanguage} />
-          {/* <audio
-            ref={audioRef}
-            id="audio-element"
-            src={audio}
-          />
+          <audio ref={audioRef} id="audio-element" src={audio} />
+
+          {/* MUSIC BUTTON */}
           <Button
             handleClick={() => setIsplaying((prev) => !prev)}
             content={
               <MusicButtonAudioSpectrum type="footer" isPlaying={isPlaying} />
             }
-          /> */}
+          />
         </div>
       </div>
       {isAboveSmallScreens ? (

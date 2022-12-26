@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
+
+// LIBS
 import ContactForm from "../components/ContactForm";
+
+// HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
-import { lang_EN } from "../data/lang-pack";
-import { lang_PL } from "../data/lang-pack";
+
+// COMPONENTS
+import { SlArrowRight } from "react-icons/sl";
+
+// STATE
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
-import { SlArrowRight } from "react-icons/sl";
-import { useState } from "react";
+
+// DATA
+import { lang_EN } from "../data/lang-pack";
+import { lang_PL } from "../data/lang-pack";
 
 const Contact = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");

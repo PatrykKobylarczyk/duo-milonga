@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { lang_EN } from "../data/lang-pack";
-import { lang_PL } from "../data/lang-pack";
-import { useRecoilState } from "recoil";
-import { languageState, mediumClicked } from "../atoms/atom";
+
+// LIBS
+import { motion } from "framer-motion";
+
+// HOOKS
+import useMediaQuery from "../hooks/useMediaQuery";
+
+// COMPONENTS
 import Music from "../components/Music";
 import Gallery from "../components/Gallery";
 import Video from "../components/Video";
-import useMediaQuery from "../hooks/useMediaQuery";
-import { AnimatePresence, motion } from "framer-motion";
+
+// STATE
+import { useRecoilState } from "recoil";
+import { languageState, mediumClicked } from "../atoms/atom";
+
+// DATA
+import { lang_EN } from "../data/lang-pack";
+import { lang_PL } from "../data/lang-pack";
 
 const Media = () => {
   const [language] = useRecoilState(languageState);
@@ -111,14 +121,14 @@ const Media = () => {
             </ul>
           </motion.div>
         )}
-          <motion.div
-            className="absolute lg:relative top-0 left-0 w-full lg:w-4/5 h-screen grid place-items-center z-30 translate-x-['100%']"
-            animate={isMediumClicked ? "closed" : "open"}
-            variants={variantsMedia}
-            transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
-          >
-            {isMediumClicked && medium}
-          </motion.div>
+        <motion.div
+          className="absolute lg:relative top-0 left-0 w-full lg:w-4/5 h-screen grid place-items-center z-30 translate-x-['100%']"
+          animate={isMediumClicked ? "closed" : "open"}
+          variants={variantsMedia}
+          transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+        >
+          {isMediumClicked && medium}
+        </motion.div>
       </section>
     </div>
   );

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import Button from "../components/Button";
+
+// COMPONENTS
 import { SlControlPlay } from "react-icons/sl";
+import Button from "../components/Button";
 import Modal from "./Modal";
 
 const VideoWindow = () => {
@@ -14,8 +16,10 @@ const VideoWindow = () => {
         onClick={() => setShowModal(true)}
       >
         <Button
-          content={<SlControlPlay className=" ml-1 group-hover:brightness-125" />}
-          className='absolute'
+          content={
+            <SlControlPlay className=" ml-1 group-hover:brightness-125" />
+          }
+          className="absolute"
         />
         <StaticImage
           src="../assets/images/thumbnails/tn1.jpg"

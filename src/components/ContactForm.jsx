@@ -1,5 +1,9 @@
 import React from "react";
+
+// LIBS
 import { useForm } from "react-hook-form";
+
+// DATA
 import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
 

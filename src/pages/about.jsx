@@ -1,10 +1,16 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+
+// HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
-import { lang_EN } from "../data/lang-pack";
-import { lang_PL } from "../data/lang-pack";
+
+// STATE
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
+
+// DATA
+import { lang_EN } from "../data/lang-pack";
+import { lang_PL } from "../data/lang-pack";
 
 const About = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");

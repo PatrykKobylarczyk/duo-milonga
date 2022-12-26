@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+// LIBS
 import ReactPlayer from "react-player/lazy";
 import MuiModal from "@mui/material/Modal";
 
@@ -24,7 +26,6 @@ const Modal = ({ showModal, setShowModal }) => {
         </button>
 
         <div className="relative pt-[56.25%]">
-
           {/* From React-Player-Documentation - padding-top: 56.25% - Player ratio: 100 / (1280 / 720) */}
           <ReactPlayer
             url="https://www.youtube.com/watch?v=_uk2qDTs5aI"

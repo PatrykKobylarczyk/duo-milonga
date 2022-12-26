@@ -1,4 +1,6 @@
 import React from "react";
+
+// COMPONENTS
 import { SlControlPlay } from "react-icons/sl";
 
 const MusicButtonAudioSpectrum = ({ isPlaying, type }) => {
