@@ -25,6 +25,7 @@ const MusicPlayer = ({ closePlayer }) => {
 
 
   useEffect(() => {
+    console.log(audioRef.current.muted)
     audioRef.current.load();
     if (isPlaying) {
       audioRef.current.play();
