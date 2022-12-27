@@ -118,11 +118,12 @@ const MusicPlayer = () => {
           <audio
             ref={audioRef}
             id="audio-element"
-            src={night}
-            // onTimeUpdate={handleAudioUpdate}
-            // onEnded={nextSong}
-          
-          />
+            
+            onTimeUpdate={handleAudioUpdate}
+            onEnded={nextSong}
+          >
+            <source type="audio/mpeg" src={night} />
+          </audio>
           <AudioSpectrum
             id="audio-canvas"
             height={isAboveMediumScreens ? 200 : 110}
