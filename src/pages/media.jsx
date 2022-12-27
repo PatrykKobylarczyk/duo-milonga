@@ -127,7 +127,9 @@ const Media = () => {
           variants={variantsMedia}
           transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
         >
-          {isMediumClicked && medium}
+          {
+          medium
+          }
         </div>
       </section>
     </div>
