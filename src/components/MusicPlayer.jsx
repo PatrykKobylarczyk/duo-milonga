@@ -98,7 +98,7 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="w-[280px] h-auto md:w-[800px]">
+    <div className="w-[280px] h-auto md:w-[800px] z-50">
       <div className="relative flex flex-col w-full bg-black/50 pt-5 md:pt-15 px-3 rounded-md">
         {/* CLOSE MUSICPLAYER BUTTON */}
         <button
@@ -119,10 +119,9 @@ const MusicPlayer = () => {
             ref={audioRef}
             id="audio-element"
             src={night}
-            onTimeUpdate={handleAudioUpdate}
-            muted={false}
-            onEnded={nextSong}
-            autoPlay
+            // onTimeUpdate={handleAudioUpdate}
+            // onEnded={nextSong}
+          
           />
           <AudioSpectrum
             id="audio-canvas"
