@@ -16,7 +16,7 @@
   }
 
   footer {
-    @apply fixed bottom-0 left-0 w-full px-10 pt-8 pb-5  text-white z-50 text-center;
+    @apply fixed bottom-0 left-0 w-full px-10 pt-8 pb-5  text-white text-center;
   }
 
   main {
