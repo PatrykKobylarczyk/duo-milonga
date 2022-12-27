@@ -13,7 +13,7 @@ import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
 
 // DATA
-import audio from "../assets/audio/salwinski_milonga.mp3";
+// import audio from "../assets/audio/salwinski_milonga.mp3";
 
 
 const Footer = () => {
@@ -52,15 +52,15 @@ const Footer = () => {
 
         <div className="flex gap-5">
           <Button content={language} handleClick={changeLanguage} />
-          <audio ref={audioRef} id="audio-element" src={audio} />
+          {/* <audio ref={audioRef} id="audio-element" src={audio} /> */}
 
           {/* MUSIC BUTTON */}
-          <Button
+          {/* <Button
             handleClick={() => setIsPlaying((prev) => !prev)}
             content={
               <MusicButtonAudioSpectrum type="footer" isPlaying={isPlaying} />
             }
-          />
+          /> */}
         </div>
       </div>
       {isAboveSmallScreens ? (
