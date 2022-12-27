@@ -71,7 +71,7 @@ const Media = () => {
       )}
 
       <section className="absolute top-0 left-0 w-full h-full flex overflow-hidden">
-        {isAboveSmallScreens ? (
+        {/* {isAboveSmallScreens ? (
           <div className="w-full lg:w-1/5 h-full flex flex-col justify-center items-start pl-40 z-30">
             <ul className="text-lg flex flex-col gap-3">
               <li>
@@ -120,15 +120,15 @@ const Media = () => {
               </li>
             </ul>
           </motion.div>
-        )}
-        <motion.div
+        )} */}
+        <div
           className="absolute lg:relative top-0 left-0 w-full lg:w-4/5 h-screen grid place-items-center z-30 translate-x-['100%']"
           animate={isMediumClicked ? "closed" : "open"}
           variants={variantsMedia}
           transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
         >
           {isMediumClicked && medium}
-        </motion.div>
+        </div>
       </section>
     </div>
   );
