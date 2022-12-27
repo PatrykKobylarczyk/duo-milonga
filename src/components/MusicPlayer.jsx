@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
 
 // LIBS
-import AudioSpectrum from "react-audio-spectrum";
+import AudioSpectrum from "react-audio-spectrum2";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -121,7 +121,7 @@ const MusicPlayer = () => {
             onTimeUpdate={handleAudioUpdate}
             onEnded={nextSong}
           />
-          {/* <AudioSpectrum
+          <AudioSpectrum
             id="audio-canvas"
             height={isAboveMediumScreens ? 200 : 110}
             width={isAboveMediumScreens ? 320 : 200}
@@ -136,7 +136,7 @@ const MusicPlayer = () => {
               { stop: 1, color: "red" },
             ]}
             gap={4}
-          /> */}
+          />
         </div>
 
         {/* CONTROL PANEL */}
