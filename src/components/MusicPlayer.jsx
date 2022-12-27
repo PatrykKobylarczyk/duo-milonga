@@ -3,6 +3,7 @@ import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
 
 // LIBS
 import AudioSpectrum from "react-audio-spectrum";
+import { isSafari, isIOS } from "react-device-detect";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -121,22 +122,24 @@ const MusicPlayer = () => {
             onTimeUpdate={handleAudioUpdate}
             onEnded={nextSong}
           />
-          <AudioSpectrum
-            id="audio-canvas"
-            height={isAboveMediumScreens ? 200 : 110}
-            width={isAboveMediumScreens ? 320 : 200}
-            audioId={"audio-element"}
-            capColor={"#af2723"}
-            capHeight={2}
-            meterWidth={2}
-            meterCount={512}
-            meterColor={[
-              { stop: 0, color: "#f00" },
-              { stop: 0.6, color: "#0e879c" },
-              { stop: 1, color: "red" },
-            ]}
-            gap={4}
-          />
+          {!(isIOS || isSafari) && (
+            <AudioSpectrum
+              id="audio-canvas"
+              height={isAboveMediumScreens ? 200 : 110}
+              width={isAboveMediumScreens ? 320 : 200}
+              audioId={"audio-element"}
+              capColor={"#af2723"}
+              capHeight={2}
+              meterWidth={2}
+              meterCount={512}
+              meterColor={[
+                { stop: 0, color: "#f00" },
+                { stop: 0.6, color: "#0e879c" },
+                { stop: 1, color: "red" },
+              ]}
+              gap={4}
+            />
+          )}
         </div>
 
         {/* CONTROL PANEL */}
