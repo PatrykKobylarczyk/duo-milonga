@@ -21,7 +21,6 @@ import {
 
 // DATA
 import { musicData } from "../data/musicData";
-import night from "../assets/audio/majkusiak_night.mp3";
 
 const MusicPlayer = () => {
   const audioRef = useRef(null);
@@ -118,7 +117,7 @@ const MusicPlayer = () => {
           <audio
             ref={audioRef}
             id="audio-element"
-            src={night}
+            src={currentSong.music}
             onTimeUpdate={handleAudioUpdate}
             onEnded={nextSong}
           />
