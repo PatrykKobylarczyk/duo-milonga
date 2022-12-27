@@ -118,13 +118,11 @@ const MusicPlayer = () => {
           <audio
             ref={audioRef}
             id="audio-element"
-            
+            src={night}
             onTimeUpdate={handleAudioUpdate}
             onEnded={nextSong}
-          >
-            <source type="audio/mpeg" src={night} />
-          </audio>
-          <AudioSpectrum
+          />
+          {/* <AudioSpectrum
             id="audio-canvas"
             height={isAboveMediumScreens ? 200 : 110}
             width={isAboveMediumScreens ? 320 : 200}
@@ -139,7 +137,7 @@ const MusicPlayer = () => {
               { stop: 1, color: "red" },
             ]}
             gap={4}
-          />
+          /> */}
         </div>
 
         {/* CONTROL PANEL */}
