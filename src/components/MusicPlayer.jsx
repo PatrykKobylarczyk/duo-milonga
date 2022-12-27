@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
 
 // LIBS
-import AudioSpectrum from "react-audio-spectrum2";
+import AudioSpectrum from "react-audio-spectrum";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
