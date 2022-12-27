@@ -26,17 +26,17 @@ const Footer = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
   };
 
-  useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-  }, [isPlaying]);
+  // useEffect(() => {
+  //   if (isPlaying) {
+  //     audioRef.current.play();
+  //   } else {
+  //     audioRef.current.pause();
+  //   }
+  // }, [isPlaying]);
 
-  useEffect(() => {
-    console.log(audioRef);
-  }, []);
+  // useEffect(() => {
+  //   console.log(audioRef);
+  // }, []);
 
   return (
     <footer>
