@@ -122,7 +122,7 @@ const MusicPlayer = () => {
             onTimeUpdate={handleAudioUpdate}
             onEnded={nextSong}
           />
-          {!(isIOS || isSafari) && (
+          {!(isIOS || isSafari) ? (
             <AudioSpectrum
               id="audio-canvas"
               height={isAboveMediumScreens ? 200 : 110}
@@ -139,6 +139,8 @@ const MusicPlayer = () => {
               ]}
               gap={4}
             />
+          ): (
+            <iframe src="https://gifer.com/embed/AJ4Y" width={480} height={131}  allowFullScreen></iframe>
           )}
         </div>
 
