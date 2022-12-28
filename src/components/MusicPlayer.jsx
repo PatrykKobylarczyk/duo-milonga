@@ -123,7 +123,7 @@ const MusicPlayer = () => {
             onTimeUpdate={handleAudioUpdate}
             onEnded={nextSong}
           />
-          {(isIOS || isSafari) ? (
+          {!(isIOS || isSafari) ? (
             <AudioSpectrum
               id="audio-canvas"
               height={isAboveMediumScreens ? 200 : 110}
