@@ -18,6 +18,7 @@ import {
   currentSongState,
   currentSongIndex,
   mediumClicked,
+  selectedMediumState
 } from "../atoms/atom";
 
 // DATA
@@ -29,6 +30,7 @@ const MusicPlayer = () => {
   const [currentIndex, setCurrentIndex] = useRecoilState(currentSongIndex);
   const [currentSong, setCurrentSong] = useRecoilState(currentSongState);
   const [isMediumClicked, SetMediumClicked] = useRecoilState(mediumClicked);
+  const [selectedMedium, setSelectedMedium] = useRecoilState(selectedMediumState);
   const [isPlaying, setIsPlaying] = useState(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [audioProgress, setAudioProgress] = useState(0);
@@ -64,9 +66,11 @@ const MusicPlayer = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(audioRef);
-  }, []);
+  const closePlayer = () => {
+    SetMediumClicked(false)
+    setSelectedMedium(null)
+  }
+
 
   // CONTROL TIME FOR PROGRESS BAR
   const handleAudioUpdate = () => {
@@ -104,7 +108,7 @@ const MusicPlayer = () => {
         {/* CLOSE MUSICPLAYER BUTTON */}
         <button
           className="absolute top-2 right-2 z-50"
-          onClick={() => SetMediumClicked(false)}
+          onClick={closePlayer}
         >
           back
         </button>

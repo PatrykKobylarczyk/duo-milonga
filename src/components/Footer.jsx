@@ -15,7 +15,6 @@ import { languageState } from "../atoms/atom";
 // DATA
 import audio from "../assets/audio/salwinski_milonga.mp3";
 
-
 const Footer = () => {
   const audioRef = useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
@@ -33,10 +32,6 @@ const Footer = () => {
       audioRef.current.pause();
     }
   }, [isPlaying]);
-
-  useEffect(() => {
-    console.log(audioRef);
-  }, []);
 
   return (
     <footer>

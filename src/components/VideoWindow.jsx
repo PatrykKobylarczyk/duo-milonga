@@ -12,20 +12,21 @@ const VideoWindow = () => {
   return (
     <>
       <div
-        className="group relative w-full h-60 transition duration-200 cursor-pointer"
+        className="group relative grid place-items-center w-full h-60 lg:h-80 transition duration-200 cursor-pointer"
         onClick={() => setShowModal(true)}
       >
-        <Button
-          content={
-            <SlControlPlay className=" ml-1 group-hover:brightness-125" />
-          }
-          className="absolute"
-        />
+        <div>
+          <Button
+            content={
+              <SlControlPlay className=" ml-1 group-hover:brightness-125" />
+            }
+          />
+        </div>
         <StaticImage
           src="../assets/images/thumbnails/tn1.jpg"
           // dodac dynamic Image
           alt="video thumbnail"
-          className="absolute group-hover:scale-105 top-0 left-0 w-full h-full transition duration-200 hover:scale-105 -z-10 brightness-110"
+          className="absolute group-hover:scale-105 top-0 left-0 w-full max-w-[500px] h-full transition duration-200 hover:scale-105 -z-10 brightness-110"
         />
       </div>
       {showModal && <Modal showModal={showModal} setShowModal={setShowModal} />}

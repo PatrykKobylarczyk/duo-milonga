@@ -37,6 +37,12 @@
   border: 1px solid red
 } */
 
+/* active link */
+
+.active{
+  color: #af2622;
+}
+
 /* dynamic vieport for IOS */
 .pages {
   height: 100dvh;

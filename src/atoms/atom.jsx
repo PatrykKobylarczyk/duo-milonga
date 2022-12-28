@@ -11,6 +11,11 @@ export const mediumClicked = atom({
   default: false
 })
 
+export const selectedMediumState = atom({
+  key: 'selectedMedium',
+  default: 'Music'
+})
+
 export const currentSongState = atom({
   key: 'currentSong',
   default: musicData[0]
