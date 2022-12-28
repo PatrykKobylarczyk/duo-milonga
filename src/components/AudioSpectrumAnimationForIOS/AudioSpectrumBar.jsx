@@ -5,7 +5,7 @@ const AudioSpectrumBar = ({ isPlaying }) => {
     <span
       className={`audio-spectrum-bar ${
         isPlaying ? "on" : null
-      } block w-2 h-[4px]  bg-[#f00] `}
+      } block w-[2px] h-[1px] bg-red`}
     ></span>
   );
 };
