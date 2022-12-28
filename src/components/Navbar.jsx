@@ -61,18 +61,34 @@ const Navbar = () => {
             >
               <Link to="/">{lang.menu_home}</Link>
             </motion.div>
+
             <motion.div
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/about">{lang.menu_about}</Link>
             </motion.div>
+
             <motion.div
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
-              <Link to="/media">{lang.menu_media}</Link>
+              <Link to="/music">{lang.menu_media_music}</Link>
             </motion.div>
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+            <Link to="/video">{lang.menu_media_video}</Link>
+            </motion.div>
+
+            <motion.div
+              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              variants={projectVariant}
+            >
+              <Link to="/gallery">{lang.menu_media_gallery}</Link>
+            </motion.div>
+
             <motion.div
               transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
@@ -137,7 +153,9 @@ const Navbar = () => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/media" onClick={() => setIsMenuToggled(false)}>{lang.menu_media}</Link>
+                  <Link to="/media" onClick={() => setIsMenuToggled(false)}>
+                    {lang.menu_media}
+                  </Link>
                 </motion.div>
                 <motion.div
                   transition={{
@@ -146,7 +164,9 @@ const Navbar = () => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/contact" onClick={() => setIsMenuToggled(false)}>{lang.menu_contact}</Link>
+                  <Link to="/contact" onClick={() => setIsMenuToggled(false)}>
+                    {lang.menu_contact}
+                  </Link>
                 </motion.div>
               </motion.div>
             </AnimatePresence>

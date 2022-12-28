@@ -15,12 +15,12 @@ const Modal = ({ showModal, setShowModal }) => {
     <MuiModal
       open={showModal}
       onClose={handleClose}
-      className="fixed h-3/4 !top-1/2 -translate-y-1/4 lg:-translate-y-1/2 left-0 right-0 z-30 mx-auto max-w-6xl min-h-3xl overflow-hidden lg:p-16"
+      className="fixed h-3/4 !top-1/2 -translate-y-1/4 lg:-translate-y-1/2 left-0 right-0 z-30 mx-auto max-w-6xl min-h-3xl overflow-hidden lg:p-16 bg-black/80"
     >
       <div>
         <button
           onClick={handleClose}
-          className="button absolute right-5 top-5 !z-40 h-9 w-9 border-none text-white hover:bg-[#181818]"
+          className="button absolute right-5 top-5 !z-40 h-9 w-9 border-none text-white"
         >
           close
         </button>
