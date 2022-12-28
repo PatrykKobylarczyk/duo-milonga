@@ -27,7 +27,7 @@ module.exports = {
           "linear-gradient(to right, rgba(3,11,15, 1) 0, rgba(3,11,15, .8) 15%, rgba(3,11,15, .6) 35%, rgba(3,11,15,0.2) 50%, rgba(3,11,15,0.2) 75%, rgba(3,11,15,0) 100%)",
         "gradient-left-side":
           "linear-gradient(to right, rgba(3,11,15, .8) 0, rgba(3,11,15, .6) 25%, rgba(3,11,15, .4) 35%, rgba(3,11,15,.2) 50%, rgba(3,11,15,0.1) 75%,rgba(3,11,15,.3) 85%, rgba(3,11,15,.8) 100%)",
-      },
+      }
     },
     screens: {
       xs: "480px",

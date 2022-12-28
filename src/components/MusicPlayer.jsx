@@ -22,6 +22,7 @@ import {
 
 // DATA
 import { musicData } from "../data/musicData";
+import AudioSpectrumAnimation from "./AudioSpectrumAnimationForIOS/AudioSpectrumAnimation";
 
 const MusicPlayer = () => {
   const audioRef = useRef(null);
@@ -140,7 +141,7 @@ const MusicPlayer = () => {
               gap={4}
             />
           ): (
-            <iframe src="https://gifer.com/embed/AJ4Y" width={480} height={131}  allowFullScreen></iframe>
+            <AudioSpectrumAnimation isPlaying={isPlaying}/>
           )}
         </div>
 

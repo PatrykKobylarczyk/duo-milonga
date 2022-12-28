@@ -113,6 +113,130 @@ li {
   }
 }
 
+/* custom audio spectrum */
+
+.audio-spectrum-bar.on{
+  animation: audio-spectrum-small 1.2s infinite;
+}
+
+.audio-spectrum-bar.on:nth-child(8n) {
+  animation: audio-spectrum-small 1.4s infinite;
+  animation-delay: 0.1s;
+}
+
+.audio-spectrum-bar.on:nth-child(6n+1) {
+  animation: audio-spectrum-xmedium .8s infinite;
+  animation-delay: 0.2s;
+}
+.audio-spectrum-bar.on:nth-child(4+7n) {
+  animation: audio-spectrum-medium 1.3s infinite;
+  animation-delay: 0.2s;
+}
+.audio-spectrum-bar.on:nth-child(11n) {
+  animation: audio-spectrum-large .8s infinite;
+  animation-delay: 0.2s;
+}
+.audio-spectrum-bar.on:nth-child(4n) {
+  animation: audio-spectrum-xsmall 1.4s infinite;
+  animation-delay: 0.3s;
+}
+.audio-spectrum-bar.on:nth-child(5n) {
+  animation: audio-spectrum-large 2.5s infinite;
+  animation-delay: 0.4s;
+}
+.audio-spectrum-bar.on:nth-child(7n+1) {
+  animation: audio-spectrum-small 1s infinite;
+  animation-delay: 0.6s;
+}
+.audio-spectrum-bar.on:nth-child(9n+2) {
+  animation: audio-spectrum-medium 1.7s infinite;
+  animation-delay: 0.7s;
+}
+
+.audio-spectrum-bar.on:first-child {
+  animation: audio-spectrum-small 1.2s infinite;
+}
+.audio-spectrum-bar.on:last-child {
+  animation: audio-spectrum-small 1.2s infinite;
+  animation-delay: 0.3s;
+}
+
+
+@keyframes audio-spectrum-small {
+  0% {
+    height: 4px;
+  }
+  50% {
+    height: 60px;
+    background-image: linear-gradient(to top, #ff0000 10%, #0082cf 20%, #1c7bbd 60%, #af2622 90%);
+  }
+  100% {
+    height: 4px;
+  }
+}
+
+@keyframes audio-spectrum-medium {
+  0% {
+    height: 4px;
+  }
+  50% {
+    background-image: linear-gradient(to top, #ff0000 10%, #0082cf 20%, #1c7bbd 60%, #af2622 90%);
+    height: 85px;
+  }
+  100% {
+    height: 4px;
+  }
+}
+
+@keyframes audio-spectrum-large {
+  0% {
+    height: 4px;
+  }
+  50% {
+    background-image: linear-gradient(to top, #ff0000 10%, #0082cf 20%, #1c7bbd 60%, #af2622 90%);
+    height: 90px;
+  }
+  100% {
+    height: 4px;
+  }
+}
+@keyframes audio-spectrum-xsmall {
+  0% {
+    height: 4px;
+  }
+  50% {
+    height: 30px;
+    background-image: linear-gradient(to top, #ff0000 10%, #0082cf 20%, #1c7bbd 60%, #af2622 90%);
+  }
+  100% {
+    height: 4px;
+  }
+}
+@keyframes audio-spectrum-xlarge {
+  0% {
+    height: 4px;
+  }
+  50% {
+    height: 110px;
+    background-image: linear-gradient(to top, #ff0000 10%, #0082cf 20%, #1c7bbd 60%, #af2622 90%);
+  }
+  100% {
+    height: 4px;
+  }
+}
+@keyframes audio-spectrum-xmedium {
+  0% {
+    height: 4px;
+  }
+  50% {
+    height: 75px;
+    background-image: linear-gradient(to top, #ff0000 10%, #0082cf 20%, #1c7bbd 60%, #af2622 90%);
+  }
+  100% {
+    height: 4px;
+  }
+}
+
 /* music player */
 input[type="range"] {
   height: 1px;
@@ -120,7 +244,6 @@ input[type="range"] {
   margin: 10px 0;
   width: 100%;
   background-color: #fff;
-  
 }
 input[type="range"]:focus {
   outline: none;
@@ -199,3 +322,4 @@ input[type="range"]:focus::-ms-fill-lower {
 input[type="range"]:focus::-ms-fill-upper {
   background: #2497e3;
 }
+
