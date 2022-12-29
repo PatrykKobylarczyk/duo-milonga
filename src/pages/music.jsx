@@ -8,7 +8,7 @@ const music = () => {
   return (
     <div className="pages relative page h-screen">
       <div className="fixed left-0 top-0 w-full h-full  bg-gradient-layout z-[1]"></div>
-      {/* <div className="fixed left-0 top-0 w-full h-full  bg-gradient-layout-darker z-[3]"></div> */}
+      <div className="fixed left-0 top-0 w-full h-full  bg-gradient-layout-lighter z-[3]"></div>
       <StaticImage
         src="../assets/images/Duo/05.jpg"
         alt="main room"
