@@ -15,10 +15,10 @@ const VideoWindow = () => {
         className="group relative grid place-items-center w-full h-full lg:h-80 transition duration-200 cursor-pointer"
         onClick={() => setShowModal(true)}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Button
             content={
-              <SlControlPlay className=" ml-1" />
+              <SlControlPlay className=" ml-1 text-white" />
             }
           />
         </div>

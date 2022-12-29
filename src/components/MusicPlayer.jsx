@@ -103,15 +103,8 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="w-[280px] h-auto md:w-[800px] z-50">
+    <div className={`w-[280px] h-auto md:w-[800px] z-[5] ${(isIOS || isSafari) && 'translate-y-10'}`}>
       <div className="relative flex flex-col w-full bg-black/80 pt-5 md:pt-15 px-3 rounded-md">
-        {/* CLOSE MUSICPLAYER BUTTON */}
-        {/* <button
-          className="absolute top-2 right-2 z-50"
-          onClick={closePlayer}
-        >
-          back
-        </button> */}
 
         {/* SONG TITLE */}
         <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-5 md:translate-y-0">

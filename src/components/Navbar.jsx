@@ -153,7 +153,9 @@ const Navbar = () => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/music">{lang.menu_media_music}</Link>
+                  <Link to="/music" onClick={() => setIsMenuToggled(false)}>
+                    {lang.menu_media_music}
+                  </Link>
                 </motion.div>
                 <motion.div
                   transition={{
@@ -162,7 +164,9 @@ const Navbar = () => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/video">{lang.menu_media_video}</Link>
+                  <Link to="/video" onClick={() => setIsMenuToggled(false)}>
+                    {lang.menu_media_video}
+                  </Link>
                 </motion.div>
 
                 <motion.div
@@ -172,7 +176,9 @@ const Navbar = () => {
                   }}
                   variants={projectVariant}
                 >
-                  <Link to="/gallery">{lang.menu_media_gallery}</Link>
+                  <Link to="/gallery" onClick={() => setIsMenuToggled(false)}>
+                    {lang.menu_media_gallery}
+                  </Link>
                 </motion.div>
                 <motion.div
                   transition={{
