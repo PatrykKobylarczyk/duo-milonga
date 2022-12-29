@@ -33,6 +33,7 @@ const MusicPlayer = () => {
   const [selectedMedium, setSelectedMedium] = useRecoilState(selectedMediumState);
   const [isPlaying, setIsPlaying] = useState(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const isAboveLargeScreens = useMediaQuery("(min-width: 1368px)");
   const [audioProgress, setAudioProgress] = useState(0);
   const [musicTotalLength, setMusicTotalLength] = useState("04 : 38");
   const [musicCurrentTime, setMusicCurrentTime] = useState("00 : 00");
@@ -103,11 +104,11 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className={`w-[280px] h-auto md:w-[600px] z-[5] `}>
-      <div className="relative flex flex-col w-full bg-black/80 pt-5 md:pt-15 px-3 rounded-md">
+    <div className={`w-[280px] h-auto md:w-[500px] z-[5] `}>
+      <div className="relative flex flex-col w-full bg-black/80  md:pt-5 lg:pt-10 px-3 rounded-md">
 
         {/* SONG TITLE */}
-        <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-5 md:translate-y-0">
+        <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-5 xl:translate-y-0">
           {musicData[currentIndex].title}
         </h1>
 
@@ -123,7 +124,7 @@ const MusicPlayer = () => {
           {!(isIOS || isSafari) ? (
             <AudioSpectrum
               id="audio-canvas"
-              height={isAboveMediumScreens ? 200 : 110}
+              height={isAboveLargeScreens ? 200 : 110}
               width={isAboveMediumScreens ? 320 : 200}
               audioId={"audio-element"}
               capColor={"#af2723"}
@@ -144,7 +145,7 @@ const MusicPlayer = () => {
 
         {/* CONTROL PANEL */}
         <div className="grid place-items-center z-40">
-          <div className="flex gap-5 py-5 md:py-8 items-center">
+          <div className="flex gap-5 py-5 xl:py-8 items-center">
             <button className="button w-10 h-10 " onClick={prevSong}>
               <RxTrackPrevious size={"12px"} />
             </button>
@@ -163,16 +164,16 @@ const MusicPlayer = () => {
         <input
           type="range"
           value={audioProgress}
-          className=" w-full z-40"
+          className=" w-full z-40 bg-yellow"
           onChange={handleMusicProgressBar}
         />
       </div>
 
       {/* SONG LIST */}
-      <ul className="w-full h-auto flex flex-col gap-1 lg:gap-3 mt-3">
+      <ul className="w-full h-auto flex flex-col gap-1 xl:gap-3 mt-3">
         {musicData.map((song, index) => (
           <li
-            className="bg-black/80 px-8 py-3 lg:py-5 rounded-md cursor-pointer"
+            className="bg-black/80 px-8 py-3 sm:py-2 xl:py-5 text-sm xl:text-base rounded-md cursor-pointer"
             key={song.title}
             onClick={() => setSongFromList(song, index)}
           >
