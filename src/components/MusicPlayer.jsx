@@ -103,7 +103,7 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className={`w-[280px] h-auto md:w-[800px] z-[5] ${(isIOS || isSafari) ?'-translate-y-10' : null}`}>
+    <div className={`w-[280px] h-auto md:w-[800px] z-[5] `}>
       <div className="relative flex flex-col w-full bg-black/80 pt-5 md:pt-15 px-3 rounded-md">
 
         {/* SONG TITLE */}
