@@ -24,7 +24,7 @@ const About = () => {
     <div className="pages w-full relative mb-40">
       <div className="pages fixed top-0 right-0 w-full  ">
         <StaticImage
-          src="../assets/images/Duo/08.jpg"
+          src="../assets/images/Duo/04.jpg"
           alt="main room"
           className="pages fixed w-full h-screen -z-[2]"
           objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
@@ -106,7 +106,7 @@ const About = () => {
           </div>
         </section>
       </div>
-      <div className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-lighter z-10"></div>
+      <div className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-lighter z-0"></div>
     </div>
   );
 };

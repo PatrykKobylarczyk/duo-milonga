@@ -12,7 +12,7 @@ const VideoWindow = () => {
   return (
     <>
       <div  
-        className="group relative grid place-items-center w-full h-full lg:h-80 transition duration-200 cursor-pointer"
+        className="group relative grid place-items-center w-full h-full lg:h-80 transition duration-200 cursor-pointer z-20"
         onClick={() => setShowModal(true)}
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

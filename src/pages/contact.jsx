@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 // LIBS
 import ContactForm from "../components/ContactForm";
+import { motion } from "framer-motion";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -27,9 +28,14 @@ const Contact = () => {
   return (
     <div className="page pages relative h-screen flex flex-col justify-center overflow-hidden">
       <div className="flex">
-        {isAboveMediumScreens && (
-          <div className="h-full w-1/6 bg-darker-gradient-bg"></div>
-        )}
+         (
+          <motion.div
+          className="pages fixed left-0 top-0 w-full h-screen bg-darker-gradient-bg z-[5]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: .7 }}
+          transition={{ ease: "easeInOut", delay: 0.5, duration: 1 }}
+        ></motion.div>
+        )
         <StaticImage
           src="../assets/images/Duo/05.jpg"
           alt="main room"
@@ -37,8 +43,8 @@ const Contact = () => {
           objectPosition="62% 0"
         />
       </div>
-      <div className="absolute left-0 top-0 w-full h-full bg-darker-gradient-bg "></div>
-      <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center lg:gap-10">
+      {/* <div className="absolute left-0 top-0 w-full h-full bg-darker-gradient-bg "></div> */}
+      <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center lg:gap-10 z-10">
         <div className="flex flex-col items-center lg:items-start lg:pl-40  lg:w-1/3 ">
           <div>
             {!isContactForm && (

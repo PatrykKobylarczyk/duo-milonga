@@ -32,7 +32,7 @@ const ContactForm = ({ language }) => {
       className="max-w-2xl z-20 mt-10"
     >
       <input
-        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-2  placeholder:font-light"
+        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/70 p-2  placeholder:font-light"
         type="text"
         placeholder="name"
         {...register("name", {
@@ -48,7 +48,7 @@ const ContactForm = ({ language }) => {
       )}
 
       <input
-        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-2  placeholder:font-light mt-2"
+        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/70 p-2  placeholder:font-light mt-2"
         type="text"
         placeholder="email"
         {...register("email", {
@@ -64,7 +64,7 @@ const ContactForm = ({ language }) => {
       )}
 
       <textarea
-        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/40 p-2  placeholder:font-light mt-2"
+        className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/70 p-2  placeholder:font-light mt-2"
         name="message"
         placeholder="message"
         rows="4"
