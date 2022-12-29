@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS'
@@ -20,29 +20,27 @@ const About = () => {
   const [language] = useRecoilState(languageState);
   const lang = language === "PL" ? lang_EN : lang_PL;
 
-  console.log(lang.about_description_paragraph_festivals);
-
   return (
-    <div className="pages relative mb-40">
-      <div className="right-0 h-full w-full">
+    <div className="pages w-full relative mb-40">
+      <div className="fixed top-0 right-0 w-full  ">
         <StaticImage
           src="../assets/images/Duo/08.jpg"
           alt="main room"
-          className="w-full h-screen fixed -z-[2]"
+          className="fixed w-full h-screen -z-[2]"
           objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
         />
-        <div className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-lighter z-[1]"></div>
-        <motion.div 
-        className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker -z-[1]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 3 }}
+       
+        <motion.div
+          className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "easeInOut",delay: .5, duration: 2 }}
         ></motion.div>
+        
       </div>
-      <div className="text-white flex w-full justify-center lg:px-6 lg:justify-start z-0 bg-red">
+      <div className="text-white flex w-full justify-center lg:px-6 lg:justify-start z-0 ">
         <section className="absolute top-1/2 left-1/2 -translate-x-1/2 w-full md:max-w-6xl py-20 lg:py-32 px-10">
-          <h1 className="text-3xl lg:text-4xl font-bold mb-12 z-10">
+          <h1 className="text-3xl lg:text-4xl font-bold mb-12">
             {lang.about_title}
           </h1>
           <p>{lang.about_description_paragraph1}</p>
@@ -108,6 +106,7 @@ const About = () => {
           </div>
         </section>
       </div>
+      <div className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-lighter z-10"></div>
     </div>
   );
 };
