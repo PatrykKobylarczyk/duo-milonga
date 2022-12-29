@@ -3,9 +3,7 @@ import React from "react";
 const Button = ({ content, handleClick }) => {
   return (
     <button
-      className={`button 
-      h-14 w-14
-      text-xs`}
+      className={`button text-xs`}
       
       onClick={handleClick}
     >

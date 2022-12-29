@@ -8,7 +8,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth scrollbar-hide;
   }
 
   header {
@@ -26,16 +26,27 @@
 
 @layer components {
   .button {
-    @apply flex items-center justify-center rounded-full border-[1px] border-white;
+    @apply h-14 w-14 flex items-center justify-center rounded-full border-[1px] border-white;
   }
 
   .page {
     @apply bg-[#141414] text-white;
   }
 }
-/* *{
-  border: 1px solid red
-} */
+
+/* scrollbar hide */
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 
 /* active link */
 

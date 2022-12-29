@@ -21,6 +21,8 @@ module.exports = {
       backgroundImage: {
         "gradient-layout":
           "linear-gradient(to bottom,rgba(3,11,15,1) 0,rgba(3,11,15,.35) 15%,rgba(3,11,15,0.1) 25%,rgba(3,11,15, 0) 50%,rgba(3,11,15,.15) 75%, rgba(3,11,15,.35) 85%,rgba(3,11,15,1) 100%);",
+        "gradient-layout-lighter":
+          "linear-gradient(to bottom,rgba(3,11,15,1) 0,rgba(3,11,15,.35) 15%, rgba(3,11,15,0) 25%,  rgba(3,11,15, 0) 75%,rgba(3,11,15,.35) 85%, rgba(3,11,15,1) 100%);",
         "gradient-layout-darker":
           "linear-gradient(to right,rgba(3,11,15,1) 0,rgba(3,11,15,.65) 15%,rgba(3,11,15,.5) 25%,rgba(3,11,15, .4) 50%,rgba(3,11,15,.5) 75%, rgba(3,11,15,.65) 85%,rgba(3,11,15,1) 100%);",
         "darker-gradient-bg":
