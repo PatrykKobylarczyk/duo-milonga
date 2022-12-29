@@ -22,16 +22,16 @@ const About = () => {
 
   return (
     <div className="pages w-full relative mb-40">
-      <div className="fixed top-0 right-0 w-full  ">
+      <div className="pages fixed top-0 right-0 w-full  ">
         <StaticImage
           src="../assets/images/Duo/08.jpg"
           alt="main room"
-          className="fixed w-full h-screen -z-[2]"
+          className="pages fixed w-full h-screen -z-[2]"
           objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
         />
        
         <motion.div
-          className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-0"
+          className="pages fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeInOut",delay: .5, duration: 2 }}

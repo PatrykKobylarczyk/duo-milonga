@@ -24,7 +24,7 @@ module.exports = {
         "gradient-layout-lighter":
           "linear-gradient(to bottom,rgba(3,11,15,1) 0,rgba(3,11,15,.35) 10%, rgba(3,11,15,0) 25%,  rgba(3,11,15, 0) 75%,rgba(3,11,15,.35) 90%, rgba(3,11,15,1) 100%);",
         "gradient-layout-darker":
-          "linear-gradient(to top ,rgba(3,11,15,1) 0,rgba(3,11,15,.7) 15%,rgba(3,11,15,.6) 25%,rgba(3,11,15, .5) 50%,rgba(3,11,15,.45) 75%, rgba(3,11,15,.4) 75%,rgba(3,11,15, .2) 85%, rgba(3,11,15, .3) 100%);",
+          "linear-gradient(to top ,rgba(3,11,15,1) 0,rgba(3,11,15,.85) 15%,rgba(3,11,15,.7) 25%,rgba(3,11,15, .6) 50%,rgba(3,11,15,.5) 75%, rgba(3,11,15,.4) 75%,rgba(3,11,15, .25) 85%, rgba(3,11,15, .3) 100%);",
         "darker-gradient-bg":
           "linear-gradient(to right, rgba(3,11,15, 1) 0, rgba(3,11,15, .8) 15%, rgba(3,11,15, .6) 35%, rgba(3,11,15,0.2) 50%, rgba(3,11,15,0.2) 75%, rgba(3,11,15,0) 100%)",
         "gradient-left-side":
