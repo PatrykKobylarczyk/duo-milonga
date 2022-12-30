@@ -24,7 +24,7 @@ const music = () => {
       <motion.div
         className="pages fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-[5]"
         initial={{ opacity: 0 }}
-        animate={{ opacity: .6 }}
+        animate={{ opacity: .75 }}
         transition={{ ease: "easeInOut", delay: 0.5, duration: 1 }}
       ></motion.div>
     </div>

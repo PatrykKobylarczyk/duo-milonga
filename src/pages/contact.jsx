@@ -32,7 +32,7 @@ const Contact = () => {
           <motion.div
           className="pages fixed left-0 top-0 w-full h-screen bg-darker-gradient-bg z-[5]"
           initial={{ opacity: 0 }}
-          animate={{ opacity: .7 }}
+          animate={{ opacity: .8 }}
           transition={{ ease: "easeInOut", delay: 0.5, duration: 1 }}
         ></motion.div>
         )

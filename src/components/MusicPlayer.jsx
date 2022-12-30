@@ -108,7 +108,7 @@ const MusicPlayer = () => {
       <div className="relative flex flex-col w-full bg-black/80  md:pt-5 lg:pt-10 px-3 rounded-md">
 
         {/* SONG TITLE */}
-        <h1 className="absolute top-0 left-0 h-full w-full grid place-items-center text-2xl lg:text-4xl font-black -translate-y-5 xl:translate-y-0">
+        <h1 className="absolute top-0 left-0 w-full h-full grid place-items-center text-2xl xl:text-4xl font-black -translate-y-5 xl:translate-y-0">
           {musicData[currentIndex].title}
         </h1>
 
