@@ -35,7 +35,7 @@ const Gallery = () => {
       <GalleryRow setShowModal={setShowModal}/>
       <MuiModal
         open={showModal}
-        className="fixed h-screen w-full top-0 left-0 right-0 z-50  overflow-hidden bg-black/60 grid place-items-center"
+        className="h-screen w-full top-0 left-0 right-0 z-50 bg-black/60 grid place-items-center"
       >
         <ImageWindow />
       </MuiModal>
