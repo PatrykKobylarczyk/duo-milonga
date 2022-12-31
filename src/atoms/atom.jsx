@@ -25,3 +25,12 @@ export const currentSongIndex = atom({
   key: 'currentIndex',
   default: 0
 })
+export const imageState = atom({
+  key: 'currentImage',
+  default: '01.jpg'
+})
+
+export const modalState = atom({
+  key: 'modalState',
+  default: false,
+})
