@@ -17,7 +17,7 @@ const Gallery = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="h-screen pages">
+    <div className="h-screen pages relative">
       <StaticImage
         src="../assets/images/Duo/01.jpg"
         alt="main room"
