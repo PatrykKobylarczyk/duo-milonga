@@ -23,7 +23,7 @@ const VideoWindow = () => {
           />
         </div>
         <StaticImage
-          src="../assets/images/thumbnails/tn1.jpg"
+          src="http://i3.ytimg.com/vi/7xobYV9D1xo/hqdefault.jpg"
           // dodac dynamic Image
           alt="video thumbnail"
           className="group-hover:scale-[1.02] top-0 left-0 w-full max-w-[500px] h-full transition duration-200 hover:scale-105 -z-10 brightness-110"

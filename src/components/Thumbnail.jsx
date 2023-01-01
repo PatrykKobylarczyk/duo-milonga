@@ -8,11 +8,9 @@ const Thumbnail = ({ image, setShowModal }) => {
   // const [showModal, setShowModal] = useRecoilState(modalState);
   const [currentImage, setCurrentImage] = useRecoilState(imageState);
 
-console.log(currentImage)
-
   return (
     <div
-      className="w-full cursor-pointer transition duration-200 ease-out md:hover:scale-[1.02]"
+      className="w-full cursor-pointer transition duration-200 ease-out md:hover:scale-[1.02] z-10"
       onClick={() => {
         setCurrentImage(image);
         setShowModal(true);

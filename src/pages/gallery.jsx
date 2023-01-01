@@ -17,8 +17,7 @@ const Gallery = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="h-screen  relative">
-
+    <div className="page h-screen relative">
       {/* BACKGROUND  */}
       <div className="fixed overflow-hidden top-0 right-0 w-full  ">
         <StaticImage
@@ -36,7 +35,8 @@ const Gallery = () => {
       </div>
 
       {/* CONTENT */}
-      <div>
+      <section className="flex flex-col px-5 py-20">
+        <h1 className="text-white text-3xl z-[7] mt-[30vh] mb-5">Photos</h1>
         <GalleryRow setShowModal={setShowModal} />
         <MuiModal
           open={showModal}
@@ -44,8 +44,8 @@ const Gallery = () => {
         >
           <ImageWindow />
         </MuiModal>
-      </div>
-      <div className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-lighter z-0"></div>
+        <div className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-lighter z-0"></div>
+      </section>
     </div>
   );
 };

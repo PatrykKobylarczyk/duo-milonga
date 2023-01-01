@@ -19,7 +19,7 @@ const images = [
 
 const GalleryRow = ({ setShowModal }) => {
   return (
-    <div className="absolute top-0 left-0 right-0 max-w-[80%] grid m-auto grid-cols-1 sm:grid-cols-2 gap-10 scrollbar-hide md:p-40 pt-40 md:pt-60 overflow-y-scroll">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-10 scrollbar-hide md:p-40 overflow-y-scroll">
       {images.map((image, i) => (
         <Thumbnail key={i} image={image} setShowModal={setShowModal} />
       ))}
