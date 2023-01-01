@@ -22,7 +22,7 @@ const About = () => {
 
   return (
     <div className="pages w-full relative mb-40">
-      <div className="pages fixed top-0 right-0 w-full  ">
+      <div className="fixed overflow-hidden top-0 right-0 w-full  ">
         <StaticImage
           src="../assets/images/Duo/04.jpg"
           alt="main room"
@@ -38,7 +38,7 @@ const About = () => {
         ></motion.div>
         
       </div>
-      <div className="text-white flex w-full justify-center lg:px-6 lg:justify-start z-0 ">
+      <div className="text-white flex overflow-scroll w-full justify-center lg:px-6 lg:justify-start z-0 ">
         <section className="absolute top-1/2 left-1/2 -translate-x-1/2 w-full md:max-w-6xl py-20 lg:py-32 px-10">
           <h1 className="text-3xl lg:text-4xl font-bold mb-12">
             {lang.about_title}

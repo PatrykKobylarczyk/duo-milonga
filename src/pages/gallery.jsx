@@ -17,11 +17,11 @@ const Gallery = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="h-screen pages relative">
+    <div className="h-screen  relative">
       <StaticImage
         src="../assets/images/Duo/01.jpg"
         alt="main room"
-        className="pages fixed w-full h-screen -z-[2]"
+        className="fixed w-full h-screen overflow-hidden -z-[2]"
         objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
       />
       <motion.div
@@ -32,13 +32,14 @@ const Gallery = () => {
       ></motion.div>
       <div className="fixed left-0 top-0 w-full h-full bg-gradient-layout-lighter"></div>
 
-      <GalleryRow setShowModal={setShowModal}/>
+      <GalleryRow setShowModal={setShowModal} />
       <MuiModal
         open={showModal}
         className="h-screen w-full top-0 left-0 right-0 z-50 bg-black/60 grid place-items-center"
       >
         <ImageWindow />
       </MuiModal>
+      <div className=" fixed left-0 top-0 w-full h-screen bg-gradient-layout-lighter z-0"></div>
     </div>
   );
 };
