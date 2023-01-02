@@ -95,7 +95,7 @@ const About = () => {
           className="fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ ease: "easeInOut", delay: 0.5, duration: 2 }}
+          transition={{ ease: "easeInOut", delay: 0.3, duration: 1.2 }}
         ></motion.div>
       </div>
 
@@ -104,7 +104,9 @@ const About = () => {
         <h1 className="text-3xl lg:text-4xl font-bold mb-12">
           {lang.about_title}
         </h1>
-        <p>{lang.about_description_paragraph1}</p>
+        <p>
+          {lang.about_description_paragraph1}
+        </p>
         {isAboveMediumScreens ? (
           <>
             <p className="mt-12">{lang.about_description_paragraph2}</p>

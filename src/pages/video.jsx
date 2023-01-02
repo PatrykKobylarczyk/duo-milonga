@@ -11,8 +11,30 @@ import VideoWindow from "../components/VideoWindow";
 import { videoData } from "../data/videoData";
 
 const video = () => {
+  // Animation
+  const videos = ["V", "i", "d", "e", "o", "s"];
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 1,
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+  const item = {
+    hidden: { x: 20, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+  const item2 = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
-    <div className="page relative w-full h-auto md:h-screen md:overflow-hidden flex flex-col items-center pb-32">
+    <div className="page relative h-screen">
       {/* BACKGROUN */}
       <div className="h-screen fixed left-0 top-0 -z-[2]">
         <StaticImage
@@ -22,24 +44,46 @@ const video = () => {
           objectPosition=" 33% 0"
         />
       </div>
-
-      {/* CONTENT */}
-      <div className="flex flex-col px-5 py-20">
-        <h1 className="text-3xl z-[7] mt-[30vh] mb-10">
-          Videos
-        </h1>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 z-30">
-          {videoData.map((video) => (
-            <VideoWindow key={video.id} video={video} />
-          ))}
-        </div>
-      </div>
       <motion.div
-        className="pages fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-[5]"
+        className="fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-[5]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
-        transition={{ ease: "easeInOut", delay: 0.5, duration: 1 }}
+        transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
       ></motion.div>
+
+      {/* CONTENT */}
+      <section className="w-full md:max-w-[80vw] flex flex-col mx-auto px-5 lg:px-40 py-20 overflow-y-scroll scrollbar-hide">
+        <motion.div
+          className="flex justify-end text-4xl md:text-6xl font-bold  z-[7] mt-[30vh] mb-5 md:mb-10"
+          initial="hidden"
+          animate="visible"
+          viewport={{ once: true }}
+          variants={container}
+        >
+          {videos.map((letter, i) => (
+            <motion.div key={i} variants={item}>
+              {letter}
+            </motion.div>
+          ))}
+        </motion.div>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          viewport={{ once: true }}
+          variants={item}
+          transition={{ delay: 1.8, staggerChildren: 0.1, delayChildren: .5 }}
+        >
+          {videoData.map((video, i) => (
+            <motion.div key={video.i} variants={item}>
+              <VideoWindow video={video} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
+      <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
     </div>
   );
 };

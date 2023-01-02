@@ -31,7 +31,7 @@ const Navbar = () => {
     visible: {
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.4,
+        delayChildren: 0.2,
       },
     },
   };
@@ -56,41 +56,41 @@ const Navbar = () => {
             variants={menuListAnimation}
           >
             <motion.div
-              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              transition={{ duration: 0.3, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/">{lang.menu_home}</Link>
             </motion.div>
 
             <motion.div
-              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              transition={{ duration: 0.3, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/about">{lang.menu_about}</Link>
             </motion.div>
 
             <motion.div
-              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              transition={{ duration: 0.3, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/music">{lang.menu_media_music}</Link>
             </motion.div>
             <motion.div
-              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              transition={{ duration: 0.3, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/video">{lang.menu_media_video}</Link>
             </motion.div>
 
             <motion.div
-              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              transition={{ duration: 0.3, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/gallery">{lang.menu_media_gallery}</Link>
             </motion.div>
 
             <motion.div
-              transition={{ duration: 0.6, ease: [0.435, 0.135, 0.09, 0.83] }}
+              transition={{ duration: 0.3, ease: [0.435, 0.135, 0.09, 0.83] }}
               variants={projectVariant}
             >
               <Link to="/contact">{lang.menu_contact}</Link>
@@ -113,7 +113,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.3 }}
+            transition={{ ease: "easeInOut", duration: 0.15 }}
           >
             {/* MENU ITEMS */}
             <AnimatePresence>
@@ -126,7 +126,7 @@ const Navbar = () => {
               >
                 <motion.div
                   transition={{
-                    duration: 0.6,
+                    duration: 0.3,
                     ease: [0.435, 0.135, 0.09, 0.83],
                   }}
                   variants={projectVariant}
@@ -137,7 +137,7 @@ const Navbar = () => {
                 </motion.div>
                 <motion.div
                   transition={{
-                    duration: 0.6,
+                    duration: 0.3,
                     ease: [0.435, 0.135, 0.09, 0.83],
                   }}
                   variants={projectVariant}
@@ -148,7 +148,7 @@ const Navbar = () => {
                 </motion.div>
                 <motion.div
                   transition={{
-                    duration: 0.6,
+                    duration: 0.3,
                     ease: [0.435, 0.135, 0.09, 0.83],
                   }}
                   variants={projectVariant}
@@ -159,7 +159,7 @@ const Navbar = () => {
                 </motion.div>
                 <motion.div
                   transition={{
-                    duration: 0.6,
+                    duration: 0.3,
                     ease: [0.435, 0.135, 0.09, 0.83],
                   }}
                   variants={projectVariant}
@@ -171,7 +171,7 @@ const Navbar = () => {
 
                 <motion.div
                   transition={{
-                    duration: 0.6,
+                    duration: 0.3,
                     ease: [0.435, 0.135, 0.09, 0.83],
                   }}
                   variants={projectVariant}
@@ -182,7 +182,7 @@ const Navbar = () => {
                 </motion.div>
                 <motion.div
                   transition={{
-                    duration: 0.6,
+                    duration: 0.3,
                     ease: [0.435, 0.135, 0.09, 0.83],
                   }}
                   variants={projectVariant}

@@ -10,7 +10,7 @@ const Thumbnail = ({ image, setShowModal }) => {
 
   return (
     <div
-      className="w-full cursor-pointer transition duration-200 ease-out md:hover:scale-[1.02] z-10"
+      className="w-full transition duration-200 ease-out md:hover:scale-[1.02] cursor-pointer z-10"
       onClick={() => {
         setCurrentImage(image);
         setShowModal(true);

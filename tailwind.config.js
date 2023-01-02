@@ -15,8 +15,9 @@ module.exports = {
         "opaque-black": "rgba(0,0,0,0.35)",
       },
       fontFamily: {
-        monteCarlo: ["MonteCarlo"],
-        Quicksand: ["Quicksand", "sans-serif"],
+        'monteCarlo': ["MonteCarlo"],
+        'Quicksand': ["Quicksand", "sans-serif"],
+        'Montserrat': ["Montserrat"],
       },
       backgroundImage: {
         "gradient-layout":

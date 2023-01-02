@@ -10,8 +10,6 @@ import MusicPlayer from "../components//MusicPlayer";
 const music = () => {
   return (
     <div className="pages relative page h-screen grid place-items-center">
-      <div className="fixed left-0 top-0 w-full h-full  bg-gradient-layout z-[1]"></div>
-      <div className="fixed left-0 top-0 w-full h-full  bg-gradient-layout-lighter z-[3]"></div>
       <StaticImage
         src="../assets/images/Aneta/04.jpg"
         alt="main room"
@@ -23,8 +21,10 @@ const music = () => {
         className="pages fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-[5]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.75 }}
-        transition={{ ease: "easeInOut", delay: 0.5, duration: 1 }}
+        transition={{ ease: "easeInOut", delay: 0.3, duration: .8 }}
       ></motion.div>
+      <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
+      <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
     </div>
   );
 };
