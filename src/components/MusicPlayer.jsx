@@ -104,13 +104,14 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className={`w-[280px] h-auto md:w-[500px] z-[5] `}>
+    <div className={`w-[280px] h-auto md:w-[500px] z-[6] `}>
       <div className="relative flex flex-col w-full bg-black/80  md:pt-5 lg:pt-10 px-3 rounded-md">
 
         {/* SONG TITLE */}
         <h1 className="absolute top-0 left-0 w-full h-full grid place-items-center text-2xl xl:text-4xl font-black -translate-y-5 xl:translate-y-0">
           {musicData[currentIndex].title}
         </h1>
+        
 
         {/* AUDIO AND AUDIOSPECTRUM */}
         <div className="w-full h-auto grid place-items-center">
@@ -164,7 +165,7 @@ const MusicPlayer = () => {
         <input
           type="range"
           value={audioProgress}
-          className=" w-full z-40 bg-yellow"
+          className=" w-full z-40"
           onChange={handleMusicProgressBar}
         />
       </div>
@@ -173,11 +174,11 @@ const MusicPlayer = () => {
       <ul className="w-full h-auto flex flex-col gap-1 xl:gap-3 mt-3">
         {musicData.map((song, index) => (
           <li
-            className="bg-black/80 px-8 py-3 sm:py-2 xl:py-5 text-sm xl:text-base rounded-md cursor-pointer"
+            className={`bg-black/80 px-8 py-3 sm:py-2 xl:py-5 text-sm xl:text-base rounded-md cursor-pointer ${currentSong === song ? 'border-[#af2622]/60 border-[1px]' : ''}`}
             key={song.title}
             onClick={() => setSongFromList(song, index)}
           >
-            {song.title}
+            {song.title} -{!isAboveMediumScreens && <br/>} {song.author}
           </li>
         ))}
       </ul>
