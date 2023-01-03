@@ -13,7 +13,7 @@ const music = () => {
       <StaticImage
         src="../assets/images/Aneta/04.jpg"
         alt="main room"
-        className="h-full fixed left-0 top-0 z-[2]"
+        className="h-screen fixed left-0 top-0 z-[2]"
         objectPosition=" 65% 0"
       />
       <MusicPlayer />
