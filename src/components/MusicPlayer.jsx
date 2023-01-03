@@ -101,7 +101,7 @@ const MusicPlayer = () => {
 
   return (
     <motion.div
-      className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2- w-[280px] h-auto md:w-[500px] z-[6] `}
+      className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-auto md:w-[500px] z-[6] `}
       initial={{ x: 20, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 0.8, duration: 0.5 }}
