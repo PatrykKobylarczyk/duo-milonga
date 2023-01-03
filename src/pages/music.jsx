@@ -9,7 +9,7 @@ import MusicPlayer from "../components//MusicPlayer";
 
 const music = () => {
   return (
-    <div className="pages relative page h-screen">
+    <div className="pages relative page h-screen grid place-items-center">
       <StaticImage
         src="../assets/images/Aneta/04.jpg"
         alt="main room"
