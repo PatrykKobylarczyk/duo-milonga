@@ -101,7 +101,7 @@ const MusicPlayer = () => {
 
   return (
     <motion.div
-      className={`fixed w-[280px] h-auto md:w-[500px] z-[6] `}
+      className={`fixed top-1/2 left-1/2 -translate-1/2 w-[280px] h-auto md:w-[500px] z-[6] `}
       initial={{ x: 20, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 0.8, duration: 0.5 }}
@@ -182,8 +182,8 @@ const MusicPlayer = () => {
       >
         {musicData.map((song, index) => (
           <motion.li
-            className={`bg-black/80 px-8 py-3 sm:py-2 xl:py-5 text-sm xl:text-base rounded-md cursor-pointer ${
-              currentSong === song ? "border-[#af2622]/60 border-[1px]" : ""
+            className={`bg-black/80 px-8 py-3 sm:py-2 xl:py-5 text-sm xl:text-base rounded-md cursor-pointer border-[1px] ${
+              currentSong === song ? "border-[#af2622]/60 " : "border-black/80"
             }`}
             key={song.title}
             onClick={() => setSongFromList(song, index)}
