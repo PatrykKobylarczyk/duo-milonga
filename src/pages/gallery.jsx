@@ -53,7 +53,7 @@ const Gallery = () => {
       </div>
 
       {/* CONTENT */}
-      <section className="max-w-[80vw] flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19]">
+      <section className="w-full md:max-w-[80vw] flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19] overflow-y-scroll scrollbar-hide">
         <motion.div
           className="flex justify-end text-4xl md:text-6xl font-bold z-[7] mt-[30vh] mb-10"
           initial="hidden"
@@ -62,10 +62,7 @@ const Gallery = () => {
           variants={container}
         >
           {photos.map((letter, i) => (
-            <motion.div
-              key={i}
-              variants={item}
-            >
+            <motion.div key={i} variants={item}>
               {letter}
             </motion.div>
           ))}
