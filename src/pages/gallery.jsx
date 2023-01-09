@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
-
+import { graphql } from "gatsby";
 //LIBS'
 import { motion } from "framer-motion";
 
@@ -11,8 +11,9 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import GalleryRow from "../components/GalleryRow";
 import MuiModal from "@mui/material/Modal";
 import ImageWindow from "../components/ImageWindow";
+import Image from "../components/Image";
 
-const Gallery = () => {
+const Gallery = ({ data }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [showModal, setShowModal] = useState(false);
 
@@ -74,7 +75,7 @@ const Gallery = () => {
           variants={item}
           transition={{ delay: 1.8, staggerChildren: 0.1, delayChildren: 0.5 }}
         >
-          <GalleryRow setShowModal={setShowModal} />
+          <GalleryRow setShowModal={setShowModal} data={data}/>
         </motion.div>
         <MuiModal
           open={showModal}
@@ -88,5 +89,30 @@ const Gallery = () => {
     </div>
   );
 };
+
+export const query = graphql`
+  {
+    allFile(
+      filter: {
+        extension: { regex: "/(jpg)/" }
+        name: { nin: ["hqdefault", "tn1"] }
+      }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            gatsbyImageData(
+              blurredOptions: { width: 200 }
+              placeholder: BLURRED
+              transformOptions: { cropFocus: CENTER }
+             
+            )
+          }
+          sourceInstanceName
+        }
+      }
+    }
+  }
+`;
 
 export default Gallery;

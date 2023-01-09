@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { useRecoilState } from "recoil";
 import { modalState, imageState } from "../atoms/atom";
 
@@ -16,11 +16,10 @@ const Thumbnail = ({ image, setShowModal }) => {
         setShowModal(true);
       }}
     >
-      <StaticImage
-        src={`../assets/images/Duo/02.jpg`}
-        alt=''
+      <GatsbyImage
+        image={image}
+        alt='Duo milonga'
         className="object-cover"
-        layout="constrained"
       />
     </div>
   );
