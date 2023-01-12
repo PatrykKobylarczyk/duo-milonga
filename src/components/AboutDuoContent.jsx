@@ -1,7 +1,6 @@
 import React from "react";
 
-const AboutDuoContent = ({lang}) => {
-
+const AboutDuoContent = ({ lang }) => {
   return (
     <>
       <p className="mt-12">{lang.about_description_paragraph2}</p>

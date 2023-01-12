@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS'
 import { motion } from "framer-motion";
+
+//COMPONENTS
+import AboutDuoContent from "../components/AboutDuoContent";
+import AboutAnetaContent from "../components/AboutAnetaContent";
+import AboutKonradContent from "../components/AboutKonradContent";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -14,9 +19,6 @@ import { languageState } from "../atoms/atom";
 // DATA
 import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
-import AboutDuoContent from "../components/AboutDuoContent";
-import AboutAnetaContent from "../components/aboutAnetaContent";
-import AboutKonradContent from "../components/aboutKonradContent";
 
 const About = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -74,9 +76,9 @@ const About = () => {
           showMoreDuo && <AboutDuoContent lang={lang} />
         )}
         {!isAboveMediumScreens && (
-          <p className="mt-5" onClick={() => handleShowMore("duo")}>
+          <button className="mt-5" onClick={() => handleShowMore("duo")}>
             {showMoreDuo ? lang.about_less : lang.about_more}
-          </p>
+          </button>
         )}
 
         {/* Aneta */}
@@ -99,9 +101,9 @@ const About = () => {
             showMoreAneta && <AboutAnetaContent lang={lang} />
           )}
           {!isAboveMediumScreens && (
-            <p className="mt-5" onClick={() => handleShowMore("aneta")}>
+            <button className="mt-5" onClick={() => handleShowMore("aneta")}>
               {showMoreAneta ? lang.about_less : lang.about_more}
-            </p>
+            </button>
           )}
         </div>
 
@@ -132,9 +134,9 @@ const About = () => {
             showMoreKonrad && <AboutKonradContent lang={lang} />
           )}
           {!isAboveMediumScreens && (
-            <p className="mt-5" onClick={() => handleShowMore("konrad")}>
+            <button className="mt-5" onClick={() => handleShowMore("konrad")}>
               {showMoreKonrad ? lang.about_less : lang.about_more}
-            </p>
+            </button>
           )}
         </div>
       </section>
