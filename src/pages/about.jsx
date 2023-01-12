@@ -75,7 +75,7 @@ const About = () => {
         )}
         {!isAboveMediumScreens && (
           <p className="mt-5" onClick={() => handleShowMore("duo")}>
-            {showMoreDuo ? "mniej..." : "więcej..."}
+            {showMoreDuo ? lang.about_less : lang.about_more}
           </p>
         )}
 
@@ -100,7 +100,7 @@ const About = () => {
           )}
           {!isAboveMediumScreens && (
             <p className="mt-5" onClick={() => handleShowMore("aneta")}>
-              {showMoreAneta ? "mniej..." : "więcej..."}
+              {showMoreAneta ? lang.about_less : lang.about_more}
             </p>
           )}
         </div>
@@ -133,7 +133,7 @@ const About = () => {
           )}
           {!isAboveMediumScreens && (
             <p className="mt-5" onClick={() => handleShowMore("konrad")}>
-              {showMoreKonrad ? "mniej..." : "więcej..."}
+              {showMoreKonrad ? lang.about_less : lang.about_more}
             </p>
           )}
         </div>

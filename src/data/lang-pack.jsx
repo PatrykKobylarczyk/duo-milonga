@@ -1,5 +1,6 @@
 export const lang_EN = {
   language: "EN",
+
   menu_home: "Home",
   menu_about: "About",
   menu_media: "Media",
@@ -82,7 +83,9 @@ export const lang_EN = {
     "honorable mention in the 3rd International Music Competition named after Michał Spisak in Dąbrowa Górnicza, 2009;",
   ],
   about_konrad_paragraph4:
-    'In 1998, he received the 2nd degree Award of the Mayor of Starachowice. In 2000, 2006 and 2008 he was awarded a scholarship by the Ministry of Culture and National Heritage, and, since 1998, he has been awarded by the National Children&#39;s Fund. In 2007, he won the 4th edition of the &quot;Young Poland&quot; scholarship program of the Ministry of Culture and National Heritage, and in 2008 and 2011, he received a scholarship from the Marshal of the Łódź Voivodeship. He often performs in concerts in Łódź and the Łódź region, as well as in other cities in Poland and around the world. Currently, he runs accordion classes at the State Primary Music School and the Secondary Music School in Zgierz, with many of his pupils enjoying success at national and international music competitions.',
+    "In 1998, he received the 2nd degree Award of the Mayor of Starachowice. In 2000, 2006 and 2008 he was awarded a scholarship by the Ministry of Culture and National Heritage, and, since 1998, he has been awarded by the National Children&#39;s Fund. In 2007, he won the 4th edition of the &quot;Young Poland&quot; scholarship program of the Ministry of Culture and National Heritage, and in 2008 and 2011, he received a scholarship from the Marshal of the Łódź Voivodeship. He often performs in concerts in Łódź and the Łódź region, as well as in other cities in Poland and around the world. Currently, he runs accordion classes at the State Primary Music School and the Secondary Music School in Zgierz, with many of his pupils enjoying success at national and international music competitions.",
+  about_more: "more...",
+  about_less: "less...",
 };
 
 export const lang_PL = {
@@ -170,4 +173,6 @@ export const lang_PL = {
   ],
   about_konrad_paragraph4:
     "W roku 1998 otrzymał Nagrodę II st. Prezydenta Miasta Starachowic. W 2000, 2006 i 2008 r. był stypendystą Ministra Kultury i Dziedzictwa Narodowego, a od 1998 r. jest podopiecznym Krajowego Funduszu na rzecz Dzieci. W roku 2007 został laureatem IV edycji programu stypendialnego Ministra Kultury i Dziedzictwa Narodowego &quot;Młoda Polska&quot;, a w 2008 oraz 2011 roku stypendystą Marszałka Województwa Łódzkiego. Często koncertuje w Łodzi i regionie łódzkim, a także innych miastach w Polsce i na świecie. Obecnie prowadzi klasy akordeonu w Państwowej Szkole Muzycznej I stopnia oraz Społecznej Szkole Muzycznej II stopnia w Zgierzu, a jego podopieczni odnoszą sukcesy na ogólnopolskich i międzynarodowych konkursach muzycznych.",
+  about_more: "więcej...",
+  about_less: "mniej...",
 };
