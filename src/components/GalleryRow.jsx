@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 //COMPONENTS
 import Thumbnail from "./Thumbnail";
 
-
-const GalleryRow = ({ setShowModal, data }) => {
+const GalleryRow = ({ setShowModal, data, setCurrentImage, handleImageModal }) => {
   const item = {
     hidden: { x: 20, opacity: 0 },
     visible: { x: 0, opacity: 1 },
@@ -20,6 +19,7 @@ const GalleryRow = ({ setShowModal, data }) => {
           <Thumbnail
             image={image.node.childImageSharp.gatsbyImageData}
             setShowModal={setShowModal}
+            onClick={() => handleImageModal(image.node.childImageSharp.gatsbyImageData)}
           />
         </motion.div>
       ))}

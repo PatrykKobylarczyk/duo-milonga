@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 //LIBS'
@@ -11,11 +11,14 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import GalleryRow from "../components/GalleryRow";
 import MuiModal from "@mui/material/Modal";
 import ImageWindow from "../components/ImageWindow";
-import Image from "../components/Image";
+import GalleryModal from "../components/GalleryModal";
 
 const Gallery = ({ data }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [showModal, setShowModal] = useState(false);
+  const [currentImage, setCurrentImage] = useState(
+    data.allFile.edges[0].node.childImageSharp.gatsbyImageData
+  );
 
   // Animation
   const photos = ["P", "h", "o", "t", "o", "s"];
@@ -34,6 +37,15 @@ const Gallery = ({ data }) => {
     hidden: { x: 50, opacity: 0 },
     visible: { x: 0, opacity: 1 },
   };
+
+  const handleImageModal = (src) => {
+    setCurrentImage(src);
+    setShowModal(true);
+  };
+
+  useEffect(() => {
+    console.log(currentImage);
+  }, [currentImage]);
 
   return (
     <div className="page h-screen relative">
@@ -75,14 +87,24 @@ const Gallery = ({ data }) => {
           variants={item}
           transition={{ delay: 1.8, staggerChildren: 0.1, delayChildren: 0.5 }}
         >
-          <GalleryRow setShowModal={setShowModal} data={data}/>
+          <GalleryRow
+            setShowModal={setShowModal}
+            data={data}
+            setCurrentImage={setCurrentImage}
+            handleImageModal={handleImageModal}
+          />
         </motion.div>
-        <MuiModal
+        {/* <MuiModal
           open={showModal}
           className="h-screen w-full top-0 left-0 right-0 z-50 bg-black/60 grid place-items-center"
         >
-          <ImageWindow />
-        </MuiModal>
+          <ImageWindow currentImage={currentImage} />
+        </MuiModal> */}
+        {showModal && (
+          <GalleryModal setShowModal={setShowModal}>
+            <ImageWindow currentImage={currentImage} />
+          </GalleryModal>
+        )}
         <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
         <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
       </section>
@@ -105,7 +127,6 @@ export const query = graphql`
               blurredOptions: { width: 200 }
               placeholder: BLURRED
               transformOptions: { cropFocus: CENTER }
-             
             )
           }
           sourceInstanceName

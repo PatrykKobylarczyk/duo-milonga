@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS'
@@ -18,16 +18,18 @@ import { lang_PL } from "../data/lang-pack";
 const About = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [language] = useRecoilState(languageState);
-  const lang = language === "PL" ? lang_EN : lang_PL;
   const [showMoreDuo, setShowMoreDuo] = useState(false);
   const [showMoreAneta, setShowMoreAneta] = useState(false);
   const [showMoreKonrad, setShowMoreKonrad] = useState(false);
-  const [showMoreContent, seShowMoreContent] = useState(null);
+  const [showMoreContent, setShowMoreContent] = useState(null);
+
+  const lang = language === "PL" ? lang_EN : lang_PL;;
+
 
   const handleShowMore = (name) => {
     switch (name) {
       case "duo":
-        seShowMoreContent(
+        setShowMoreContent(
           <>
             <p className="mt-12">{lang.about_description_paragraph2}</p>
             <ul className="mt-3">
@@ -44,10 +46,10 @@ const About = () => {
           </>
         );
         setShowMoreDuo((prev) => !prev);
-        console.log("duo");
+        console.log(lang);
         break;
       case "aneta":
-        seShowMoreContent(
+        setShowMoreContent(
           <>
             <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph2}</p>
             <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph3}</p>
@@ -57,10 +59,10 @@ const About = () => {
           </>
         );
         setShowMoreAneta((prev) => !prev);
-        console.log("aneta");
+        console.log(lang);
         break;
       case "konrad":
-        seShowMoreContent(
+        setShowMoreContent(
           <>
             <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph2}</p>
             <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph3}</p>
@@ -73,7 +75,7 @@ const About = () => {
           </>
         );
         setShowMoreKonrad((prev) => !prev);
-        console.log("konrad");
+        console.log(lang);
         break;
       default:
         console.log("Opps");
@@ -104,9 +106,7 @@ const About = () => {
         <h1 className="text-3xl lg:text-4xl font-bold mb-12">
           {lang.about_title}
         </h1>
-        <p>
-          {lang.about_description_paragraph1}
-        </p>
+        <p>{lang.about_description_paragraph1}</p>
         {isAboveMediumScreens ? (
           <>
             <p className="mt-12">{lang.about_description_paragraph2}</p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 // LIBS
 import { motion } from "framer-motion";
@@ -9,6 +9,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
+
   return (
     <>
       <Navbar />
