@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS'
@@ -14,6 +14,9 @@ import { languageState } from "../atoms/atom";
 // DATA
 import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
+import AboutDuoContent from "../components/AboutDuoContent";
+import AboutAnetaContent from "../components/aboutAnetaContent";
+import AboutKonradContent from "../components/aboutKonradContent";
 
 const About = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -21,61 +24,19 @@ const About = () => {
   const [showMoreDuo, setShowMoreDuo] = useState(false);
   const [showMoreAneta, setShowMoreAneta] = useState(false);
   const [showMoreKonrad, setShowMoreKonrad] = useState(false);
-  const [showMoreContent, setShowMoreContent] = useState(null);
 
-  const lang = language === "PL" ? lang_EN : lang_PL;;
-
+  const lang = language === "PL" ? lang_EN : lang_PL;
 
   const handleShowMore = (name) => {
     switch (name) {
       case "duo":
-        setShowMoreContent(
-          <>
-            <p className="mt-12">{lang.about_description_paragraph2}</p>
-            <ul className="mt-3">
-              {lang.about_description_paragraph_festivals.map((el, i) => (
-                <li key={i} className="">
-                  - {el}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-12">{lang.about_description_paragraph3}</p>
-            <p className="mt-12">{lang.about_description_paragraph4}</p>
-            <p className="mt-12">{lang.about_description_paragraph5}</p>
-            <p className="mt-12">{lang.about_description_paragraph6}</p>
-          </>
-        );
         setShowMoreDuo((prev) => !prev);
-        console.log(lang);
         break;
       case "aneta":
-        setShowMoreContent(
-          <>
-            <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph2}</p>
-            <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph3}</p>
-            <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph4}</p>
-            <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph5}</p>
-            <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph6}</p>
-          </>
-        );
         setShowMoreAneta((prev) => !prev);
-        console.log(lang);
         break;
       case "konrad":
-        setShowMoreContent(
-          <>
-            <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph2}</p>
-            <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph3}</p>
-            <ul className="mt-3">
-              {lang.about_konrad_festivals.map((el, i) => (
-                <li key={i}>- {el}</li>
-              ))}
-            </ul>
-            <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph4}</p>
-          </>
-        );
         setShowMoreKonrad((prev) => !prev);
-        console.log(lang);
         break;
       default:
         console.log("Opps");
@@ -108,22 +69,9 @@ const About = () => {
         </h1>
         <p>{lang.about_description_paragraph1}</p>
         {isAboveMediumScreens ? (
-          <>
-            <p className="mt-12">{lang.about_description_paragraph2}</p>
-            <ul className="mt-3">
-              {lang.about_description_paragraph_festivals.map((el, i) => (
-                <li key={i} className="">
-                  - {el}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-12">{lang.about_description_paragraph3}</p>
-            <p className="mt-12">{lang.about_description_paragraph4}</p>
-            <p className="mt-12">{lang.about_description_paragraph5}</p>
-            <p className="mt-12">{lang.about_description_paragraph6}</p>
-          </>
+          <AboutDuoContent lang={lang} />
         ) : (
-          showMoreDuo && showMoreContent
+          showMoreDuo && <AboutDuoContent lang={lang} />
         )}
         {!isAboveMediumScreens && (
           <p className="mt-5" onClick={() => handleShowMore("duo")}>
@@ -146,15 +94,9 @@ const About = () => {
           </div>
           <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph1}</p>
           {isAboveMediumScreens ? (
-            <>
-              <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph2}</p>
-              <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph3}</p>
-              <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph4}</p>
-              <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph5}</p>
-              <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph6}</p>
-            </>
+            <AboutAnetaContent lang={lang} />
           ) : (
-            showMoreAneta && showMoreContent
+            showMoreAneta && <AboutAnetaContent lang={lang} />
           )}
           {!isAboveMediumScreens && (
             <p className="mt-5" onClick={() => handleShowMore("aneta")}>
@@ -185,18 +127,9 @@ const About = () => {
           </div>
           <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph1}</p>
           {isAboveMediumScreens ? (
-            <>
-              <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph2}</p>
-              <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph3}</p>
-              <ul className="mt-3">
-                {lang.about_konrad_festivals.map((el, i) => (
-                  <li key={i}>- {el}</li>
-                ))}
-              </ul>
-              <p className="mt-10 lg:mt-10">{lang.about_konrad_paragraph4}</p>
-            </>
+            <AboutKonradContent lang={lang} />
           ) : (
-            showMoreKonrad && showMoreContent
+            showMoreKonrad && <AboutKonradContent lang={lang} />
           )}
           {!isAboveMediumScreens && (
             <p className="mt-5" onClick={() => handleShowMore("konrad")}>
