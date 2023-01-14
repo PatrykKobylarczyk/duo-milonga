@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-5">
-          <Button content={language} handleClick={changeLanguage} />
+          <Button content={language} handleClick={changeLanguage} styles={'text-xs'}/>
           <audio ref={audioRef} id="audio-element" src={audio} />
 
           {/* MUSIC BUTTON */}
@@ -55,6 +55,7 @@ const Footer = () => {
             content={
               <MusicButtonAudioSpectrum type="footer" isPlaying={isPlaying} />
             }
+            styles={'text-xs'}
           />
         </div>
       </div>

@@ -152,7 +152,9 @@ const MusicPlayer = () => {
 
             <Button
               handleClick={() => setIsPlaying((prev) => !prev)}
-              content={<MusicButtonAudioSpectrum isPlaying={isPlaying} />}
+              content={<MusicButtonAudioSpectrum isPlaying={isPlaying} 
+              styles={'text-xs'}
+              />}
             />
             <button className="button w-10 h-10 " onClick={nextSong}>
               <RxTrackNext size={"12px"} />

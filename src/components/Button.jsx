@@ -3,7 +3,7 @@ import React from "react";
 const Button = ({ content, handleClick, styles }) => {
   return (
     <button
-      className={`button text-xs ${styles}`}
+      className={`button ${styles}`}
       
       onClick={handleClick}
     >

@@ -96,8 +96,15 @@ const Gallery = ({ data }) => {
           />
         </motion.div>
 
-        {showModal && <ImageCarousel currentImage={currentImage} setShowModal={setShowModal}/>}
-        
+        {showModal && (
+          <ImageCarousel
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+            setShowModal={setShowModal}
+            data={data}
+          />
+        )}
+
         {/* {showModal && (
           <ModalGalleryCarousell
             data={data}
