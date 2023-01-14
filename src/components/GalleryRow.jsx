@@ -6,20 +6,25 @@ import { motion } from "framer-motion";
 //COMPONENTS
 import Thumbnail from "./Thumbnail";
 
-const GalleryRow = ({ setShowModal, data, setCurrentImage, handleImageModal }) => {
+const GalleryRow = ({ setShowModal, data, handleImageModal }) => {
   const item = {
     hidden: { x: 20, opacity: 0 },
     visible: { x: 0, opacity: 1 },
   };
 
   return (
-    <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 gap-8 overflow-y-scroll scrollbar-hide ">
+    <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 sm:grid-flow-row-dense gap-8 overflow-y-scroll scrollbar-hide ">
       {data.allFile.edges.map((image, i) => (
-        <motion.div key={i} variants={item}>
+        <motion.div
+          key={i}
+          variants={item}
+          onClick={() =>
+            handleImageModal(image.node.childImageSharp.gatsbyImageData, i)
+          }
+        >
           <Thumbnail
             image={image.node.childImageSharp.gatsbyImageData}
             setShowModal={setShowModal}
-            onClick={() => handleImageModal(image.node.childImageSharp.gatsbyImageData)}
           />
         </motion.div>
       ))}

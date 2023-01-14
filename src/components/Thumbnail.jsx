@@ -18,7 +18,7 @@ const Thumbnail = ({ image, setShowModal }) => {
       <GatsbyImage
         image={image}
         alt='Duo milonga'
-        className="object-cover"
+        className="object-cover h-full"
       />
     </div>
   );

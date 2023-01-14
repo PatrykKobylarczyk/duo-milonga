@@ -9,15 +9,16 @@ import useMediaQuery from "../hooks/useMediaQuery";
 
 //COMPONENTS
 import GalleryRow from "../components/GalleryRow";
-import MuiModal from "@mui/material/Modal";
-import ImageWindow from "../components/ImageWindow";
-import GalleryModal from "../components/GalleryModal";
+import ModalGallery from "../components/ModalGallery";
+import ModalGalleryCarousell from "../components/ModalGalleryCarousell";
+import ImageCarousel from "../components/ImageCarousel";
 
 const Gallery = ({ data }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [showModal, setShowModal] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [currentImage, setCurrentImage] = useState(
-    data.allFile.edges[0].node.childImageSharp.gatsbyImageData
+    data.allFile.edges[currentIndex].node.childImageSharp.gatsbyImageData
   );
 
   // Animation
@@ -38,14 +39,11 @@ const Gallery = ({ data }) => {
     visible: { x: 0, opacity: 1 },
   };
 
-  const handleImageModal = (src) => {
+  const handleImageModal = (src, i) => {
+    setCurrentIndex(i);
     setCurrentImage(src);
     setShowModal(true);
   };
-
-  useEffect(() => {
-    console.log(currentImage);
-  }, [currentImage]);
 
   return (
     <div className="page h-screen relative">
@@ -66,7 +64,11 @@ const Gallery = ({ data }) => {
       </div>
 
       {/* CONTENT */}
-      <section className="w-full md:max-w-[80vw] flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19] overflow-y-scroll scrollbar-hide">
+      <section
+        className={`w-full md:max-w-[80vw] flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19] ${
+          showModal ? "overflow-hidden" : "overflow-y-scroll"
+        } scrollbar-hide`}
+      >
         <motion.div
           className="flex justify-end text-4xl md:text-6xl font-bold z-[7] mt-[30vh] mb-10"
           initial="hidden"
@@ -88,23 +90,24 @@ const Gallery = ({ data }) => {
           transition={{ delay: 1.8, staggerChildren: 0.1, delayChildren: 0.5 }}
         >
           <GalleryRow
-            setShowModal={setShowModal}
             data={data}
-            setCurrentImage={setCurrentImage}
             handleImageModal={handleImageModal}
+            setShowModal={setShowModal}
           />
         </motion.div>
-        {/* <MuiModal
-          open={showModal}
-          className="h-screen w-full top-0 left-0 right-0 z-50 bg-black/60 grid place-items-center"
-        >
-          <ImageWindow currentImage={currentImage} />
-        </MuiModal> */}
-        {showModal && (
-          <GalleryModal setShowModal={setShowModal}>
-            <ImageWindow currentImage={currentImage} />
-          </GalleryModal>
-        )}
+
+        {showModal && <ImageCarousel currentImage={currentImage} setShowModal={setShowModal}/>}
+        
+        {/* {showModal && (
+          <ModalGalleryCarousell
+            data={data}
+            currentIndex={currentIndex}
+            setShowModal={setShowModal}
+            showModal={showModal}
+          />
+        )} */}
+
+        {/* BLENDS */}
         <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
         <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
       </section>

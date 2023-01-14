@@ -20,30 +20,29 @@ import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
 
 const Contact = () => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [language] = useRecoilState(languageState);
   const [isContactForm, setIsContactForm] = useState(false);
   const lang = language === "PL" ? lang_EN : lang_PL;
 
   return (
     <div className="page pages relative h-screen flex flex-col justify-center overflow-hidden">
-      <div className="flex">
-         (
-          <motion.div
+      <div>
+        (
+        <motion.div
           className="pages fixed left-0 top-0 w-full h-screen bg-darker-gradient-bg z-[5]"
           initial={{ opacity: 0 }}
-          animate={{ opacity: .8 }}
+          animate={{ opacity: 0.8 }}
           transition={{ ease: "easeInOut", delay: 0.5, duration: 1 }}
         ></motion.div>
         )
         <StaticImage
           src="../assets/images/Duo/05.jpg"
           alt="main room"
-          className="h-screen left-0"
+          className="fixed top-0 left-0 h-screen"
           objectPosition="62% 0"
+          objectFit="cover"
         />
       </div>
-      {/* <div className="absolute left-0 top-0 w-full h-full bg-darker-gradient-bg "></div> */}
       <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center lg:gap-10 z-10">
         <div className="flex flex-col items-center lg:items-start lg:pl-40  lg:w-1/3 ">
           <div>
