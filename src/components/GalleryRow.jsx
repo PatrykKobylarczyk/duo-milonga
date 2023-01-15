@@ -13,7 +13,7 @@ const GalleryRow = ({ setShowModal, data, handleImageModal }) => {
   };
 
   return (
-    <div className="grid place-items-center grid-cols-3 gap-2 sm:gap-5 overflow-y-hidden">
+    <div className="grid place-items-center grid-cols-2 gap-2 sm:gap-5 overflow-y-hidden">
       {data.allFile.edges.map((image, i) => (
         <motion.div
           key={i}
