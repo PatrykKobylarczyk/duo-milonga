@@ -24,7 +24,7 @@ const ImageCarousel = ({
   };
 
   return (
-    <div className="pages fixed top-0 left-0 w-full h-screen grid place-items-center bg-black/90 z-[500]">
+    <div className="pages fixed top-0 left-0 w-full h-screen grid place-items-center bg-black/95 z-[500]">
       <div className="relative h-[80vh] sm:max-w-[90%] sm:h-[90vh] flex items-center gap-10">
         {isAboveMediumScreens && (
           <div className="absolute scale-75 top-0 right-0 z-[800] text-white text-sm opacity-40 hover:opacity-80 transition duration-200">

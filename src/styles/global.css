@@ -10,7 +10,7 @@
 
 @layer base {
   html {
-    @apply font-Montserrat scroll-smooth scrollbar-hide;
+    @apply font-Montserrat scrollbar-hide;
   }
 
   header {

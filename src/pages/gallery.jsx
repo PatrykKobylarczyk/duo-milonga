@@ -46,9 +46,9 @@ const Gallery = ({ data }) => {
   };
 
   return (
-    <div className="page h-screen relative">
+    <div className={`page h-screen relative ${showModal && 'overflow-hidden '}`}>
       {/* BACKGROUND  */}
-      <div className="w-full fixed overflow-hidden top-0 right-0">
+      <div className="w-full fixed  top-0 right-0">
         <StaticImage
           src="../assets/images/Konrad/02.jpg"
           alt="main room"
@@ -65,9 +65,7 @@ const Gallery = ({ data }) => {
 
       {/* CONTENT */}
       <section
-        className={`w-full flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19] ${
-          showModal ? "overflow-hidden" : "overflow-y-scroll"
-        } scrollbar-hide`}
+        className='w-full flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19]'
       >
         <motion.div
           className="flex justify-end text-4xl md:text-6xl font-bold z-[7] mt-[30vh] mb-10"
