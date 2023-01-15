@@ -65,7 +65,7 @@ const Gallery = ({ data }) => {
 
       {/* CONTENT */}
       <section
-        className={`w-full md:max-w-[80vw] flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19] ${
+        className={`w-full flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19] ${
           showModal ? "overflow-hidden" : "overflow-y-scroll"
         } scrollbar-hide`}
       >

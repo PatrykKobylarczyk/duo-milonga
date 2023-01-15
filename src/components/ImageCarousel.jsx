@@ -46,7 +46,7 @@ const ImageCarousel = ({
           </div>
         )}
 
-        <GatsbyImage
+        {/* <GatsbyImage
           image={
             data.allFile.edges[currentIndex].node.childImageSharp
               .gatsbyImageData
@@ -57,7 +57,7 @@ const ImageCarousel = ({
             objectFit: "contain",
             objectPosition: "50% 50%",
           }}
-        />
+        /> */}
 
         {isAboveMediumScreens && (
           <div className="text-white scale-75 opacity-40 hover:opacity-80 transition duration-200">
