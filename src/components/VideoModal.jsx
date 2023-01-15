@@ -13,7 +13,7 @@ const VideoModal = ({ setShowModal }) => {
         <Button content={<MdClose />} handleClick={() => setShowModal(false)} />
       </div>
 
-      <div className="w-full sm:w-[77vw] h-[90vh]">
+      <div className="w-full sm:w-[75vw] h-auto">
         <div className="relative pt-[56.25%] w-full h-full mx-auto">
           {/* From React-Player-Documentation - padding-top: 56.25% - Player ratio: 100 / (1280 / 720) */}
           <ReactPlayer

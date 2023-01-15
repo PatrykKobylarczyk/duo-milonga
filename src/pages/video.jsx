@@ -69,7 +69,7 @@ const Video = () => {
 
       {/* BLENDS */}
       <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
-      <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
+      <div className=" fixed left-0 bottom-0 w-full h-[10vh] bg-gradient-to-t from-black z-10"></div>
     </div>
   );
 };
