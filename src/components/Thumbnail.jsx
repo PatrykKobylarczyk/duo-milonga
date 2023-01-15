@@ -10,7 +10,7 @@ const Thumbnail = ({ image, setShowModal }) => {
 
   return (
     <div
-      className="w-full transition duration-200 ease-out md:hover:scale-[1.02] cursor-pointer z-10"
+      className="w-full h-32 xs:h-44 sm:h-60 md:h-80 lg:h-96  transition duration-200 ease-out md:hover:scale-[1.02] cursor-pointer z-10"
       onClick={() => {
         setShowModal(true);
       }}
@@ -18,7 +18,11 @@ const Thumbnail = ({ image, setShowModal }) => {
       <GatsbyImage
         image={image}
         alt='Duo milonga'
-        className="object-cover h-full"
+        className="h-full"
+        imgStyle={{
+          objectFit: "cover",
+          objectPosition: "50% 20%",
+        }}
       />
     </div>
   );
