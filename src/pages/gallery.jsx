@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 //LIBS'
@@ -9,8 +9,6 @@ import useMediaQuery from "../hooks/useMediaQuery";
 
 //COMPONENTS
 import GalleryRow from "../components/GalleryRow";
-import ModalGallery from "../components/ModalGallery";
-import ModalGalleryCarousell from "../components/ModalGalleryCarousell";
 import ImageCarousel from "../components/ImageCarousel";
 
 const Gallery = ({ data }) => {
@@ -21,7 +19,7 @@ const Gallery = ({ data }) => {
     data.allFile.edges[currentIndex].node.childImageSharp.gatsbyImageData
   );
 
-  // Animation
+  //Title Animation
   const photos = ["P", "h", "o", "t", "o", "s"];
   const container = {
     hidden: {},
@@ -46,7 +44,9 @@ const Gallery = ({ data }) => {
   };
 
   return (
-    <div className={`page h-screen relative ${showModal && 'overflow-hidden '}`}>
+    <div
+      className={`page h-screen relative ${showModal && "overflow-hidden "}`}
+    >
       {/* BACKGROUND  */}
       <div className="w-full fixed  top-0 right-0">
         <StaticImage
@@ -64,9 +64,7 @@ const Gallery = ({ data }) => {
       </div>
 
       {/* CONTENT */}
-      <section
-        className='w-full flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19]'
-      >
+      <section className="w-full flex flex-col mx-auto px-5 lg:px-40 py-20 z-[19]">
         <motion.div
           className="flex justify-end text-4xl md:text-6xl font-bold z-[7] mt-[30vh] mb-10"
           initial="hidden"
@@ -102,20 +100,11 @@ const Gallery = ({ data }) => {
             data={data}
           />
         )}
-
-        {/* {showModal && (
-          <ModalGalleryCarousell
-            data={data}
-            currentIndex={currentIndex}
-            setShowModal={setShowModal}
-            showModal={showModal}
-          />
-        )} */}
-
-        {/* BLENDS */}
-        <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
-        <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
       </section>
+
+      {/* BLENDS */}
+      <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
+      <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
     </div>
   );
 };

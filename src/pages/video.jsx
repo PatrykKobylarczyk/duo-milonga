@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS
 import { motion } from "framer-motion";
+import VideoRaw from "../components/VideoRaw";
+import VideoModal from "../components/VideoModal";
 
-// COMPONENTS
-import VideoWindow from "../components/VideoWindow";
+const Video = () => {
+  const [showModal, setShowModal] = useState(false);
 
-// DATA
-import { videoData } from "../data/videoData";
-
-const video = () => {
   // Animation
   const videos = ["V", "i", "d", "e", "o", "s"];
   const container = {
@@ -28,13 +26,9 @@ const video = () => {
     hidden: { x: 20, opacity: 0 },
     visible: { x: 0, opacity: 1 },
   };
-  const item2 = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
 
   return (
-    <div className="page relative h-screen">
+    <div className={`page h-screen relative ${showModal && "overflow-hidden "}`}>
       {/* BACKGROUN */}
       <div className="h-screen fixed left-0 top-0 -z-[2]">
         <StaticImage
@@ -66,26 +60,18 @@ const video = () => {
             </motion.div>
           ))}
         </motion.div>
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          viewport={{ once: true }}
-          variants={item}
-          transition={{ delay: 1.8, staggerChildren: 0.1, delayChildren: .5 }}
-        >
-          {videoData.map((video, i) => (
-            <motion.div key={video.i} variants={item}>
-              <VideoWindow video={video} />
-            </motion.div>
-          ))}
-        </motion.div>
+        <VideoRaw setShowModal={setShowModal} item={item}/>
+
+        {showModal && (
+          <VideoModal setShowModal={setShowModal}/>
+        )}
       </section>
 
+      {/* BLENDS */}
       <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
       <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
     </div>
   );
 };
 
-export default video;
+export default Video;
