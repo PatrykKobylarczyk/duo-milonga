@@ -48,7 +48,7 @@ const Video = () => {
       {/* CONTENT */}
       <section className="w-full sm:max-w-[70vw] flex flex-col mx-auto px-5 lg:px-10 py-20">
         <motion.div
-          className="flex justify-end text-4xl md:text-6xl font-bold  z-[7] mt-[35vh] sm:mt-[40vh] mb-5 md:mb-10"
+          className="flex justify-end text-4xl md:text-6xl font-bold z-[7] mt-[35vh] sm:mt-[40vh] mb-5 md:mb-10"
           initial="hidden"
           animate="visible"
           viewport={{ once: true }}

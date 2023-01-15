@@ -76,7 +76,7 @@ const ImageCarousel = ({
           <div className="text-white scale-75 opacity-60 hover:opacity-90 transition duration-200">
             <Button
               content={<MdWest />}
-              styles={`text-sm font-light text-white ${
+              styles={`text-lg font-light text-white ${
                 currentIndex === 0 && "opacity-0 pointer-events-none"
               }`}
               handleClick={() => handleGalleryNavigation("prev")}
@@ -84,14 +84,14 @@ const ImageCarousel = ({
           </div>
           <div className="scale-75 z-[800] text-white text-sm opacity-60 sm:opacity-40 hover:opacity-90 transition duration-200">
             <Button
-              content={<MdClose />}
+              content={<MdClose size={'17px'}/>}
               handleClick={() => setShowModal(false)}
             />
           </div>
           <div className="text-white scale-75 opacity-60 hover:opacity-90 transition duration-200">
             <Button
               content={<MdEast />}
-              styles={`text-sm font-light ${
+              styles={`text-lg font-light ${
                 currentIndex === 24 && "opacity-0 pointer-events-none"
               }`}
               handleClick={() => handleGalleryNavigation("next")}
