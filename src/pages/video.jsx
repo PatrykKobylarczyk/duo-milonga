@@ -14,7 +14,7 @@ const Video = () => {
   const [showModal, setShowModal] = useState(false);
   const [language] = useRecoilState(languageState);
 
-  // Animation
+  //Title Animation
   const videos_en = ["V", "i", "d", "e", "o", "s"];
   const videos_pl = ["F", "i", "l", "m", "y"];
 

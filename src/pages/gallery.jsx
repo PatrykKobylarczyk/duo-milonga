@@ -42,7 +42,7 @@ const lang = language === "PL" ? photos_en : photos_pl
     },
   };
   const item = {
-    hidden: { x: 50, opacity: 0 },
+    hidden: { x: 20, opacity: 0 },
     visible: { x: 0, opacity: 1 },
   };
 
