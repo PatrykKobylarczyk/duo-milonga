@@ -342,3 +342,12 @@ input[type="range"]:focus::-ms-fill-upper {
   background: #2497e3;
 }
 
+.slick-slide {
+  height: auto; 
+}
+.slick-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
