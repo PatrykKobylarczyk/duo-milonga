@@ -11,6 +11,10 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import GalleryRow from "../components/GalleryRow";
 import ImageCarousel from "../components/ImageCarousel";
 
+// STATE
+import { useRecoilState } from "recoil";
+import { languageState } from "../atoms/atom";
+
 const Gallery = ({ data }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [showModal, setShowModal] = useState(false);
@@ -18,9 +22,14 @@ const Gallery = ({ data }) => {
   const [currentImage, setCurrentImage] = useState(
     data.allFile.edges[currentIndex].node.childImageSharp.gatsbyImageData
   );
+  const [language] = useRecoilState(languageState);
 
   //Title Animation
-  const photos = ["P", "h", "o", "t", "o", "s"];
+  const photos_en = ["P", "h", "o", "t", "o", "s"];
+  const photos_pl = ["Z", "d", "j", "ę", "c", "i", "a"];
+
+const lang = language === "PL" ? photos_en : photos_pl
+
   const container = {
     hidden: {},
     visible: {
@@ -72,7 +81,7 @@ const Gallery = ({ data }) => {
           viewport={{ once: true }}
           variants={container}
         >
-          {photos.map((letter, i) => (
+          {lang.map((letter, i) => (
             <motion.div key={i} variants={item}>
               {letter}
             </motion.div>

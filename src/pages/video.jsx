@@ -6,11 +6,20 @@ import { motion } from "framer-motion";
 import VideoRaw from "../components/VideoRaw";
 import VideoModal from "../components/VideoModal";
 
+// STATE
+import { useRecoilState } from "recoil";
+import { languageState } from "../atoms/atom";
+
 const Video = () => {
   const [showModal, setShowModal] = useState(false);
+  const [language] = useRecoilState(languageState);
 
   // Animation
-  const videos = ["V", "i", "d", "e", "o", "s"];
+  const videos_en = ["V", "i", "d", "e", "o", "s"];
+  const videos_pl = ["F", "i", "l", "m", "y"];
+
+  const lang = language === "PL" ? videos_en : videos_pl
+
   const container = {
     hidden: {},
     visible: {
@@ -54,7 +63,7 @@ const Video = () => {
           viewport={{ once: true }}
           variants={container}
         >
-          {videos.map((letter, i) => (
+          {lang.map((letter, i) => (
             <motion.div key={i} variants={item}>
               {letter}
             </motion.div>
