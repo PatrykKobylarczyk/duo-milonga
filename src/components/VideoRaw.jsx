@@ -21,7 +21,7 @@ const VideoRaw = ({setShowModal, item}) => {
     >
       {videoData.map((video, i) => (
         <motion.div key={video.i} variants={item}>
-          <VideoWindow setShowModal={setShowModal} />
+          <VideoWindow setShowModal={setShowModal} title={video.title} thumbnail={video.thumbnail} id={i}/>
         </motion.div>
       ))}
     </motion.div>
