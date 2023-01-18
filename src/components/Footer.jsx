@@ -20,6 +20,7 @@ const Footer = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language, setLanguage] = useRecoilState(languageState);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [langIsReady, setLangIsReady] = useState(false);
 
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
@@ -33,6 +34,7 @@ const Footer = () => {
     }
   }, [isPlaying]);
 
+  // Set initial language state because from local storage returns null
   useEffect(() => {
     if (!language) {
       setLanguage("PL");
@@ -40,7 +42,7 @@ const Footer = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("PL", JSON.stringify(language));
+    localStorage.setItem("language", JSON.stringify(language));
   }, [language]);
 
   return (
