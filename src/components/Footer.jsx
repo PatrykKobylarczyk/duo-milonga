@@ -33,6 +33,10 @@ const Footer = () => {
     }
   }, [isPlaying]);
 
+  useEffect(() => {
+    localStorage.setItem('PL', JSON.stringify(language));
+  }, [language]);
+
   return (
     <footer>
       <div className="flex justify-between items-center">
