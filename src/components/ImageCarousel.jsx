@@ -11,12 +11,7 @@ import Slider from "react-slick";
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
 
-const ImageCarousel2 = ({
-  setShowModal,
-  currentIndex,
-  setCurrentIndex,
-  data,
-}) => {
+const ImageCarousel2 = ({ setShowModal, currentIndex, data }) => {
   const slider = React.useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
@@ -39,60 +34,63 @@ const ImageCarousel2 = ({
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    className: "w-full sm:w-[90vw] h-full",
+    className: "w-full sm:w-[83vw] h-full",
     initialSlide: currentIndex,
     arrows: false,
     adaptiveHeight: true,
   };
 
   return (
-    <div className="pages fixed top-0 left-0 w-full h-screen flex items-center justify-center ali gap-10 bg-black/95 z-[500]">
+    <div className="pages fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-black/95 z-[500]">
       {isAboveSmallScreens && (
-        <div className="absolute scale-75 top-0 right-0 z-[800] text-white text-sm opacity-40 hover:opacity-80 transition duration-200">
+        <div className="opacity-40 hover:opacity-90 transition duration-200">
           <Button
-            content={<MdClose />}
-            handleClick={() => setShowModal(false)}
+            content={<MdWest />}
+            handleClick={() => slider?.current?.slickPrev()}
           />
         </div>
-      )}
-      {isAboveSmallScreens && (
-        <Button
-          content={<MdWest />}
-          handleClick={() => slider?.current?.slickPrev()}
-        />
       )}
       <Slider ref={slider} {...settings}>
         {displayCarouselSection}
       </Slider>
-      {isAboveSmallScreens && (
-        <Button
-          content={<MdEast />}
-          handleClick={() => slider?.current?.slickNext()}
-        />
-      )}
+      <div className="relative h-full flex flex-col justify-center">
+        {isAboveSmallScreens && (
+          <div className="absolute top-10 right-0 z-[800] text-white text-lg opacity-40 hover:opacity-90 transition duration-200">
+            <Button
+              content={<MdClose />}
+              handleClick={() => setShowModal(false)}
+            />
+          </div>
+        )}
+        {isAboveSmallScreens && (
+          <div className="opacity-40 hover:opacity-90 transition duration-200">
+            <Button
+              content={<MdEast />}
+              handleClick={() => slider?.current?.slickNext()}
+            />
+          </div>
+        )}
+      </div>
+
       {!isAboveSmallScreens && (
-        <div className="absolute flex gap-2 bottom-2">
-          <div className="text-white scale-75 opacity-60 hover:opacity-90 transition duration-200">
+        <div className="absolute flex gap-2 bottom-2 text-white">
+          <div className="scale-75 opacity-60 hover:opacity-90 transition duration-200">
             <Button
               content={<MdWest />}
-              styles={`text-lg font-light text-white ${
-                currentIndex === 0 && "opacity-0 pointer-events-none"
-              }`}
+              styles={`text-lg font-light`}
               handleClick={() => slider?.current?.slickPrev()}
             />
           </div>
-          <div className="scale-75 z-[800] text-white text-sm opacity-60 sm:opacity-40 hover:opacity-90 transition duration-200">
+          <div className="scale-75 opacity-60 hover:opacity-90 transition duration-200">
             <Button
               content={<MdClose size={"17px"} />}
               handleClick={() => setShowModal(false)}
             />
           </div>
-          <div className="text-white scale-75 opacity-60 hover:opacity-90 transition duration-200">
+          <div className="scale-75 opacity-60 hover:opacity-90 transition duration-200">
             <Button
               content={<MdEast />}
-              styles={`text-lg font-light ${
-                currentIndex === 24 && "opacity-0 pointer-events-none"
-              }`}
+              styles={`text-lg font-light `}
               handleClick={() => slider?.current?.slickNext()}
             />
           </div>

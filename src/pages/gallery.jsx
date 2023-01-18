@@ -104,7 +104,6 @@ const lang = language === "PL" ? photos_en : photos_pl
         {showModal && (
           <ImageCarousel
             currentIndex={currentIndex}
-            setCurrentIndex={setCurrentIndex}
             setShowModal={setShowModal}
             data={data}
           />

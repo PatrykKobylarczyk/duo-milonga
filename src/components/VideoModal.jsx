@@ -10,20 +10,35 @@ import { currentVideoIndex } from "../atoms/atom";
 // DATA
 import { videoData } from "../data/videoData";
 
-const VideoModal = ({ setShowModal }) => {
+// HOOKS
+import useMediaQuery from "../hooks/useMediaQuery";
 
+const VideoModal = ({ setShowModal }) => {
   const [muted] = useState(false);
   const [videoIndex] = useRecoilState(currentVideoIndex);
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
   return (
     <div className="pages fixed top-0 left-0 w-full h-screen grid place-items-center bg-black/95 z-[500]">
-
-      <div className="absolute scale-75 bottom-[5%] left-1/2 -translate-x-1/2 sm:top-[5%] sm:right-[5%] sm:translate-x-0 z-[800] text-white text-lg opacity-60 hover:opacity-90 transition duration-200">
-        <Button content={<MdClose />} handleClick={() => setShowModal(false)} />
-      </div>
+      {!isAboveSmallScreens && (
+        <div className="absolute scale-75 bottom-2 left-1/2 -translate-x-1/2 z-[800] text-lg opacity-60 hover:opacity-90 transition duration-200">
+          <Button
+            content={<MdClose />}
+            handleClick={() => setShowModal(false)}
+          />
+        </div>
+      )}
+      {isAboveSmallScreens && (
+        <div className="absolute sm:flex sm:justify-end sm:scale-100 sm:top-10 sm:right-[5%] z-[800] text-lg opacity-60 hover:opacity-90 transition duration-200">
+          <Button
+            content={<MdClose />}
+            handleClick={() => setShowModal(false)}
+          />
+        </div>
+      )}
 
       <div className="w-full sm:w-[75vw] h-auto">
-        <div className="relative pt-[56.25%] w-full h-full mx-auto">
+        <div className="relative pt-[56.25%] w-full mx-auto">
           {/* From React-Player-Documentation - padding-top: 56.25% - Player ratio: 100 / (1280 / 720) */}
           <ReactPlayer
             url={videoData[videoIndex].url}
@@ -35,7 +50,7 @@ const VideoModal = ({ setShowModal }) => {
               left: "0",
             }}
             playing
-            playsinline
+            playsInline
             muted={muted}
             controls={true}
           />
