@@ -3,10 +3,7 @@ import { musicData } from "../data/musicData";
 
 export const languageState = atom({
   key: "language",
-  default:
-    typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("PL"))
-      : "PL",
+  default: typeof window !== "undefined" && JSON.parse(localStorage.getItem("PL")),
 });
 
 export const mediumClicked = atom({

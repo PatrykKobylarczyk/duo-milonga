@@ -34,7 +34,13 @@ const Footer = () => {
   }, [isPlaying]);
 
   useEffect(() => {
-    localStorage.setItem('PL', JSON.stringify(language));
+    if (!language) {
+      setLanguage("PL");
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("PL", JSON.stringify(language));
   }, [language]);
 
   return (
@@ -50,7 +56,11 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-5">
-          <Button content={language} handleClick={changeLanguage} styles={'text-xs'}/>
+          <Button
+            content={language}
+            handleClick={changeLanguage}
+            styles={"text-xs"}
+          />
           <audio ref={audioRef} id="audio-element" src={audio} />
 
           {/* MUSIC BUTTON */}
@@ -59,7 +69,7 @@ const Footer = () => {
             content={
               <MusicButtonAudioSpectrum type="footer" isPlaying={isPlaying} />
             }
-            styles={'text-xs'}
+            styles={"text-xs"}
           />
         </div>
       </div>
