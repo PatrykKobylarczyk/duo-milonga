@@ -18,7 +18,7 @@
   }
 
   footer {
-    @apply fixed bottom-0 left-0 w-full px-10 pb-3  text-white text-center z-50;
+    @apply fixed bottom-0 left-0 w-full px-10 pb-5 sm:pb-3  text-white text-center z-50;
   }
 
   main {

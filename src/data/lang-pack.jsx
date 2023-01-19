@@ -90,7 +90,7 @@ export const lang_EN = {
 
 export const lang_PL = {
   language: "PL",
-  menu_home: "Główna",
+  menu_home: "Home",
   menu_about: "O Nas",
   menu_media: "Media",
   menu_media_music: "Muzyka",

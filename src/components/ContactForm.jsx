@@ -27,7 +27,7 @@ const ContactForm = ({ language }) => {
     <form
       target="_blank"
       onSubmit={onSubmit}
-      action="https://formsubmit.co/patryk.kobylarczyk@gmail.com"
+      action="https://formsubmit.co/duomilonga@gmail.com"
       method="POST"
       className="max-w-2xl z-20 mt-10"
     >
