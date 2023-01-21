@@ -5,9 +5,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import ContactForm from "../components/ContactForm";
 import { motion } from "framer-motion";
 
-// HOOKS
-import useMediaQuery from "../hooks/useMediaQuery";
-
 // COMPONENTS
 import { SlArrowRight } from "react-icons/sl";
 
