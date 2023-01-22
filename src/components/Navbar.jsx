@@ -109,7 +109,7 @@ const Navbar = () => {
       <AnimatePresence>
         {!isAboveSmallScreens && isMenuToggled && (
           <motion.div
-            className="fixed right-0 top-0 h-full bg-[#001525] text-white w-full z-40"
+            className="fixed right-0 top-0 h-full bg-[#020F1A] text-white w-full z-40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

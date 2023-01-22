@@ -3,6 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
+    title: `Duo Milonga - Harp and Accordion`,
+    description: `Example project for the Gatsby Head API`,
+    twitterUsername: `@gatsbyjs`,
+    image: `/gatsby-icon.png`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
