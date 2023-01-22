@@ -14,13 +14,13 @@ import { languageState } from "../atoms/atom";
 
 // DATA
 import audio from "../assets/audio/salwinski_milonga.mp3";
+import { useCallback } from "react";
 
 const Footer = () => {
   const audioRef = useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language, setLanguage] = useRecoilState(languageState);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [langIsReady, setLangIsReady] = useState(false);
 
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
@@ -35,15 +35,21 @@ const Footer = () => {
   }, [isPlaying]);
 
   // Set initial language state because from local storage returns null
-  useEffect(() => {
+  const setLanguageState = useCallback(() => {
     if (!language) {
       setLanguage("PL");
     }
-  }, []);
+  }, [language, setLanguage]);
 
   useEffect(() => {
+    setLanguageState();
+  }, [setLanguageState]);
+
+  const setLanguageInLocalStorage = useCallback(() => {
     localStorage.setItem("language", JSON.stringify(language));
   }, [language]);
+
+  useEffect(() => setLanguageInLocalStorage(), [setLanguageInLocalStorage]);
 
   return (
     <footer>

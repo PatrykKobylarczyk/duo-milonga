@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
 
 // LIBS
 import { motion } from "framer-motion";
@@ -12,14 +11,13 @@ import useMediaQuery from "../hooks/useMediaQuery";
 // COMPONENTS
 import Button from "./Button";
 import MusicButtonAudioSpectrum from "./MusicButtonAudioSpectrum";
+import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
 
 // STATE
 import { useRecoilState } from "recoil";
 import {
   currentSongState,
   currentSongIndex,
-  mediumClicked,
-  selectedMediumState,
 } from "../atoms/atom";
 
 // DATA
@@ -30,9 +28,6 @@ const MusicPlayer = () => {
   const audioRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useRecoilState(currentSongIndex);
   const [currentSong, setCurrentSong] = useRecoilState(currentSongState);
-  const [isMediumClicked, SetMediumClicked] = useRecoilState(mediumClicked);
-  const [selectedMedium, setSelectedMedium] =
-    useRecoilState(selectedMediumState);
   const [isPlaying, setIsPlaying] = useState(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const isAboveLargeScreens = useMediaQuery("(min-width: 1368px)");
@@ -189,8 +184,6 @@ const MusicPlayer = () => {
             }`}
             key={song.title}
             onClick={() => setSongFromList(song, index)}
-            // initial={{ x: 20, opacity: 0 }}
-            // animate={{ x: 0, opacity: 1 }}
           >
             {song.title} -{!isAboveMediumScreens && <br />} {song.author}
           </motion.li>

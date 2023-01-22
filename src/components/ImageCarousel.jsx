@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
-import { MdWest, MdEast, MdClose } from "react-icons/md";
+import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
+
+//COMPONENTS
+import { MdWest, MdEast, MdClose } from "react-icons/md";
 import Button from "./Button";
 
 //CAROUSEL
@@ -8,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-// HOOKS
+//HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
 
 const ImageCarousel2 = ({ setShowModal, currentIndex, data }) => {

@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
-// LIBS
+//LIBS
 import { motion, AnimatePresence } from "framer-motion";
 import { Squeeze as Hamburger } from "hamburger-react";
 
-// HOOKS
+//HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
 
-// COMPONENTS
+//COMPONENTS
 import Logo from "./Logo";
 
-// STATE
+//STATE
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
 
-// DATA
+//DATA
 import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
 

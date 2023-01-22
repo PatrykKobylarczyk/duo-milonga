@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react";
 
 // COMPONENTS
 import { SlControlPlay } from "react-icons/sl";
@@ -20,7 +19,7 @@ const VideoWindow = ({ setShowModal, title, thumbnail, id }) => {
 
   return (
     <div className="overflow-hidden">
-      <div
+      <button
         className="group relative grid place-items-center w-full h-full transition duration-200 hover:scale-[1.02] cursor-pointer z-10"
         onClick={() => handleOpenModal(id)}
       >
@@ -28,7 +27,7 @@ const VideoWindow = ({ setShowModal, title, thumbnail, id }) => {
           <Button content={<SlControlPlay className=" ml-1 text-white" />} />
         </div>
         <img src={thumbnail} alt={title} className="w-[120%] h-full" />
-      </div>
+      </button>
     </div>
   );
 };

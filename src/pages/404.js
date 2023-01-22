@@ -1,13 +1,11 @@
-import * as React from "react"
+import * as React from "react";
 
-const NotFoundPage = () => {
-  return (
-    <main>
-    Nie działa
-    </main>
-  )
-}
+const NotFoundPage = () => (
+ 
+    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  
+);
 
-export default NotFoundPage
+export default NotFoundPage;
 
-export const Head = () => <title>Not found</title>
+export const Head = () => <title>Not found</title>;

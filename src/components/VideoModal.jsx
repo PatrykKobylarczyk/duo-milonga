@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+
+//COMPONENTS
 import Button from "../components/Button";
 import { MdClose } from "react-icons/md";
+
+//LIBS
 import ReactPlayer from "react-player/lazy";
 
 // STATE

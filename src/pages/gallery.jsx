@@ -19,16 +19,13 @@ const Gallery = ({ data }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentImage, setCurrentImage] = useState(
-    data.allFile.edges[currentIndex].node.childImageSharp.gatsbyImageData
-  );
   const [language] = useRecoilState(languageState);
 
   //Title Animation
   const photos_en = ["P", "h", "o", "t", "o", "s"];
   const photos_pl = ["Z", "d", "j", "ę", "c", "i", "a"];
 
-const lang = language === "PL" ? photos_en : photos_pl
+  const lang = language === "PL" ? photos_en : photos_pl;
 
   const container = {
     hidden: {},
@@ -46,9 +43,8 @@ const lang = language === "PL" ? photos_en : photos_pl
     visible: { x: 0, opacity: 1 },
   };
 
-  const handleImageModal = (src, i) => {
+  const handleImageModal = (_, i) => {
     setCurrentIndex(i);
-    setCurrentImage(src);
     setShowModal(true);
   };
 
@@ -122,7 +118,17 @@ export const query = graphql`
     allFile(
       filter: {
         extension: { regex: "/(jpg)/" }
-        name: { nin: ["hqdefault", "1-Home Poczernione-pion", "1-Home Poczernione", "tn1", "tn2", "tn4", "Bez nazwy-1"] }
+        name: {
+          nin: [
+            "hqdefault"
+            "1-Home Poczernione-pion"
+            "1-Home Poczernione"
+            "tn1"
+            "tn2"
+            "tn4"
+            "Bez nazwy-1"
+          ]
+        }
       }
     ) {
       edges {
@@ -143,4 +149,4 @@ export const query = graphql`
 
 export default Gallery;
 
-export const Head = () => <title>Duo Milonga - Gallery</title>
+export const Head = () => <title>Duo Milonga - Gallery</title>;
