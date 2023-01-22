@@ -33,7 +33,7 @@ const Contact = () => {
         ></motion.div>
         )
         <StaticImage
-          src="../assets/images/Duo/05.jpg"
+          src="../assets/images/Kontakt.jpg"
           alt="main room"
           className="fixed top-0 left-0 h-screen"
           objectPosition="62% 0"
@@ -91,3 +91,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export const Head = () => <title>Duo Milonga - Contact</title>

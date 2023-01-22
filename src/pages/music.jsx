@@ -11,7 +11,7 @@ const music = () => {
   return (
     <div className="pages relative page h-screen ">
       <StaticImage
-        src="../assets/images/Aneta/04.jpg"
+        src="../assets/images/10-_B2A3749-1sin.jpg"
         alt="main room"
         className="h-screen fixed left-0 top-0 -z-[2]"
         objectPosition=" 65% 0"
@@ -32,3 +32,5 @@ const music = () => {
 };
 
 export default music;
+
+export const Head = () => <title>Duo Milonga - Music</title>

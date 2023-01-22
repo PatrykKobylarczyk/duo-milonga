@@ -59,7 +59,7 @@ const lang = language === "PL" ? photos_en : photos_pl
       {/* BACKGROUND  */}
       <div className="w-full fixed  top-0 right-0">
         <StaticImage
-          src="../assets/images/Konrad/02.jpg"
+          src="../assets/images/16_B2A3473-1.jpg"
           alt="main room"
           className="fixed w-full h-screen -z-[2]"
           objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
@@ -122,7 +122,7 @@ export const query = graphql`
     allFile(
       filter: {
         extension: { regex: "/(jpg)/" }
-        name: { nin: ["hqdefault", "tn1"] }
+        name: { nin: ["hqdefault", "1-Home Poczernione-pion", "1-Home Poczernione", "tn1", "tn2", "tn4", "Bez nazwy-1"] }
       }
     ) {
       edges {
@@ -142,3 +142,5 @@ export const query = graphql`
 `;
 
 export default Gallery;
+
+export const Head = () => <title>Duo Milonga - Gallery</title>

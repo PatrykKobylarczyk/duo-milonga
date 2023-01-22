@@ -14,7 +14,7 @@ const IndexPage = () => {
           <StaticImage
             src="../assets/images/6-_B2A3836-1popr.jpg"
             alt="main room"
-            className=" h-full left-0 -z-50"
+            className=" h-full -z-50"
             objectPosition="32% 30%"
             cropFocus="attention"
           />
@@ -22,7 +22,7 @@ const IndexPage = () => {
           <StaticImage
             src="../assets/images/Bez nazwy-1.jpg"
             alt="main room"
-            className="w-full left-0 -z-50"
+            className="h-full -z-50"
             // objectPosition="32% 30%"
             objectFit="cover"
           />

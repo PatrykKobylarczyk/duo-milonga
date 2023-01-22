@@ -41,10 +41,10 @@ const Video = () => {
       {/* BACKGROUN */}
       <div className="h-screen fixed left-0 top-0 -z-[2]">
         <StaticImage
-          src="../assets/images/Duo/08.jpg"
+          src="../assets/images/Video.jpg"
           alt="main room"
           className="h-screen"
-          objectPosition=" 33% 0"
+          // objectPosition=" 33% 0"
         />
       </div>
       <motion.div
@@ -84,3 +84,5 @@ const Video = () => {
 };
 
 export default Video;
+
+export const Head = () => <title>Duo Milonga - Videos</title>

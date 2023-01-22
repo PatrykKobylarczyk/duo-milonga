@@ -50,7 +50,7 @@ const About = () => {
       {/* BACKGROUND  */}
       <div className="fixed overflow-hidden top-0 right-0 w-full">
         <StaticImage
-          src="../assets/images/Duo/04.jpg"
+          src="../assets/images/04.jpg"
           alt="main room"
           className="fixed w-full h-screen -z-[2]"
           objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
@@ -88,10 +88,9 @@ const About = () => {
               {lang.about_aneta_name}
             </h1>
             <StaticImage
-              src="../assets/images/Aneta/03.jpg"
+              src="../assets/images/Aneta.jpg"
               alt="main room"
               className="w-full md:w-1/2 brightness-110"
-              objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
             />
           </div>
           <p className="mt-10 lg:mt-10">{lang.about_aneta_paragraph1}</p>
@@ -116,10 +115,9 @@ const About = () => {
               </h1>
             )}
             <StaticImage
-              src="../assets/images/Konrad/02.jpg"
+              src="../assets/images/Konrad.jpg"
               alt="main room"
               className="w-full md:w-1/2"
-              objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
             />
             {isAboveMediumScreens && (
               <h1 className="w-full md:w-1/2 text-2xl md:text-4xl font-bold md:text-left">
@@ -147,3 +145,5 @@ const About = () => {
 };
 
 export default About;
+
+export const Head = () => <title>Duo Milonga - About</title>
