@@ -1,4 +1,5 @@
-# Music group website. The main goals were to play 
+# Music group website. 
+The main goals were to play 
 with pictures and to be able to listen to music
 
 ## Live
