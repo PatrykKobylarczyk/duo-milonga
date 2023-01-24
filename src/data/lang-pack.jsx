@@ -121,16 +121,16 @@ export const lang_PL = {
     "wielu festiwali muzyki kameralnej i tangowej.",
   ],
   about_description_paragraph3:
-    "Dużym wyróżnieniem dla zespołu było zaproszenie do wykonania recitalu podczas XI   Światowego Kongresu Harfowego w Vancouver (Kanada) w lipcu 2011 roku. Przez wiele lat duet grał także regularne koncerty dla Fundacji im. Yehudi Menuhina Live Music Now w Salzburgu.",
+    "Dużym wyróżnieniem dla zespołu było zaproszenie do wykonania recitalu podczas XI Światowego Kongresu Harfowego w Vancouver (Kanada) w lipcu 2011 roku. Przez wiele lat duet grał także regularne koncerty dla Fundacji im. Yehudi Menuhina Live Music Now w Salzburgu.",
   about_description_paragraph4:
-    "Duo Milonga to zaskakujące mnogością barw połączenie delikatnego brzmienia harfy z wyrazistym, a zarazem lirycznym dźwiękiem akordeonu. To niespotykane zestawienie,charakterystyczne bardziej dla muzyki współczesnej, potrafi jednocześnie nadać zupełnie    nowy kształt muzyce dawnych mistrzów. W repertuarze zespołu znajdują się różnorodne    kompozycje, od opracowań muzyki dawnej po utwory XXI wieczne, a także własne aranżacje muzyki hiszpańskiej oraz tang argentyńskich. Zespół, za swoją działalność związaną z tangiem, został uhonorowany certyfikatem Narodowej Akademii Tanga w Buenos Aires.",
+    "Duo Milonga to zaskakujące mnogością barw połączenie delikatnego brzmienia harfy z wyrazistym, a zarazem lirycznym dźwiękiem akordeonu. To niespotykane zestawienie, charakterystyczne bardziej dla muzyki współczesnej, potrafi jednocześnie nadać zupełnie nowy kształt muzyce dawnych mistrzów. W repertuarze zespołu znajdują się różnorodne kompozycje, od opracowań muzyki dawnej po utwory XXI wieczne, a także własne aranżacje muzyki hiszpańskiej oraz tang argentyńskich. Zespół, za swoją działalność związaną z tangiem, został uhonorowany certyfikatem Narodowej Akademii Tanga w Buenos Aires.",
   about_description_paragraph5:
-    "Zespół współpracuje z argentyńskim wokalistą Oscarem Ernesto Ovejero, tworząc projekt Colours of tango regularnie koncertującym w Polsce i Europie, którego płyta ukazała się w 2015 roku nakładem wydawnictwa DUX.",
+    "Zespół współpracuje z argentyńskim wokalistą Oscarem Ernesto Ovejero, tworząc projekt Colours of tango regularnie koncertujący w Polsce i Europie, którego płyta ukazała się w 2015 roku nakładem wydawnictwa DUX.",
   about_description_paragraph6:
     "Duo Milonga koncertuje także z solistą Teatru Muzycznego w Łodzi, Pawłem Erdmanem, tworząc spektakl „Muzyczny Przybornik Jeremiego”. Projekt ukazuje nowatorskie aranżacje najbardziej znanych i lubianych piosenek słynnego Kabaretu Starszych Panów, autorstwa Jeremiego Przybory i Jerzego Wasowskiego.",
   about_aneta_name: "Aneta Salwińska",
   about_aneta_paragraph1:
-    "absolwentka Akademii Muzycznej im. Karola Szymanowskiego w Katowicach w klasie harfy prof. Helgi Storck. Równolegle studiowała także w Universität Mozarteum w Salzburgu (Austria) na wydziale Pedagogiki Wokalno-Instrumentalnej ze specjalnością: harfa. W 2020 roku uzyskała stopnień doktora sztuki prezentując dysertację na temat transkrypcji w muzyce harfowej. Brała udział w kursach mistrzowskich prowadzonych m. in. przez: prof. Helgę Storck ,prof. Klausa Storck, prof. Isabelle Moretti, prof. Cristinę Bragę, prof. Davida Watkinsa, Parka Stickney’a, prof. Imogen Barford i.in.",
+    "absolwentka Akademii Muzycznej im. Karola Szymanowskiego w Katowicach w klasie harfy prof. Helgi Storck. Równolegle studiowała także w Universität Mozarteum w Salzburgu (Austria) na wydziale Pedagogiki Wokalno-Instrumentalnej ze specjalnością: harfa. W 2020 roku uzyskała stopnień doktora sztuki prezentując dysertację na temat transkrypcji w muzyce harfowej. Brała udział w kursach mistrzowskich prowadzonych m. in. przez: prof. Helgę Storck, prof. Klausa Storck, prof. Isabelle Moretti, prof. Cristinę Bragę, prof. Davida Watkinsa, Parka Stickney’a, prof. Imogen Barford i.in.",
   about_aneta_paragraph2:
     "Występuje jako solistka i kameralistka, a także w orkiestrach. Ważny punkt repertuaru   Anety Salwińskiej stanowią polskie koncerty na harfę. W ramach V Międzynarodowego Festiwalu Harfowego w Katowicach 2013, wykonała wraz z Adamem Krzeszowcem Concerto da camera na harfę, wiolonczelę i orkiestrę Krzysztofa Meyera z towarzyszeniem Śląskiej Orkiestry Kameralnej, a w roku 2014 podczas XXII Międzynarodowego Festiwalu Muzyki Kameralnej wykonała wraz z Łukaszem Zimnikiem Sinfonia Concertante na flet i harfę Andrzeja Panufnika - także z towarzyszeniem Śląskiej Orkiestry Kameralnej. W 2016 roku, w ramach Koncertu Inauguracyjnego VIII Międzynarodowego Festiwalu Harfowego w Katowicach wykonała wraz z Adamem Krzeszowcem Sceny na harfę, wiolonczelę i orkiestrę Tadeusza Bairda, który to utwór nagrała także z towarzyszeniem Narodowej Orkiestry Symfonicznej Polskiego Radia w Katowicach.",
   about_aneta_paragraph3:
@@ -145,7 +145,7 @@ export const lang_PL = {
   about_konrad_paragraph1:
     "Naukę gry na akordeonie rozpoczął w wieku 7 lat w Państwowej Szkole Muzycznej w Starachowicach, w klasie Marka Mareckiego. W 2011 roku ukończył Akademię Muzyczną w Łodzi w klasie prof. Zbigniewa Ignaczewskiego. W latach 2008 - 2011 studiował także w Universität für Musik und darstellende Kunst w Grazu (Austria) w klasie prof. Janne Rättyä.",
   about_konrad_paragraph2:
-    "Wielokrotnie uczestniczył w Międzynarodowym Kursie Interpretacji Muzycznej, gdzie doskonalił swoje umiejętności pod okiem najznakomitszych pedagogów z Polski i świata.",
+    'Wielokrotnie uczestniczył w "Międzynarodowym Kursie Interpretacji Muzycznej", gdzie doskonalił swoje umiejętności pod okiem najznakomitszych pedagogów z Polski i świata.',
   about_konrad_paragraph3:
     "Jest laureatem wielu ogólnopolskich i międzynarodowych konkursów akordeonowych:",
   about_konrad_festivals: [
@@ -172,7 +172,7 @@ export const lang_PL = {
     "wyróżnienie w III Międzynarodowym Konkursie Muzycznym im. Michała Spisaka w Dąbrowie Górniczej, 2009 r.;",
   ],
   about_konrad_paragraph4:
-    "W roku 1998 otrzymał Nagrodę II st. Prezydenta Miasta Starachowic. W 2000, 2006 i 2008 r. był stypendystą Ministra Kultury i Dziedzictwa Narodowego, a od 1998 r. jest podopiecznym Krajowego Funduszu na rzecz Dzieci. W roku 2007 został laureatem IV edycji programu stypendialnego Ministra Kultury i Dziedzictwa Narodowego &quot;Młoda Polska&quot;, a w 2008 oraz 2011 roku stypendystą Marszałka Województwa Łódzkiego. Często koncertuje w Łodzi i regionie łódzkim, a także innych miastach w Polsce i na świecie. Obecnie prowadzi klasy akordeonu w Państwowej Szkole Muzycznej I stopnia oraz Społecznej Szkole Muzycznej II stopnia w Zgierzu, a jego podopieczni odnoszą sukcesy na ogólnopolskich i międzynarodowych konkursach muzycznych.",
+    'W roku 1998 otrzymał Nagrodę II st. Prezydenta Miasta Starachowic. W 2000, 2006 i 2008 r. był stypendystą Ministra Kultury i Dziedzictwa Narodowego, a od 1998 r. jest podopiecznym Krajowego Funduszu na rzecz Dzieci. W roku 2007 został laureatem IV edycji programu stypendialnego Ministra Kultury i Dziedzictwa Narodowego "Młoda Polska", a w 2008 oraz 2011 roku stypendystą Marszałka Województwa Łódzkiego. Często koncertuje w Łodzi i regionie łódzkim, a także innych miastach w Polsce i na świecie. Obecnie prowadzi klasy akordeonu w Państwowej Szkole Muzycznej I stopnia oraz Społecznej Szkole Muzycznej II stopnia w Zgierzu, a jego podopieczni odnoszą sukcesy na ogólnopolskich i międzynarodowych konkursach muzycznych.',
   about_more: "więcej...",
   about_less: "mniej...",
 };
