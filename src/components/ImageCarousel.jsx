@@ -13,7 +13,7 @@ import Slider from "react-slick";
 //HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
 
-const ImageCarousel2 = ({ setShowModal, currentIndex, data }) => {
+const ImageCarousel = ({ setShowModal, currentIndex, data }) => {
   const slider = React.useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
@@ -102,4 +102,4 @@ const ImageCarousel2 = ({ setShowModal, currentIndex, data }) => {
   );
 };
 
-export default ImageCarousel2;
+export default ImageCarousel;

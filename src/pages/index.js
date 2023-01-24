@@ -19,7 +19,6 @@ const IndexPage = () => {
             alt="main room"
             className=" h-full -z-50"
             objectPosition="32% 30%"
-            cropFocus="attention"
           />
         ) : (
           <StaticImage
