@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import AboutDuoContent from "../components/AboutDuoContent";
 import AboutAnetaContent from "../components/AboutAnetaContent";
 import AboutKonradContent from "../components/AboutKonradContent";
+import Head from "../components/Head";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -140,10 +141,9 @@ const About = () => {
       </section>
       <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
       <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
+      <Head title="Duo Milonga - About" />
     </div>
   );
 };
 
 export default About;
-
-export const Head = () => <title>Duo Milonga - About</title>

@@ -10,6 +10,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 //COMPONENTS
 import GalleryRow from "../components/GalleryRow";
 import ImageCarousel from "../components/ImageCarousel";
+import Head from "../components/Head";
 
 // STATE
 import { useRecoilState } from "recoil";
@@ -109,6 +110,7 @@ const Gallery = ({ data }) => {
       {/* BLENDS */}
       <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
       <div className=" fixed left-0 bottom-0 w-full h-[10vh] z-10"></div>
+      <Head title='Duo Milonga - Gallery'/>
     </div>
   );
 };
@@ -127,6 +129,7 @@ export const query = graphql`
             "tn2"
             "tn4"
             "Bez nazwy-1"
+            "favicon"
           ]
         }
       }
@@ -148,5 +151,3 @@ export const query = graphql`
 `;
 
 export default Gallery;
-
-export const Head = () => <title>Duo Milonga - Gallery</title>;

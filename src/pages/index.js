@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
+import Head from "../components/Head";
 
 const IndexPage = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
@@ -23,16 +24,16 @@ const IndexPage = () => {
             src="../assets/images/Bez nazwy-1.jpg"
             alt="main room"
             className="h-full -z-50"
-            // objectPosition="32% 30%"
             objectFit="cover"
           />
         )}
       </main>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
+      <Head title='Duo Milonga- Home'/>
     </div>
   );
 };
 
 export default IndexPage;
 
-export const Head = () => <title>Duo Milonga - Home</title>;
+

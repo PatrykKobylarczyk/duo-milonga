@@ -10,7 +10,7 @@
 
 @layer base {
   html {
-    @apply font-Montserrat overflow-x-hidden scrollbar-hide;
+    @apply font-Montserrat overflow-x-hidden scrollbar-hide bg-[#020F1A];
   }
 
   header {

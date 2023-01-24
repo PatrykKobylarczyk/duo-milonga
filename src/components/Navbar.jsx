@@ -21,7 +21,7 @@ import { lang_PL } from "../data/lang-pack";
 
 const Navbar = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [language] = useRecoilState(languageState);
 
   const lang = language === "PL" ? lang_EN : lang_PL;
@@ -47,7 +47,7 @@ const Navbar = () => {
         <Logo color="white" />
 
         {/* DESKTOP NAV */}
-        {isAboveSmallScreens ? (
+        {isAboveMediumScreens ? (
           <motion.div
             className="hovered-link flex justify-between gap-16 font-opensans text-sm font-semibold text-white"
             initial="hidden"
@@ -107,7 +107,7 @@ const Navbar = () => {
       </header>
       {/* MOBILE MENU POPUP */}
       <AnimatePresence>
-        {!isAboveSmallScreens && isMenuToggled && (
+        {!isAboveMediumScreens && isMenuToggled && (
           <motion.div
             className="fixed right-0 top-0 h-full bg-[#020F1A] text-white w-full z-40"
             initial={{ opacity: 0 }}

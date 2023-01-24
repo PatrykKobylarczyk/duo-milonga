@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 // COMPONENTS
 import { SlArrowRight } from "react-icons/sl";
+import Head from "../components/Head";
 
 // STATE
 import { useRecoilState } from "recoil";
@@ -36,7 +37,7 @@ const Contact = () => {
           src="../assets/images/Kontakt.jpg"
           alt="main room"
           className="fixed top-0 left-0 h-screen"
-          objectPosition="62% 0"
+          // objectPosition="62% 0"
           objectFit="cover"
         />
       </div>
@@ -86,10 +87,9 @@ const Contact = () => {
           {isContactForm && <ContactForm language={language} />}
         </div>
       </div>
+      <Head title='Duo Milonga - Contact'/>
     </div>
   );
 };
 
 export default Contact;
-
-export const Head = () => <title>Duo Milonga - Contact</title>

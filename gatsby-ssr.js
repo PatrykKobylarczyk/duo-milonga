@@ -6,3 +6,4 @@ import Layout from './src/components/Layout';
 
 export const wrapRootElement = ({element, data}) => <RecoilRoot {...data}>{element}</RecoilRoot>;
 export const wrapPageElement = ({element, data}) => <Layout {...data} >{element} </Layout>
+
