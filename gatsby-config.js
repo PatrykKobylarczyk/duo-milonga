@@ -5,8 +5,8 @@ module.exports = {
   siteMetadata: {
     title: `Duo Milonga - Harp and Accordion`,
     description: `The accordion and harp duo - concerts, musical setting, corporate events, events`,
-    image: `src/assets/images/favicon.jpg`,
-    siteUrl: `https://www.yourdomain.tld`,
+    image: `src/assets/images/favicon.png`,
+    siteUrl: `https://www.duomilonga.com`,
   },
   plugins: [
     "gatsby-plugin-postcss",
@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/assets/images/favicon.jpg',
+        icon: 'src/assets/images/favicon.png',
       },
     },
     {
