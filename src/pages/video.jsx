@@ -12,6 +12,7 @@ import VideoModal from "../components/VideoModal";
 // STATE
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
+import Loader from "../components/Loader";
 
 const Video = () => {
   const [showModal, setShowModal] = useState(false);
@@ -41,6 +42,7 @@ const Video = () => {
 
   return (
     <div className={`page h-screen relative ${showModal && "overflow-hidden "}`}>
+      <Loader/>
       {/* BACKGROUN */}
       <div className="h-screen fixed left-0 top-0 -z-[2]">
         <StaticImage

@@ -58,7 +58,7 @@ const Footer = () => {
           <SocialMedia />
           {isAboveSmallScreens ? null : (
             <p className="text-[10px] font-light mt-5 mb-0">
-              © 2022 Duo Milonga
+              © 2023 Duo Milonga
             </p>
           )}
         </div>
@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
       </div>
       {isAboveSmallScreens ? (
-        <p className="text-[10px] font-light mt-5 mb-0">© 2022 Duo Milonga</p>
+        <p className="text-[10px] font-light mt-5 mb-0">© 2023 Duo Milonga</p>
       ) : null}
     </footer>
   );

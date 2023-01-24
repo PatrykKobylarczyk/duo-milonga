@@ -4,12 +4,14 @@ import { StaticImage } from "gatsby-plugin-image";
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
 import Head from "../components/Head";
+import Loader from "../components/Loader";
 
 const IndexPage = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
   return (
     <div className="pages relative h-screen">
+      <Loader/>
       <main>
         {isAboveSmallScreens ? (
           <StaticImage

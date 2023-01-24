@@ -7,10 +7,12 @@ import { motion } from "framer-motion";
 //COMPONENTS
 import MusicPlayer from "../components//MusicPlayer";
 import Head from "../components/Head";
+import Loader from "../components/Loader";
 
 const music = () => {
   return (
     <div className="pages relative page h-screen ">
+      <Loader/>
       <StaticImage
         src="../assets/images/10-_B2A3749-1sin.jpg"
         alt="main room"

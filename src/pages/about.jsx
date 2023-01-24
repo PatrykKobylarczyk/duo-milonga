@@ -20,6 +20,7 @@ import { languageState } from "../atoms/atom";
 // DATA
 import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
+import Loader from "../components/Loader";
 
 const About = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -48,6 +49,8 @@ const About = () => {
 
   return (
     <div className="w-full relative page">
+      <Loader/>
+
       {/* BACKGROUND  */}
       <div className="fixed overflow-hidden top-0 right-0 w-full">
         <StaticImage

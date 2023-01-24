@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 // COMPONENTS
 import { SlArrowRight } from "react-icons/sl";
 import Head from "../components/Head";
+import Loader from "../components/Loader";
 
 // STATE
 import { useRecoilState } from "recoil";
@@ -24,6 +25,7 @@ const Contact = () => {
 
   return (
     <div className="page pages relative h-screen flex flex-col justify-center overflow-hidden">
+      <Loader/>
       <div>
         (
         <motion.div

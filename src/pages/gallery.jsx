@@ -15,6 +15,7 @@ import Head from "../components/Head";
 // STATE
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
+import Loader from "../components/Loader";
 
 const Gallery = ({ data }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -53,6 +54,8 @@ const Gallery = ({ data }) => {
     <div
       className={`page h-screen relative ${showModal && "overflow-hidden "}`}
     >
+      <Loader/>
+
       {/* BACKGROUND  */}
       <div className="w-full fixed  top-0 right-0">
         <StaticImage
