@@ -112,7 +112,7 @@ const Navbar = () => {
             className="fixed right-0 top-0 h-full bg-[#020F1A] text-white w-full z-40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, transition: { delay: 0.45 } }}
             transition={{ ease: "easeInOut", duration: 0.3 }}
           >
             {/* MENU ITEMS */}
