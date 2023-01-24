@@ -22,6 +22,9 @@ const Footer = () => {
   const [language, setLanguage] = useRecoilState(languageState);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const currentDate = new Date();
+  const fullYear = currentDate.getFullYear();
+
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
   };
@@ -58,7 +61,7 @@ const Footer = () => {
           <SocialMedia />
           {isAboveSmallScreens ? null : (
             <p className="text-[10px] font-light mt-5 mb-0">
-              © 2023 Duo Milonga
+              © {fullYear} Duo Milonga
             </p>
           )}
         </div>
@@ -82,7 +85,9 @@ const Footer = () => {
         </div>
       </div>
       {isAboveSmallScreens ? (
-        <p className="text-[10px] font-light mt-5 mb-0">© 2023 Duo Milonga</p>
+        <p className="text-[10px] font-light mt-5 mb-0">
+          © {fullYear} Duo Milonga
+        </p>
       ) : null}
     </footer>
   );

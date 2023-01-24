@@ -46,7 +46,7 @@ const Video = () => {
       {/* BACKGROUN */}
       <div className="h-screen fixed left-0 top-0 -z-[2]">
         <StaticImage
-          src="../assets/images/Video.jpg"
+          src="../assets/images/3-_B2A4045-1popr.jpg"
           alt="main room"
           className="h-screen"
           // objectPosition=" 33% 0"

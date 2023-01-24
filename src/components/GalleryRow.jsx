@@ -12,6 +12,8 @@ const GalleryRow = ({ setShowModal, data, handleImageModal }) => {
     visible: { x: 0, opacity: 1 },
   };
 
+  console.log(data.allFile.edges)
+
   return (
     <div className="grid place-items-center grid-cols-3 gap-2 sm:gap-5 overflow-y-hidden">
       {data.allFile.edges.map((image, i) => (
