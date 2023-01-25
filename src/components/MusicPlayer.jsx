@@ -139,7 +139,7 @@ const MusicPlayer = () => {
         </div>
 
         {/* CONTROL PANEL */}
-        <div className="grid place-items-center z-40">
+        <div className="grid place-items-center z-10">
           <div className="flex gap-5 py-5 xl:py-8 items-center">
             <button className="button w-10 h-10 " onClick={prevSong}>
               <RxTrackPrevious size={"12px"} />
@@ -161,7 +161,7 @@ const MusicPlayer = () => {
         <input
           type="range"
           value={audioProgress}
-          className=" w-full z-40"
+          className=" w-full z-10"
           onChange={handleMusicProgressBar}
         />
       </div>

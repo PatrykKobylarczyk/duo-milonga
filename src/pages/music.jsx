@@ -10,18 +10,10 @@ import Head from "../components/Head";
 import Loader from "../components/Loader";
 
 const Music = () => {
-  const [pageReady, setPageReady] = useState(false);
-
-  useEffect(() => {
-    setPageReady(true);
-    return ()=>{
-      setPageReady(false)
-    }
-  },[]);
 
   return (
     <div className="pages relative page h-screen ">
-      {!pageReady && <Loader />}
+      <Loader />
       <StaticImage
         src="../assets/images/10-_B2A3749-1sin.jpg"
         alt="main room"

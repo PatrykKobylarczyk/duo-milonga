@@ -16,8 +16,6 @@ const AudioSpectrumAnimation = ({ isPlaying }) => {
     bars.push(<AudioSpectrumBar key={i} isPlaying={isPlaying} />);
   }
 
-  console.log(width);
-
   return (
     <div
       className={`flex items-end h-[110px] md:h-[200px] w-[200px] md:w-[320px] gap-[2px] ${isPlaying ? null : 'opacity-0'}`}

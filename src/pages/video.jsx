@@ -17,14 +17,6 @@ import Loader from "../components/Loader";
 const Video = () => {
   const [showModal, setShowModal] = useState(false);
   const [language] = useRecoilState(languageState);
-  const [pageReady, setPageReady] = useState(false);
-
-  useEffect(() => {
-    setPageReady(true);
-    return () => {
-      setPageReady(false);
-    };
-  },[]);
 
   //Title Animation
   const videos_en = ["V", "i", "d", "e", "o", "s"];
@@ -52,7 +44,7 @@ const Video = () => {
     <div
       className={`page h-screen relative ${showModal && "overflow-hidden "}`}
     >
-      {!pageReady && <Loader />}
+       <Loader />
       {/* BACKGROUN */}
       <div className="h-screen fixed left-0 top-0 -z-[2]">
         <StaticImage

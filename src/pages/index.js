@@ -8,18 +8,10 @@ import Loader from "../components/Loader";
 
 const IndexPage = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  const [pageReady, setPageReady] = useState(false);
-
-  useEffect(() => {
-    setPageReady(true);
-    return ()=>{
-      setPageReady(false)
-    }
-  },[]);
 
   return (
     <div className="pages relative h-screen">
-      {!pageReady && <Loader/>}
+       <Loader/>
       <main>
         {isAboveSmallScreens ? (
           <StaticImage

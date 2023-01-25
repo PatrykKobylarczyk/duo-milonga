@@ -22,15 +22,6 @@ const Gallery = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [language] = useRecoilState(languageState);
-  const [pageReady, setPageReady] = useState(false);
-
-
-  useEffect(() => {
-    setPageReady(true);
-    return ()=>{
-      setPageReady(false)
-    }
-  },[]);
 
   //Title Animation
   const photos_en = ["P", "h", "o", "t", "o", "s"];
@@ -63,7 +54,7 @@ const Gallery = ({ data }) => {
     <div
       className={`page h-screen relative ${showModal && "overflow-hidden "}`}
     >
-     {!pageReady && <Loader/>}
+      <Loader />
 
       {/* BACKGROUND  */}
       <div className="w-full fixed  top-0 right-0">
@@ -122,7 +113,7 @@ const Gallery = ({ data }) => {
       {/* BLENDS */}
       <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
       <div className=" fixed left-0 bottom-0 w-full h-[10vh] z-10"></div>
-      <Head title='Duo Milonga - Gallery'/>
+      <Head title="Duo Milonga - Gallery" />
     </div>
   );
 };

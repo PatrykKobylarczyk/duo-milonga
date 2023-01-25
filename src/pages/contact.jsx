@@ -22,18 +22,11 @@ const Contact = () => {
   const [language] = useRecoilState(languageState);
   const [isContactForm, setIsContactForm] = useState(false);
   const lang = language === "PL" ? lang_EN : lang_PL;
-  const [pageReady, setPageReady] = useState(false);
-
-  useEffect(() => {
-    setPageReady(true);
-    return ()=>{
-      setPageReady(false)
-    }
-  },[]);
+  
 
   return (
     <div className="page pages relative h-screen flex flex-col justify-center overflow-hidden">
-      {!pageReady && <Loader/>}
+      <Loader/>
       <div>
         (
         <motion.div
