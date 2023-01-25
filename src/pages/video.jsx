@@ -24,7 +24,7 @@ const Video = () => {
     return () => {
       setPageReady(false);
     };
-  });
+  },[]);
 
   //Title Animation
   const videos_en = ["V", "i", "d", "e", "o", "s"];

@@ -15,7 +15,7 @@ const IndexPage = () => {
     return ()=>{
       setPageReady(false)
     }
-  });
+  },[]);
 
   return (
     <div className="pages relative h-screen">

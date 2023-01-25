@@ -29,7 +29,7 @@ const Contact = () => {
     return ()=>{
       setPageReady(false)
     }
-  });
+  },[]);
 
   return (
     <div className="page pages relative h-screen flex flex-col justify-center overflow-hidden">

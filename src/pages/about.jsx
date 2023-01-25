@@ -35,7 +35,7 @@ const About = () => {
     return ()=>{
       setPageReady(false)
     }
-  });
+  },[]);
 
   const lang = language === "PL" ? lang_EN : lang_PL;
 

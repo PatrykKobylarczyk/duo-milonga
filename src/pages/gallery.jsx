@@ -30,7 +30,7 @@ const Gallery = ({ data }) => {
     return ()=>{
       setPageReady(false)
     }
-  });
+  },[]);
 
   //Title Animation
   const photos_en = ["P", "h", "o", "t", "o", "s"];

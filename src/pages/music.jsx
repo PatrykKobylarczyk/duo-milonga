@@ -17,7 +17,7 @@ const Music = () => {
     return ()=>{
       setPageReady(false)
     }
-  });
+  },[]);
 
   return (
     <div className="pages relative page h-screen ">
