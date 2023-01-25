@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 //LIBS'
@@ -22,6 +22,15 @@ const Gallery = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [language] = useRecoilState(languageState);
+  const [pageReady, setPageReady] = useState(false);
+
+
+  useEffect(() => {
+    setPageReady(true);
+    return ()=>{
+      setPageReady(false)
+    }
+  });
 
   //Title Animation
   const photos_en = ["P", "h", "o", "t", "o", "s"];
@@ -54,7 +63,7 @@ const Gallery = ({ data }) => {
     <div
       className={`page h-screen relative ${showModal && "overflow-hidden "}`}
     >
-      <Loader/>
+     {!pageReady && <Loader/>}
 
       {/* BACKGROUND  */}
       <div className="w-full fixed  top-0 right-0">

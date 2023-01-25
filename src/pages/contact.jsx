@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 // LIBS
@@ -22,10 +22,18 @@ const Contact = () => {
   const [language] = useRecoilState(languageState);
   const [isContactForm, setIsContactForm] = useState(false);
   const lang = language === "PL" ? lang_EN : lang_PL;
+  const [pageReady, setPageReady] = useState(false);
+
+  useEffect(() => {
+    setPageReady(true);
+    return ()=>{
+      setPageReady(false)
+    }
+  });
 
   return (
     <div className="page pages relative h-screen flex flex-col justify-center overflow-hidden">
-      <Loader/>
+      {!pageReady && <Loader/>}
       <div>
         (
         <motion.div

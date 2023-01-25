@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 //COMPONENTS
@@ -17,12 +17,20 @@ import Loader from "../components/Loader";
 const Video = () => {
   const [showModal, setShowModal] = useState(false);
   const [language] = useRecoilState(languageState);
+  const [pageReady, setPageReady] = useState(false);
+
+  useEffect(() => {
+    setPageReady(true);
+    return () => {
+      setPageReady(false);
+    };
+  });
 
   //Title Animation
   const videos_en = ["V", "i", "d", "e", "o", "s"];
   const videos_pl = ["F", "i", "l", "m", "y"];
 
-  const lang = language === "PL" ? videos_en : videos_pl
+  const lang = language === "PL" ? videos_en : videos_pl;
 
   const container = {
     hidden: {},
@@ -41,8 +49,10 @@ const Video = () => {
   };
 
   return (
-    <div className={`page h-screen relative ${showModal && "overflow-hidden "}`}>
-      <Loader/>
+    <div
+      className={`page h-screen relative ${showModal && "overflow-hidden "}`}
+    >
+      {!pageReady && <Loader />}
       {/* BACKGROUN */}
       <div className="h-screen fixed left-0 top-0 -z-[2]">
         <StaticImage
@@ -74,18 +84,16 @@ const Video = () => {
             </motion.div>
           ))}
         </motion.div>
-        <VideoRaw setShowModal={setShowModal} item={item}/>
+        <VideoRaw setShowModal={setShowModal} item={item} />
 
-        {showModal && (
-          <VideoModal setShowModal={setShowModal}/>
-        )}
+        {showModal && <VideoModal setShowModal={setShowModal} />}
       </section>
 
       {/* BLENDS */}
       <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
       <div className=" fixed left-0 bottom-0 w-full h-[10vh] bg-gradient-to-t from-black z-10"></div>
 
-      <Head title='Duo Milonga - Videos'/>
+      <Head title="Duo Milonga - Videos" />
     </div>
   );
 };

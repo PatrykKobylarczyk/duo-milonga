@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 // HOOKS
@@ -8,10 +8,18 @@ import Loader from "../components/Loader";
 
 const IndexPage = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+  const [pageReady, setPageReady] = useState(false);
+
+  useEffect(() => {
+    setPageReady(true);
+    return ()=>{
+      setPageReady(false)
+    }
+  });
 
   return (
     <div className="pages relative h-screen">
-      <Loader/>
+      {!pageReady && <Loader/>}
       <main>
         {isAboveSmallScreens ? (
           <StaticImage

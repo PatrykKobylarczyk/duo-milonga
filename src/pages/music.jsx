@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS
@@ -9,10 +9,19 @@ import MusicPlayer from "../components//MusicPlayer";
 import Head from "../components/Head";
 import Loader from "../components/Loader";
 
-const music = () => {
+const Music = () => {
+  const [pageReady, setPageReady] = useState(false);
+
+  useEffect(() => {
+    setPageReady(true);
+    return ()=>{
+      setPageReady(false)
+    }
+  });
+
   return (
     <div className="pages relative page h-screen ">
-      <Loader/>
+      {!pageReady && <Loader />}
       <StaticImage
         src="../assets/images/10-_B2A3749-1sin.jpg"
         alt="main room"
@@ -30,9 +39,9 @@ const music = () => {
       ></motion.div>
       <div className=" fixed left-0 top-0 w-full h-[20vh] bg-gradient-to-b from-black z-10"></div>
       <div className=" fixed left-0 bottom-0 w-full h-[20vh] bg-gradient-to-t from-black z-10"></div>
-      <Head title='Duo Milonga - Music'/>
+      <Head title="Duo Milonga - Music" />
     </div>
   );
 };
 
-export default music;
+export default Music;

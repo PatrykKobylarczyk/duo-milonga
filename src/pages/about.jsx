@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS'
@@ -28,6 +28,14 @@ const About = () => {
   const [showMoreDuo, setShowMoreDuo] = useState(false);
   const [showMoreAneta, setShowMoreAneta] = useState(false);
   const [showMoreKonrad, setShowMoreKonrad] = useState(false);
+  const [pageReady, setPageReady] = useState(false);
+
+  useEffect(() => {
+    setPageReady(true);
+    return ()=>{
+      setPageReady(false)
+    }
+  });
 
   const lang = language === "PL" ? lang_EN : lang_PL;
 
@@ -49,7 +57,7 @@ const About = () => {
 
   return (
     <div className="w-full relative page">
-      <Loader/>
+      {!pageReady && <Loader />}
 
       {/* BACKGROUND  */}
       <div className="fixed overflow-hidden top-0 right-0 w-full">
