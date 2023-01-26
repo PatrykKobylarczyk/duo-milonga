@@ -25,11 +25,6 @@ const Footer = () => {
   const [IsMusicInPlayer, setIsMusicInPlayer] = useRecoilState(musicInPlayer);
 
 
-  useEffect(()=>{
-    const currentDate = new Date();
-    setCurrentYear(currentDate.getFullYear())
-  }, [])
-
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
   };
@@ -72,7 +67,7 @@ const Footer = () => {
           <SocialMedia />
           {isAboveSmallScreens ? null : (
             <p className="text-[10px] font-light mt-5 mb-0">
-              © {currentYear} Duo Milonga
+              © 2023 Duo Milonga
             </p>
           )}
         </div>
@@ -97,7 +92,7 @@ const Footer = () => {
       </div>
       {isAboveSmallScreens ? (
         <p className="text-[10px] font-light mt-5 mb-0">
-          © {currentYear} Duo Milonga
+          © 2023 Duo Milonga
         </p>
       ) : null}
     </footer>
