@@ -40,7 +40,7 @@ const Contact = () => {
           src="../assets/images/Kontakt.jpg"
           alt="main room"
           className="fixed top-0 left-0 h-screen"
-          // objectPosition="62% 0"
+          objectPosition="63% 0"
           objectFit="cover"
         />
       </div>

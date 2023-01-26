@@ -29,7 +29,7 @@ const ContactForm = ({ language }) => {
       onSubmit={onSubmit}
       action="https://formsubmit.co/duomilonga@gmail.com"
       method="POST"
-      className="max-w-2xl z-20 mt-10"
+      className="max-w-2xl z-20 mt-10 mx-auto lg:mx-0"
     >
       <input
         className="w-full bg-transparent border-b-[1px] border-b-white font-semibold placeholder-white/70 p-2  placeholder:font-light"
