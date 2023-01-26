@@ -34,7 +34,7 @@ const Gallery = ({ data }) => {
     visible: {
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 1,
+        delayChildren: 1.3,
         duration: 1,
         ease: "easeInOut",
       },
@@ -68,7 +68,7 @@ const Gallery = ({ data }) => {
           className="fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.8 }}
-          transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
+          transition={{ ease: "easeInOut", delay: 0.8, duration: 0.8 }}
         ></motion.div>
       </div>
 
@@ -92,7 +92,7 @@ const Gallery = ({ data }) => {
           animate={{ opacity: 1 }}
           viewport={{ once: true }}
           variants={item}
-          transition={{ delay: 1.8, staggerChildren: 0.1, delayChildren: 0.5 }}
+          transition={{ delay: 2, staggerChildren: 0.1, delayChildren: 0.5 }}
         >
           <GalleryRow
             data={data}

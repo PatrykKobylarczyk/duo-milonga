@@ -39,3 +39,16 @@ export const currentVideoIndex = atom({
   key: "videoIndex",
   default: 0,
 });
+export const isMenuOpen = atom({
+  key: "isMenuToggled",
+  default: false,
+});
+
+export const musicInFooter = atom({
+  key: "isMusicInFooter",
+  default: false,
+});
+export const musicInPlayer = atom({
+  key: "isMusicInPlayer",
+  default: false,
+});

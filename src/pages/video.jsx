@@ -4,6 +4,9 @@ import { StaticImage } from "gatsby-plugin-image";
 //COMPONENTS
 import Head from "../components/Head";
 
+// HOOKS
+import useMediaQuery from "../hooks/useMediaQuery";
+
 //LIBS
 import { motion } from "framer-motion";
 import VideoRaw from "../components/VideoRaw";
@@ -15,6 +18,7 @@ import { languageState } from "../atoms/atom";
 import Loader from "../components/Loader";
 
 const Video = () => {
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [showModal, setShowModal] = useState(false);
   const [language] = useRecoilState(languageState);
 
@@ -29,7 +33,7 @@ const Video = () => {
     visible: {
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 1,
+        delayChildren: 1.3,
         duration: 1,
         ease: "easeInOut",
       },
@@ -46,19 +50,20 @@ const Video = () => {
     >
        <Loader />
       {/* BACKGROUN */}
-      <div className="h-screen fixed left-0 top-0 -z-[2]">
+      <div className="h-screen w-full fixed left-0 top-0 -z-[2]">
         <StaticImage
-          src="../assets/images/3-_B2A4045-1popr.jpg"
+          src="../assets/images/17.jpg"
           alt="main room"
           className="h-screen"
-          // objectPosition=" 33% 0"
+          objectPosition={`${isAboveMediumScreens ? "right center" : "31% 0%"}`}
+          objectFit="cover"
         />
       </div>
       <motion.div
         className="fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-[5]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
-        transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
+        transition={{ ease: "easeInOut", delay: 0.8, duration: 0.8 }}
       ></motion.div>
 
       {/* CONTENT */}

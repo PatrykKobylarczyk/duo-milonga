@@ -17,7 +17,7 @@ const VideoRaw = ({setShowModal, item}) => {
       animate={{ opacity: 1 }}
       viewport={{ once: true }}
       variants={item}
-      transition={{ delay: 1.8, staggerChildren: 0.1, delayChildren: 0.5 }}
+      transition={{ delay:2, staggerChildren: 0.1, delayChildren: 0.5 }}
     >
       {videoData.map((video, i) => (
         <motion.div key={i} variants={item}>

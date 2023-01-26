@@ -10,7 +10,7 @@ import SocialMedia from "./SocialMedia";
 
 // STATE
 import { useRecoilState } from "recoil";
-import { languageState } from "../atoms/atom";
+import { languageState, musicInFooter, musicInPlayer } from "../atoms/atom";
 
 // DATA
 import audio from "../assets/audio/salwinski_milonga.mp3";
@@ -20,7 +20,9 @@ const Footer = () => {
   const audioRef = useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language, setLanguage] = useRecoilState(languageState);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMusicInFooter, setIsMusicInFooter] = useRecoilState(musicInFooter);
+  const [IsMusicInPlayer, setIsMusicInPlayer] = useRecoilState(musicInPlayer);
+
 
   const currentDate = new Date();
   const fullYear = currentDate.getFullYear();
@@ -29,13 +31,19 @@ const Footer = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
   };
 
+  const handlePlayMusicButton = () => {
+    setIsMusicInFooter((prev) => !prev);
+    setIsMusicInPlayer(false)
+  };
+
   useEffect(() => {
-    if (isPlaying) {
+    audioRef.current.load();
+    if (isMusicInFooter) {
       audioRef.current.play();
     } else {
       audioRef.current.pause();
     }
-  }, [isPlaying]);
+  }, [isMusicInFooter]);
 
   // Set initial language state because from local storage returns null
   const setLanguageState = useCallback(() => {
@@ -76,9 +84,9 @@ const Footer = () => {
 
           {/* MUSIC BUTTON */}
           <Button
-            handleClick={() => setIsPlaying((prev) => !prev)}
+            handleClick={handlePlayMusicButton}
             content={
-              <MusicButtonAudioSpectrum type="footer" isPlaying={isPlaying} />
+              <MusicButtonAudioSpectrum type="footer" isMusicInFooter={isMusicInFooter} />
             }
             styles={"text-xs"}
           />

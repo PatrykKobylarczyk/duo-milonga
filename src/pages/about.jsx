@@ -55,17 +55,17 @@ const About = () => {
       {/* BACKGROUND  */}
       <div className="fixed overflow-hidden top-0 right-0 w-full">
         <StaticImage
-          src="../assets/images/17.jpg"
+          src="../assets/images/3-_B2A4045-1popr.jpg"
           alt="main room"
           className="fixed w-full h-screen -z-[2]"
-          objectPosition={`${isAboveMediumScreens ? "0% 0%" : "31% 0%"}`}
+          objectPosition={`${isAboveMediumScreens ? "0% bottom" : "47% 0%"}`}
         />
 
         <motion.div
           className="fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ ease: "easeInOut", delay: 0.3, duration: 1.2 }}
+          transition={{ ease: "easeInOut", delay: 0.8, duration: 1.2 }}
         ></motion.div>
       </div>
 

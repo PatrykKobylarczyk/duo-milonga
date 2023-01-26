@@ -13,14 +13,14 @@ import Logo from "./Logo";
 
 //STATE
 import { useRecoilState } from "recoil";
-import { languageState } from "../atoms/atom";
+import { languageState, isMenuOpen } from "../atoms/atom";
 
 //DATA
 import { lang_EN } from "../data/lang-pack";
 import { lang_PL } from "../data/lang-pack";
 
 const Navbar = () => {
-  const [isMenuToggled, setIsMenuToggled] = useState(false);
+  const [isMenuToggled, setIsMenuToggled] = useRecoilState(isMenuOpen);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [language] = useRecoilState(languageState);
 

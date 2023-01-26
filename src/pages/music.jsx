@@ -9,7 +9,12 @@ import MusicPlayer from "../components//MusicPlayer";
 import Head from "../components/Head";
 import Loader from "../components/Loader";
 
+//STATE
+import { useRecoilState } from "recoil";
+import { isMenuOpen } from "../atoms/atom";
+
 const Music = () => {
+  const [isMenuToggled] = useRecoilState(isMenuOpen);
 
   return (
     <div className="pages relative page h-screen ">
@@ -21,7 +26,7 @@ const Music = () => {
         objectPosition=" 75% 0"
       />
       <div className="w-full h-full fixed top-0 left-0 grid place-items-center z-[6]">
-        <MusicPlayer />
+        {!isMenuToggled && <MusicPlayer />}
       </div>
       <motion.div
         className="pages fixed left-0 top-0 w-full h-screen bg-gradient-layout-darker z-[5]"

@@ -1,10 +1,10 @@
 import React from "react";
 
-const AudioSpectrumBar = ({ isPlaying }) => {
+const AudioSpectrumBar = ({ IsMusicInPlayer }) => {
   return (
     <span
       className={`audio-spectrum-bar ${
-        isPlaying ? "on" : null
+        IsMusicInPlayer ? "on" : null
       } block w-[2px] h-[1px] bg-red`}
     ></span>
   );
