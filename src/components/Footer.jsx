@@ -20,12 +20,15 @@ const Footer = () => {
   const audioRef = useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language, setLanguage] = useRecoilState(languageState);
+  const [currentYear, setCurrentYear] = useState(2023);
   const [isMusicInFooter, setIsMusicInFooter] = useRecoilState(musicInFooter);
   const [IsMusicInPlayer, setIsMusicInPlayer] = useRecoilState(musicInPlayer);
 
 
-  const currentDate = new Date();
-  const fullYear = currentDate.getFullYear();
+  useEffect(()=>{
+    const currentDate = new Date();
+    setCurrentYear(currentDate.getFullYear())
+  }, [])
 
   const changeLanguage = () => {
     setLanguage(language === "PL" ? "EN" : "PL");
@@ -69,7 +72,7 @@ const Footer = () => {
           <SocialMedia />
           {isAboveSmallScreens ? null : (
             <p className="text-[10px] font-light mt-5 mb-0">
-              © {fullYear} Duo Milonga
+              © {currentYear} Duo Milonga
             </p>
           )}
         </div>
@@ -94,7 +97,7 @@ const Footer = () => {
       </div>
       {isAboveSmallScreens ? (
         <p className="text-[10px] font-light mt-5 mb-0">
-          © {fullYear} Duo Milonga
+          © {currentYear} Duo Milonga
         </p>
       ) : null}
     </footer>
