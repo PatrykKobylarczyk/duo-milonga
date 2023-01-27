@@ -80,7 +80,7 @@ const IndexPage = () => {
       <main>
         {isAboveSmallScreens ? (
           <StaticImage
-            src="../assets/images/6-_B2A3836-1popr.jpg"
+            src="../assets/images/06-_B2A3836-1popr.jpg"
             alt="main room"
             className=" h-full -z-50"
             objectPosition="32% 30%"

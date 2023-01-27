@@ -55,7 +55,7 @@ const About = () => {
       {/* BACKGROUND  */}
       <div className="fixed overflow-hidden top-0 right-0 w-full">
         <StaticImage
-          src="../assets/images/3-_B2A4045-1popr.jpg"
+          src="../assets/images/03-_B2A4045-1popr.jpg"
           alt="main room"
           className="fixed w-full h-screen -z-[2]"
           objectPosition={`${isAboveMediumScreens ? "0% bottom" : "47% 0%"}`}
