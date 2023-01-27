@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 //LIBS'
@@ -11,11 +11,11 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import GalleryRow from "../components/GalleryRow";
 import ImageCarousel from "../components/ImageCarousel";
 import Head from "../components/Head";
+import Loader from "../components/Loader";
 
 // STATE
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
-import Loader from "../components/Loader";
 
 const Gallery = ({ data }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -135,7 +135,8 @@ export const query = graphql`
             "favicon"
           ]
         }
-      }
+      },
+      sort: {name: ASC}
     ) {
       edges {
         node {
