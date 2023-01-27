@@ -18,8 +18,8 @@ const IndexPage = () => {
   const [language] = useRecoilState(languageState);
 
   //Titles Animation
-  const harp_en = ["H", "a", "r", "p",<span className="text-red font-semibold ml-2 md:ml-5 text-3xl md:text-5xl">&</span>];
-  const harp_pl = ["H", "a", "r", "f", "a", <span className="text-red font-semibold ml-2 md:ml-5 text-3xl md:text-5xl">&</span>];
+  const harp_en = ["H", "a", "r", "p",<span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-4xl">&</span>];
+  const harp_pl = ["H", "a", "r", "f", "a", <span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-4xl">&</span>];
   const accordion_en = ["A", "c", "c", "o", "r", "d", "i", "o", "n"];
   const accordion_pl = ["A", "k", "o", "r", "d", "e", "o", "n"];
 
@@ -75,7 +75,7 @@ const IndexPage = () => {
         )}
       </main>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
-      <div className="absolute flex flex-col justify-end  text-white left-[40%] md:left-[60%] top-[70vh] md:top-[70vh] text-4xl md:text-6xl font-bold z-[7]">
+      <div className="absolute flex flex-col justify-end  text-white left-[40%] md:left-[60%] top-[65vh] md:top-[70vh] text-3xl md:text-5xl font-medium z-[7]">
         <motion.div
           className="flex"
           initial="hidden"
