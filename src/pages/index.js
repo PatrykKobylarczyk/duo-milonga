@@ -95,7 +95,7 @@ const IndexPage = () => {
         )}
       </main>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
-      <div className={`absolute flex flex-col justify-end  text-white left-[45%] md:left-[70%] ${isIOS ? 'top-[55vh]' : 'top-[60vh]'} md:top-[60vh] text-2xl md:text-3xl font-medium md:font-bold z-[7]`}>
+      <div className={`absolute flex flex-col justify-end  text-white left-[15%] md:left-[70%] ${isIOS ? 'top-[55vh]' : 'top-[60vh]'} md:top-[60vh] text-2xl md:text-3xl font-medium md:font-bold z-[7]`}>
         <motion.div
           className="flex"
           initial="hidden"
