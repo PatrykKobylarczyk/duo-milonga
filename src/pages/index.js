@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS'
 import { motion } from "framer-motion";
-import { isSafari, isIOS } from "react-device-detect";
+import { isIOS } from "react-device-detect";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -25,7 +25,7 @@ const IndexPage = () => {
     "a",
     "r",
     "p",
-    <span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-4xl">
+    <span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-3xl">
       &
     </span>,
   ];
@@ -35,7 +35,7 @@ const IndexPage = () => {
     "r",
     "f",
     "a",
-    <span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-4xl">
+    <span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-3xl">
       &
     </span>,
   ];
@@ -95,7 +95,7 @@ const IndexPage = () => {
         )}
       </main>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
-      <div className={`absolute flex flex-col justify-end  text-white left-[40%] md:left-[70%] ${isIOS ? 'top-[55vh]' : 'top-[60vh]'} md:top-[60vh] text-3xl md:text-5xl font-medium md:font-bold z-[7]`}>
+      <div className={`absolute flex flex-col justify-end  text-white left-[45%] md:left-[70%] ${isIOS ? 'top-[55vh]' : 'top-[60vh]'} md:top-[60vh] text-2xl md:text-3xl font-medium md:font-bold z-[7]`}>
         <motion.div
           className="flex"
           initial="hidden"
@@ -123,7 +123,7 @@ const IndexPage = () => {
           ))}
         </motion.div>
         <motion.button 
-        className="border-[1px] border-white rounded-full text-light text-base md:text-xl h-14 mt-3 hover:border-red/50 transition duration-200 hover:text-red hover:font-bold"
+        className="border-[1px] border-white rounded-full text-light text-base md:text-xl h-12 mt-3 hover:border-red/50 transition duration-200 hover:font-bold px-5"
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         transition={{duration: .8, delay: 2.5}}
