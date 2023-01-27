@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 //LIBS'
 import { motion } from "framer-motion";
+import { isSafari, isIOS } from "react-device-detect";
 
 // HOOKS
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -12,19 +13,38 @@ import Loader from "../components/Loader";
 // STATE
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms/atom";
+import { Link } from "gatsby";
 
 const IndexPage = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language] = useRecoilState(languageState);
 
   //Titles Animation
-  const harp_en = ["H", "a", "r", "p",<span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-4xl">&</span>];
-  const harp_pl = ["H", "a", "r", "f", "a", <span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-4xl">&</span>];
+  const harp_en = [
+    "H",
+    "a",
+    "r",
+    "p",
+    <span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-4xl">
+      &
+    </span>,
+  ];
+  const harp_pl = [
+    "H",
+    "a",
+    "r",
+    "f",
+    "a",
+    <span className="text-red font-medium ml-2 md:ml-5 text-2xl md:text-4xl">
+      &
+    </span>,
+  ];
   const accordion_en = ["A", "c", "c", "o", "r", "d", "i", "o", "n"];
   const accordion_pl = ["A", "k", "o", "r", "d", "e", "o", "n"];
 
   const harp = language === "PL" ? harp_en : harp_pl;
   const accordion = language === "PL" ? accordion_en : accordion_pl;
+  const contactUs = language === "PL" ? "Contact us!" : "Skontaktuj się!";
 
   const container = {
     hidden: {},
@@ -75,7 +95,7 @@ const IndexPage = () => {
         )}
       </main>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
-      <div className="absolute flex flex-col justify-end  text-white left-[40%] md:left-[60%] top-[65vh] md:top-[70vh] text-3xl md:text-5xl font-medium z-[7]">
+      <div className={`absolute flex flex-col justify-end  text-white left-[40%] md:left-[70%] ${isIOS ? 'top-[55vh]' : 'top-[60vh]'} md:top-[60vh] text-3xl md:text-5xl font-medium md:font-bold z-[7]`}>
         <motion.div
           className="flex"
           initial="hidden"
@@ -102,6 +122,14 @@ const IndexPage = () => {
             </motion.div>
           ))}
         </motion.div>
+        <motion.button 
+        className="border-[1px] border-white rounded-full text-light text-base md:text-xl h-14 mt-3 hover:border-red/50 transition duration-200 hover:text-red hover:font-bold"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: .8, delay: 2.5}}
+        >
+          <Link to="/contact">{contactUs}</Link>
+        </motion.button>
       </div>
 
       <Head title="Duo Milonga- Home" />
