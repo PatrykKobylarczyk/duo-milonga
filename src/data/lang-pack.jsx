@@ -54,7 +54,7 @@ export const lang_EN = {
     "Since 2007, together with the accordionist Konrad Salwiński, she has been creating, and performing in Duo Milonga, which has won awards at national and international music competitions, and received glowing reviews from concerts across Europe.",
   about_konrad_name: "Konrad Salwiński",
   about_konrad_paragraph1:
-    "Konrad started learning to play the accordion at the age of 7 at the State Music School in Starachowice, as part of Marek Marecki&#39;s class. In 2011, he graduated from the Academy of Music in Łódź in the class of prof. Zbigniew Ignaczewski. In the years 2008 - 2011 he studied at the Universität für Musik und darstellende Kunst in Graz (Austria) in the class of prof. Janne Rättyä.",
+    "Konrad started learning to play the accordion at the age of 7 at the State Music School in Starachowice, as part of Marek Marecki's class. In 2011, he graduated from the Academy of Music in Łódź in the class of prof. Zbigniew Ignaczewski. In the years 2008 - 2011 he studied at the Universität für Musik und darstellende Kunst in Graz (Austria) in the class of prof. Janne Rättyä.",
   about_konrad_paragraph2:
     "He has participated in the International Music Interpretation Course many times, where he improved his skills under the guidance of some of the most outstanding teachers from Poland and across the world.",
   about_konrad_paragraph3:
@@ -83,7 +83,7 @@ export const lang_EN = {
     "honorable mention in the 3rd International Music Competition named after Michał Spisak in Dąbrowa Górnicza, 2009;",
   ],
   about_konrad_paragraph4:
-    "In 1998, he received the 2nd degree Award of the Mayor of Starachowice. In 2000, 2006 and 2008 he was awarded a scholarship by the Ministry of Culture and National Heritage, and, since 1998, he has been awarded by the National Children&#39;s Fund. In 2007, he won the 4th edition of the &quot;Young Poland&quot; scholarship program of the Ministry of Culture and National Heritage, and in 2008 and 2011, he received a scholarship from the Marshal of the Łódź Voivodeship. He often performs in concerts in Łódź and the Łódź region, as well as in other cities in Poland and around the world. Currently, he runs accordion classes at the State Primary Music School and the Secondary Music School in Zgierz, with many of his pupils enjoying success at national and international music competitions.",
+    `In 1998, he received the 2nd degree Award of the Mayor of Starachowice. In 2000, 2006 and 2008 he was awarded a scholarship by the Ministry of Culture and National Heritage, and, since 1998, he has been awarded by the National Children's Fund. In 2007, he won the 4th edition of the "Young Poland"; scholarship program of the Ministry of Culture and National Heritage, and in 2008 and 2011, he received a scholarship from the Marshal of the Łódź Voivodeship. He often performs in concerts in Łódź and the Łódź region, as well as in other cities in Poland and around the world. Currently, he runs accordion classes at the State Primary Music School and the Secondary Music School in Zgierz, with many of his pupils enjoying success at national and international music competitions.`,
   about_more: "more...",
   about_less: "less...",
 };
@@ -143,7 +143,7 @@ export const lang_PL = {
     "Od 2007 roku wraz z akordeonistą Konradem Salwińskim tworzy duet instrumentalny Duo Milonga, nagradzany na ogólnopolskich i międzynarodowych konkursach muzycznych, a także koncertujący w wielu krajach Europy.",
   about_konrad_name: "Konrad Salwiński",
   about_konrad_paragraph1:
-    "Naukę gry na akordeonie rozpoczął w wieku 7 lat w Państwowej Szkole Muzycznej w Starachowicach, w klasie Marka Mareckiego. W 2011 roku ukończył Akademię Muzyczną w Łodzi w klasie prof. Zbigniewa Ignaczewskiego. W latach 2008 - 2011 studiował także w Universität für Musik und darstellende Kunst w Grazu (Austria) w klasie prof. Janne Rättyä.",
+    'Naukę gry na akordeonie rozpoczął w wieku 7 lat w Państwowej Szkole Muzycznej w Starachowicach, w klasie Marka Mareckiego. W 2011 roku ukończył Akademię Muzyczną w Łodzi w klasie prof. Zbigniewa Ignaczewskiego. W latach 2008 - 2011 studiował także w Universität für Musik und darstellende Kunst w Grazu (Austria) w klasie prof. Janne Rättyä.',
   about_konrad_paragraph2:
     'Wielokrotnie uczestniczył w "Międzynarodowym Kursie Interpretacji Muzycznej", gdzie doskonalił swoje umiejętności pod okiem najznakomitszych pedagogów z Polski i świata.',
   about_konrad_paragraph3:
