@@ -20,16 +20,16 @@ const IndexPage = () => {
   const [language] = useRecoilState(languageState);
 
   //Titles Animation
-  const harp_en = ["A","n","e","t","a","\u00A0\ ","S","a","l","w","i","ń","s","k","a","\u00A0\ ","-","\u00A0\ ","H", "a","r", "p"];
-  const harp_pl = ["A","n","e","t","a","\u00A0\ ","S","a","l","w","i","ń","s","k","a","\u00A0\ ","-","\u00A0\ ","H","a","r","f","a"];
-  const accordion_en = ["K","o","n","r","a","d","\u00A0\ ","S","a","l","w","i","ń","s","k","i","\u00A0\ ","-","\u00A0\ ","A", "c", "c", "o", "r", "d", "i", "o", "n"];
-  const accordion_pl = ["K","o","n","r","a","d","\u00A0\ ","S","a","l","w","i","ń","s","k","i","\u00A0\ ","-","\u00A0\ ","A", "k", "o", "r", "d", "e", "o", "n"];
-  const duo = "font-monteCarlo text-white text-4xl md:text-6xl z-50 font-semibold"
-  const milonga =[<p className={duo}>d</p>, <p className={duo}>u</p>, <p className={duo}>o</p>,"\u00A0\ ", "m", "i", "l", "o", "n", "g", "a"]
+  const space = "\u00A0 "
+  const harp_en = (`Aneta${space} Salwińska${space} -${space} harp`).split('')
+  const harp_pl = (`Aneta${space} Salwińska${space} -${space} harfa`).split('')
+  const accordion_en2 = (`Konrad${space}Salwiński${space} -${space} accordion`).split('')
+  const accordion_pl2 = (`Konrad${space} Salwiński${space} -${space} akordeon`).split('')
+  const milonga2 =["D","u","o","\u00A0 ", "m", "i", "l", "o", "n", "g", "a"]
 
 
   const harp = language === "PL" ? harp_en : harp_pl;
-  const accordion = language === "PL" ? accordion_en : accordion_pl;
+  const accordion = language === "PL" ? accordion_en2 : accordion_pl2;
   const contactUs = language === "PL" ? "Contact" : "Kontakt";
 
   const container = {
@@ -82,25 +82,25 @@ const IndexPage = () => {
       </main>
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
       <div
-        className={`absolute flex flex-col justify-end text-white left-[15%] md:left-[70%] ${
+        className={`absolute flex flex-col justify-end text-white left-1/2 -translate-x-1/2 md:left-[70%] ${
           isIOS ? "top-[55vh]" : "top-[60vh]"
         } md:top-[60vh] text-2xl md:text-3xl font-medium md:font-bold z-[7]`}
       >
         <motion.div
-          className="flex items-end font-Quicksand text-red text-3xl md:text-5xl mb-2 font-semibold md:font-medium"
+          className="flex text-2xl lg:text-4xl font-bold mb-2"
           initial="hidden"
           animate="visible"
           viewport={{ once: true }}
           variants={container2}
         >
-          {milonga.map((letter, i) => ( 
+          {milonga2.map((letter, i) => ( 
             <motion.div key={i} variants={item}>
               {letter}
             </motion.div>
           ))}
         </motion.div>
         <motion.div
-          className="flex text-sm md:text-xl"
+          className="flex text-xs md:text-xl"
           initial="hidden"
           animate="visible"
           viewport={{ once: true }}
@@ -113,7 +113,7 @@ const IndexPage = () => {
           ))}
         </motion.div>
         <motion.div
-          className="flex text-sm md:text-xl"
+          className="flex text-xs md:text-xl"
           initial="hidden"
           animate="visible"
           viewport={{ once: true }}
@@ -126,10 +126,10 @@ const IndexPage = () => {
           ))}
         </motion.div>
         <motion.button
-          className="w-28 md:w-40 border-[1px] border-white rounded-full font-semibold text-xs md:text-sm h-10 mt-3 hover:border-red hover:bg-red transition duration-200"
+          className="w-28 md:w-40 border-[1px] border-white rounded-full font-semibold text-xs md:text-sm h-8 md:h-12 mt-3 hover:border-red hover:bg-red transition duration-200"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 3.3 }}
+          transition={{ duration: 0.8, delay: 4 }}
         >
           <Link to="/contact">{contactUs}</Link>
         </motion.button>
