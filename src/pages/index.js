@@ -23,12 +23,18 @@ const IndexPage = () => {
   const space = "\u00A0 "
   const harp_en = (`Aneta${space} Salwińska${space} -${space} harp`).split('')
   const harp_pl = (`Aneta${space} Salwińska${space} -${space} harfa`).split('')
-  const accordion_en2 = (`Konrad${space}Salwiński${space} -${space} accordion`).split('')
-  const accordion_pl2 = (`Konrad${space} Salwiński${space} -${space} akordeon`).split('')
+  const accordion_en = (`Konrad${space}Salwiński${space} -${space} accordion`).split('')
+  const accordion_pl = (`Konrad${space} Salwiński${space} -${space} akordeon`).split('')
+  const milonga =["D","u","o","\u00A0 ", "m", "i", "l", "o", "n", "g", "a"]
+
+  const harp_en2 = `Aneta Salwińska - harp`
+  const harp_pl2 = `Aneta Salwińska - harfa`
+  const accordion_en2 = `Konrad Salwiński - accordion`
+  const accordion_pl2 = `Konrad Salwiński - akordeon`
   const milonga2 =["D","u","o","\u00A0 ", "m", "i", "l", "o", "n", "g", "a"]
 
 
-  const harp = language === "PL" ? harp_en : harp_pl;
+  const harp = language === "PL" ? harp_en2 : harp_pl2;
   const accordion = language === "PL" ? accordion_en2 : accordion_pl2;
   const contactUs = language === "PL" ? "Contact" : "Kontakt";
 
@@ -49,7 +55,7 @@ const IndexPage = () => {
       transition: {
         staggerChildren: 0.1,
         delayChildren: 1.3,
-        duration: 2,
+        duration: 1,
         ease: "easeInOut",
       },
     },
@@ -93,13 +99,22 @@ const IndexPage = () => {
           viewport={{ once: true }}
           variants={container2}
         >
-          {milonga2.map((letter, i) => ( 
+          {milonga.map((letter, i) => ( 
             <motion.div key={i} variants={item}>
               {letter}
             </motion.div>
           ))}
         </motion.div>
         <motion.div
+          className="flex text-xs md:text-xl"
+          initial={{opacity: 0, x:20}}
+          animate={{opacity:1, x:0}}
+          viewport={{ once: true }}
+          transition={{duration:.5, delay: 2}}
+        >
+         {harp}
+        </motion.div>
+        {/* <motion.div
           className="flex text-xs md:text-xl"
           initial="hidden"
           animate="visible"
@@ -111,8 +126,17 @@ const IndexPage = () => {
               {letter}
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
         <motion.div
+          className="flex text-xs md:text-xl"
+          initial={{opacity: 0, x:50}}
+          animate={{opacity:1, x:0}}
+          viewport={{ once: true }}
+          transition={{duration:.5, delay:2.5}}
+        >
+         {accordion}
+        </motion.div>
+        {/* <motion.div
           className="flex text-xs md:text-xl"
           initial="hidden"
           animate="visible"
@@ -124,12 +148,12 @@ const IndexPage = () => {
               {letter}
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
         <motion.button
           className="w-28 md:w-40 border-[1px] border-white rounded-full font-semibold text-xs md:text-sm h-8 md:h-20 mt-3 hover:border-red hover:bg-red transition duration-200"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 4 }}
+          transition={{ duration: 0.8, delay: 2.8 }}
         >
           <Link to="/contact">{contactUs}</Link>
         </motion.button>
