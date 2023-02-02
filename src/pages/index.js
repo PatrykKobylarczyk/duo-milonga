@@ -83,7 +83,7 @@ const IndexPage = () => {
       <div className="absolute left-0 top-0 w-full h-full bg-gradient-layout"></div>
       <div
         className={`absolute flex flex-col justify-end text-white left-1/2 -translate-x-1/2 md:left-[70%] ${
-          isIOS ? "bottom-[20vh]" : "bottom-[26vh]"
+          isIOS ? "bottom-[20vh]" : "bottom-[24vh]"
         } md:top-[60vh] text-2xl md:text-3xl font-medium md:font-bold z-[7]`}
       >
         <motion.div
@@ -126,7 +126,7 @@ const IndexPage = () => {
           ))}
         </motion.div>
         <motion.button
-          className="w-28 md:w-40 border-[1px] border-white rounded-full font-semibold text-xs md:text-sm h-8 md:h-12 mt-3 hover:border-red hover:bg-red transition duration-200"
+          className="w-28 md:w-40 border-[1px] border-white rounded-full font-semibold text-xs md:text-sm h-8 md:h-20 mt-3 hover:border-red hover:bg-red transition duration-200"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 4 }}
