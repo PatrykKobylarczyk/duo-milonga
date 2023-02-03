@@ -8,7 +8,7 @@ const Logo = ({ color }) => {
         className={`font-monteCarlo text-${color} text-3xl pl-2 z-50 font-semibold`}
       >
         duo
-        <span className="font-Quicksand text-red text-2xl ml-1">milonga</span>
+        <span className="font-Quicksand text-red font-normal text-2xl ml-1">milonga</span>
       </p>
     </Link>
   );
