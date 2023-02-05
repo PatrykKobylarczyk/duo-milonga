@@ -63,7 +63,7 @@ export const lang_EN = {
     "1st prize in the category of soloists and 1st prize in the category of chamber ensembles at the Festival of Accordion Music in Przemyśl, 1998;",
     "3rd prize at the International Accordion Competition in Poprad (Slovakia), 1999;",
     "5th place in the International Accordion Competition in Klingenthal (Germany), 2000;",
-    "1st prize and the title of &quot;Absolute Winner&quot; in the International Accordion Competition in Dunajska Streda, Slovakia, 2000;",
+    '1st prize and the title of "Absolute Winner" in the International Accordion Competition in Dunajska Streda, Slovakia, 2000;',
     "Tango Maratonu The Strawberry Edition,",
     "5th place in the International Accordion Competition in Castelfidardo (Italy), 2000;",
     "1st prize at the International Accordion Competition in Poprad (Slovakia), 2001;",
