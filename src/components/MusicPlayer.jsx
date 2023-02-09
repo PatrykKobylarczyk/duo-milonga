@@ -33,8 +33,6 @@ const MusicPlayer = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const isAboveLargeScreens = useMediaQuery("(min-width: 1368px)");
   const [audioProgress, setAudioProgress] = useState(0);
-  const [musicTotalLength, setMusicTotalLength] = useState("04 : 38");
-  const [musicCurrentTime, setMusicCurrentTime] = useState("00 : 00");
   const [isMusicInFooter, setIsMusicInFooter] = useRecoilState(musicInFooter);
   const [IsMusicInPlayer, setIsMusicInPlayer] = useRecoilState(musicInPlayer);
 
@@ -74,22 +72,6 @@ const MusicPlayer = () => {
 
   // CONTROL TIME FOR PROGRESS BAR
   const handleAudioUpdate = () => {
-    //Input total length of the audio
-    let minutes = Math.floor(audioRef.current.duration / 60);
-    let seconds = Math.floor(audioRef.current.duration % 60);
-    let musicTotalLength0 = `${minutes < 10 ? `0${minutes}` : minutes} : ${
-      seconds < 10 ? `0${seconds}` : seconds
-    }`;
-    setMusicTotalLength(musicTotalLength0);
-
-    //Input Music Current Time
-    let currentMin = Math.floor(audioRef.current.currentTime / 60);
-    let currentSec = Math.floor(audioRef.current.currentTime % 60);
-    let musicCurrentT = `${currentMin < 10 ? `0${currentMin}` : currentMin} : ${
-      currentSec < 10 ? `0${currentSec}` : currentSec
-    }`;
-    setMusicCurrentTime(musicCurrentT);
-
     const progress = parseInt(
       (audioRef.current.currentTime / audioRef.current.duration) * 100
     );
@@ -159,7 +141,7 @@ const MusicPlayer = () => {
                 handleClick={handlePlayMusic}
                 content={
                   <MusicButtonAudioSpectrum
-                  IsMusicInPlayer={IsMusicInPlayer}
+                    IsMusicInPlayer={IsMusicInPlayer}
                     isMusicInFooter={isMusicInFooter}
                     styles={"text-xs"}
                   />

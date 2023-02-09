@@ -20,7 +20,6 @@ const Footer = () => {
   const audioRef = useRef(null);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const [language, setLanguage] = useRecoilState(languageState);
-  const [currentYear, setCurrentYear] = useState(2023);
   const [isMusicInFooter, setIsMusicInFooter] = useRecoilState(musicInFooter);
   const [IsMusicInPlayer, setIsMusicInPlayer] = useRecoilState(musicInPlayer);
 
