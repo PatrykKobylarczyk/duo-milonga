@@ -64,11 +64,6 @@ const Footer = () => {
       <div className="flex justify-between items-center">
         <div className="max-h-20 md:max-h-12 flex flex-col">
           <SocialMedia />
-          {isAboveSmallScreens ? null : (
-            <p className="text-[10px] font-light mt-2 mb-0">
-              © 2023 Duo Milonga
-            </p>
-          )}
         </div>
 
         <div className="flex gap-5">
