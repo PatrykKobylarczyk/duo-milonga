@@ -6,7 +6,7 @@ const LogoColour = () => {
     <StaticImage
             src="../assets/images/tango_logo.png"
             alt="logo Colours of tango"
-            className="w-[70px] mt-2"
+            className="w-[70px] mt-2 md:mt-0"
 
           />
   );
